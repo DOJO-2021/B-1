@@ -1,5 +1,1 @@
-/.metadata/
-.settings
-build
-/DojoSample/database.mv.db
-cpull.mv.db
+.gitignore
