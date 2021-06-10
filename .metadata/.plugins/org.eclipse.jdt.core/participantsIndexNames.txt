@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\484306786.index
+\Cpull\src
