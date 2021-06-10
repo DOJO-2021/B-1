@@ -789,3 +789,57 @@ Binding(CTRL+SHIFT+C,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:01.002
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:01.003
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@525e899a[org.springframework.tooling.boot.ls:1.23.0.202010230633(id=997)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:01.008
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:01.097
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.257
+!MESSAGE Boot LS startup time from start to initialized: 6233ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.561
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.moEKKoWzisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.613
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.617
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.618
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.618
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.619
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.moEKKoWz => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.623
+!MESSAGE classpath=38 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.625
+!MESSAGE buffering callback sts4.classpath.moEKKoWz Cpull false 38
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.626
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.627
+!MESSAGE classpath=35 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.629
+!MESSAGE buffering callback sts4.classpath.moEKKoWz DojoSample false 35
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.630
+!MESSAGE executing callback sts4.classpath.moEKKoWz 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.742
+!MESSAGE executing callback sts4.classpath.moEKKoWz SUCCESS [終了しました]
