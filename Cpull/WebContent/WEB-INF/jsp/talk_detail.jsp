@@ -15,9 +15,12 @@
 	</header>
 
 	<main>
+		<!-- トークルームの題名 -->
 		<h1 class="room_name">お昼ご飯自慢</h1>
 
-			<div class="room_detail">今日食べるお昼ごはんを見せ合いましょう！<br>
+		<!-- トークルームの詳細 -->
+			<div class="room_detail">
+			今日食べるお昼ごはんを見せ合いましょう！<br>
 			誰でも気軽に来てください！
 			</div>
 
