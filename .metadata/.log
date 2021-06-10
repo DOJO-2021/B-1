@@ -843,3 +843,15 @@ Binding(CTRL+SHIFT+C,
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:13:07.742
 !MESSAGE executing callback sts4.classpath.moEKKoWz SUCCESS [終了しました]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:51:38.071
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.moEKKoWz
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:51:38.072
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.moEKKoWz
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:51:38.073
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-10 16:51:38.074
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.moEKKoWz => OK
