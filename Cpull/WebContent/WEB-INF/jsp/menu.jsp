@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>メニュー</title>
 </head>
 <body>
+	<header> </header>
+	<main>
+		<p>メニュー</p>
+		<a href="/Cpull/"
 
+	</main>
 </body>
 </html>
