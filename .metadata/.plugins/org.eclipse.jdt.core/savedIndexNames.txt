@@ -1,4 +1,5 @@
 INDEX VERSION 1.131+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 3603647682.index
 979397112.index
 366799300.index
@@ -38,3 +39,14 @@ INDEX VERSION 1.131+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.jdt
 3901814333.index
 612310394.index
 3012881899.index
+=======
+290502943.index
+3826249118.index
+405544286.index
+1084131233.index
+2958734655.index
+2934874377.index
+1403166814.index
+3114916728.index
+1637107785.index
+>>>>>>> 3d7ad4d8106e2f809a531a724515fad744049f8a
