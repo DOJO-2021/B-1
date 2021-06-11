@@ -4,6 +4,5 @@ INDEX VERSION 1.4+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.wst.j
 1981302153.index
 2828276529.index
 109705252.index
-484306786.index
 789448723.index
 2429804499.index
