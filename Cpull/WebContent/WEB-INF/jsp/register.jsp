@@ -17,7 +17,7 @@
     <form method="POST" action="/Cpull/RegisterServlet">
       <p>新しいIDとPWを入力してください！
       <p>メールアドレスを入力してください
-      新しいID<input type="text" name=""><!-- name属性未定 --><br>
+      新しいID<input type="text" name="id"><!-- name属性未定? --><br>
       <p>8文字以上16文字未満で登録してください
       <p>アルファベットと数字どちらも含むパスワードを設定してください
       新しいPW<input type="text" name=""><!-- name属性未定 --><br>
