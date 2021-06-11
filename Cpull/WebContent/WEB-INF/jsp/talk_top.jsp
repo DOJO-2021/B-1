@@ -20,8 +20,8 @@
 		<div id="wrapper">
 			<!-- トークルームの題名 -->
 			<div class="talkroom_box">
-				<a href="talkroom_detail.jsp">雑談部屋</a>  //直接jspファイル指定はOKと思う
-				<a href="aaa.jsp">お昼ご飯自慢</a>			//各部屋のサーブレット作成してない
+				<a href= "/WEB-INF/jsp/talk_detail.jsp">雑談部屋</a>
+				<a href="aaa.jsp">お昼ご飯自慢</a>
 				<a href="bbb.jsp">地方出身者あつまれ！</a>
 				<a href="ccc.jsp">関東勢あつまれ</a>
 				<a href="ddd.jsp">動物好きあつまれ</a>

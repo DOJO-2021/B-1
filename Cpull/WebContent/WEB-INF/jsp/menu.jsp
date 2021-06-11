@@ -17,12 +17,12 @@
 	<main>
 		<h1 class="top_name">メニュー</h1>
 			<div class="menu_box">
-				<a href="/simpleBC/ProfileServlet">自己紹介</a>
-				<a href="/simpleBC/TalkroomServlet">トークルーム</a>
-				<a href="/simpleBC/BbsServlet">掲示板</a>
-				<a href="/simpleBC/MypageServlet">マイページ</a>
-				<a href="/simpleBC/InquiryServlet">お問い合わせ</a>
-				<a href="/simpleBC/LoginServlet">ログアウト</a>
+				<a href="/Cpull/ProfileServlet">自己紹介</a>
+				<a href="/Cpull/TalkroomServlet">トークルーム</a>
+				<a href="/Cpull/BbsServlet">掲示板</a>
+				<a href="/Cpull/MypageServlet">マイページ</a>
+				<a href="/Cpull/InquiryServlet">お問い合わせ</a>
+				<a href="/Cpull/LoginServlet">ログアウト</a>
 			</div>
 	</main>
 </body>
