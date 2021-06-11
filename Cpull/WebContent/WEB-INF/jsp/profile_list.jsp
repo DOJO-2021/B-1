@@ -4,46 +4,37 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>自己紹介｜一覧検索結果</title>
+<title>全てのプロフィール一覧</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="wrapper">
-  <!-- ヘッダー（ここから） -->
-  <header class="header">
-    <h1 class="logo">
-      <a href="list.html"><img src="images/logo.png" alt="名刺管理" width="240" height="100"></a>
-    </h1>
-  <ul id="nav">
-      <li><a href="/simpleBC/MenuServlet">トップ</a></li>
-      <li><a href="/simpleBC/SearchServlet">検索</a></li>
-      <li><a href="/simpleBC/RegistServlet">登録</a></li>
-      <li><a href="/simpleBC/LoginServlet">ログアウト</a></li>
-  </ul>
-  </header>
+
+<!-- ヘッダー（ここから） -->
+<!-- 後で入れる -->
   <!-- ヘッダー（ここまで） -->
+
+
   <!-- メイン（ここから） -->
-<h2>検索結果（更新／削除）</h2>
+<h1>自己紹介一覧</h1>
 <hr>
 
 <c:forEach var="e" items="${cardList}" >
-	<form method="POST" action="/simpleBC/UpdateDeleteServlet">
-	ID<input type="text" name="BUSINESSCARD_ID" value="${e.businesscard_id}"><br>
-	会社名<input type="text" name="COMPANY_NAME" value="${e.company_name}"><br>
-	部署名<input type="text" name="DEPARTMENT_NAME" value="${e.department_name}"><br>
-	氏名<input type="text" name="FULL_NAME" value="${e.full_name}"><br>
-	郵便番号<input type="text" name="ZIPCODE" value="${e.zipcode}"><br>
-	住所<input type="text" name="ADDRESS" value="${e.address}"><br>
-	電話番号<input type="text" name="TEL" value="${e.tel}"><br>
-	FAX番号<input type="text" name="FAX" value="${e.fax}"><br>
-	Email<input type="text" name="EMAIL" value="${e.email}"><br>
-	備考<input type="text" name="REMARKS" value="${e.remarks}"><br>
-	<input type="submit"  style="margin: 6px;float: left;"name="SUBMIT" value="更新">
-	<input type="submit"  style="margin: 6px;float: left;"name="SUBMIT" value="削除"><br>
+	<form method="POST" action="/Cpull/profileServlet.java">
+	名前<input type="text" name="USER_NAME" value="${e.user_name}"><br>
+	よみかた<input type="text" name="USER_K_NAME" value="${e.user_k_name}"><br>
+	会社名<input type="text" name="USER_COMPANY" value="${e.user_company}"><br>
+	出身<input type="text" name="USER_PREFECTURE" value="${e.user_prefecture}"><br>
+	趣味<input type="text" name="USER_HOBBY" value="${e.user_hobby}"><br>
+	特技<input type="text" name="USER_SKILL" value="${e.user_skill}"><br>
+	誕生日<input type="text" name="USER_BIRTH" value="${e.user_birth}"><br>
+	備考<input type="text" name="USER_REMARKS" value="${e.USER_REMARKS}"><br>
+
+
 	</form>
 	<hr>
 </c:forEach>
-<a href="/simpleBC/MenuServlet" class ="btn-square">トップページに戻る</a>
+
 
 </div>
 </body>

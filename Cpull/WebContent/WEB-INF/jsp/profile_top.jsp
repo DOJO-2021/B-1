@@ -3,37 +3,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>自己紹介|トップ画面</title>
+<title>自己紹介｜トップ</title>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 <div class="wrapper">
   <!-- ヘッダー（ここから） -->
-  <header class="header">
-    <h1 class="logo">
-      <a href="list.html"><img src="images/logo.png" alt="名刺管理" width="240" height="100"></a>
-    </h1>
-
-
-  <ul id="nav">
-      <li><a href="/simpleBC/MenuServlet">トップ</a></li>
-      <li><a href="/simpleBC/SearchServlet">検索</a></li>
-      <li><a href="/simpleBC/RegistServlet">登録</a></li>
-      <li><a href="/simpleBC/LoginServlet">ログアウト</a></li>
-  </ul>
-
-
-
-  </header>
+ <!-- 後で入れる -->
   <!-- ヘッダー（ここまで） -->
   <!-- メイン（ここから） -->
-  <h2>検索（入力した項目を含む名刺を検索します）</h2>
-<form method="POST" action="/simpleBC/SearchServlet">
+  <h1>自己紹介トップ</h1>
+<form method="POST" action="/Cpull/ProfileServlet">
     <table>
       <tr>
         <td>
           <label>氏名<br>
-          <input type="text" name="USER＿NAME">
+          <input type="text" name="USER_NAME">
           </label>
         </td>
         <td>
@@ -58,37 +43,34 @@
        <tr>
         <td>
           <label>特技<br>
-          <input type="text" name="user_skill">
+          <input type="text" name="USER_SKILL">
           </label>
         </td>
         <td>
           <label>誕生日<br>
-          <input type="text" name="user_birth">
+          <input type="text" name="USER_BIRTH">
           </label>
         </td>
       </tr>
       <tr>
         <td>
           <label>備考<br>
-          <input type="text" name="user_remarks">
+          <input type="text" name="USER_REMARKS">
           </label>
         </td>
-        <td>
       </tr>
       <tr>
         <td colspan="2">
-          <input type="submit" style="margin: 6px;float: left;"id="search" name="submit" value="検索">
-
+          <input type="submit" id="search" name="serch" value="検索">
+          <input type="submit" id="search" name="list" value="一覧">
         </td>
       </tr>
    </table>
 </form>
-<a href="/simpleBC/MenuServlet" class ="btn-square">トップページに戻る</a>
+
   <!-- メイン（ここまで） -->
   <!-- フッター（ここから） -->
-  <div id="footer">
-    <p>Copyright&copy;2021 reina murakami</p>
-  </div>
+
   <!-- フッター（ここまで） -->
 </div>
 </body>
