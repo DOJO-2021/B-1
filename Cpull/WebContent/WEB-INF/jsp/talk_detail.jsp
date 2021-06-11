@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>talk_detail</title>
+<title>トークルーム詳細</title>
 <link rel="stylesheet" href="/Cpull/css/style.css">
 </head>
 <body>
