@@ -5,27 +5,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>talk_top</title>
+<title>トークルーム</title>
 <link rel="stylesheet" href="/Cpull/css/style.css">
 </head>
 <body>
 	<header>
-	 <!-- あとからヘッダーを入れる -->
+		<!-- あとからヘッダーを入れる -->
 	</header>
 
 	<main>
-		<h1 class="namemenu">トークルームトップ</h1>
-			<div id = "wrapper">
+		<h1 class="top_name">トークルームトップ</h1>
+
+		<!-- wrapperでスクロールバーを作成する -->
+		<div id="wrapper">
+			<!-- トークルームの題名 -->
 			<div class="talkroom_box">
-				<a href="talkroom_detail.jsp">雑談部屋</a>
-				<a href="aaa.jsp">お昼ご飯自慢</a>
+				<a href="talkroom_detail.jsp">雑談部屋</a>  //直接jspファイル指定はOKと思う
+				<a href="aaa.jsp">お昼ご飯自慢</a>			//各部屋のサーブレット作成してない
 				<a href="bbb.jsp">地方出身者あつまれ！</a>
 				<a href="ccc.jsp">関東勢あつまれ</a>
 				<a href="ddd.jsp">動物好きあつまれ</a>
 				<a href="eee.jsp">男子集合！</a>
 			</div>
-			</div>
+		</div>
 	</main>
+
 </body>
 </html>
 

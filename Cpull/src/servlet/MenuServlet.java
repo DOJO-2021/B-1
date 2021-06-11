@@ -18,8 +18,29 @@ public class MenuServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+
+		//ここから処理書いていく
+
+
+
+
+		//これなに？
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 }
+
+
+//ここから名刺管理アプリのメニューサーブレットコピー
+
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/simpleBC/LoginServlet");
+			return;
+		}
+
+		// メニューページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/menu.jsp");
+		dispatcher.forward(request, response);
+	}
