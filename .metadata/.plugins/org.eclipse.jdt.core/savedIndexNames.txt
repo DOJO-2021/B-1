@@ -9,7 +9,6 @@ INDEX VERSION 1.131+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.jdt
 3194627089.index
 561004514.index
 2593559958.index
-2291615622.index
 4063421403.index
 557321861.index
 411021343.index

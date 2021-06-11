@@ -42,13 +42,13 @@
 			</tr>
 			</table>
 		</form>
-		<h2>掲示板の書き込み一覧を表示します</h2>
+		<h2>掲示板のスレッド一覧を表示します</h2>
 		<form>
 			<a href="bbs_list.jsp"><input type="submit" name="bbs_list" value="一覧"></a>
 		</form>
 		<h2>質問・悩みを投稿する</h2>
 		<form>
-			<a href="bbs_create.jsp"><input type="submit" name="bbs_create" value="新規作成"></a>
+			<a href="/Cpull/BbsCreateServlet"><input type="submit" name="bbs_create" value="新規作成"></a>
 		</form>
 	</main>
 </body>

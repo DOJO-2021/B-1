@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>掲示板一覧</title>
+	<title>スレッド一覧</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_list.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
 
 	<main>
 		<!-- サブメニュー追加 -->
-		ここに掲示板一覧が表示される
+		ここにスレッド一覧が表示される
 	</main>
 </body>
 </html>
