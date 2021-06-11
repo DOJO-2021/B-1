@@ -54,7 +54,7 @@ public class InquiryServlet extends HttpServlet {
 		String message= request.getParameter("MESSAGE");
 		// 登録処理を行う
 		InquiryDAO iDao = new InquiryDAO();
-		iDao.insert(new inquiry(0, 0, subject, message, null)); //お問い合わせID,ユーザーID,件名,内容,お問い合わせ時刻
+		iDao.insert(new Inquiry(0, 0, subject, message, null)); //お問い合わせID,ユーザーID,件名,内容,お問い合わせ時刻
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/i_result.jsp");

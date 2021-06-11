@@ -1,3 +1,6 @@
+package dao;
+
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -13,7 +16,7 @@ public class InquiryDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する //後で参照ファイルを指定
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/Cpull/inquiry", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "insert into BC values(null, null, ?, ?, ?,)";
