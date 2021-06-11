@@ -1,0 +1,57 @@
+//データベース
+
+Create table m_user
+(user_id varchar(50) not null,user_name varchar(20) not null,user_pw varchar(20) not null,user_k_name varchar(20) not null,
+user_company varchar(50) not null,user_class int not null,user_prefecture varchar(50),user_hobby varchar(50),
+user_skill varchar(50),user_birth date,user_remarks varchar(100),
+user_range int,user_image varchar(50),primary key (user_id));
+
+Create table bbs(user_id varchar(50) not null,bbs_id int auto_increment not null,bbs_title varchar(50) not null,
+bbs_details varchar(1000) not null,bbs_pw char(4) not null,bbs_range int not null,bbs_category int not null,primary key (user_id));
+
+Create table reply(bbs_id int auto_increment not null,user_id varchar(50) not null,reply_range int not null,
+reply_contents varchar(1000) not null,user_name varchar(20), primary key(bbs_id));
+
+
+Create table inquiry(user_id varchar(50) not null,inquiry_id int auto_increment not null,inquiry_title varchar(50) not null,
+inquiry_details varchar(500) not null,ts timestamp as current_timestamp not null,primary key(inquiry_id));
+
+Create table draft(user_id varchar(50) not null,bbs_id int auto_increment not null,draft_title varchar(50),
+draft_details varchar(1000),draft_pw char(4),draft_range int,draft_category int,primary key(bbs_id));
+
+Create table category(bbs_category int not null,category_name varchar(10) not null);
+
+//データの追加
+insert into m_user values('dojo@seplus2021.onmicrosoft.com','道場太郎','dojo2021','どうじょう たろう',
+'sepuls',0,'東京都','スポーツ観戦','タイピング','1998-01-01','よろしくお願いします。','0','null');
+
+insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'cssについて',
+'cssでの文章の配置や文字の大きさを思い通りに動かすことができません。
+　どうすればいいですか？アドバイスください！！','2021',0,11);
+
+insert into reply values(null,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+'HTML&CSSの基本の教科書のp145のCSSでのページのスタイルを調整するを見ればいけると思います！');
+
+insert into inquiry values('dojohanako@seplus2021.onmicrosoft.com',null,'明日のトークルームについて',
+'明日のトークルームで新しく地方出身者で集まれる部屋を作ってほしいです','');
+
+insert into draft values('dojohanako@seplus2021.onmicrosoft.com',null,'講義について',
+'最近講義についていくことで精一杯で理解できているかとても不安です。','2021',0,04);
+
+
+
+insert into category values('00','パーソナル');
+insert into category values('01','it基礎');
+insert into category values('02','Java基礎');
+insert into category values('03',' 開発');
+insert into category values('04','その他');
+
+
+insert into category values('10','パーソナル');
+insert into category values('11','it基礎');
+insert into category values('12','Java基礎');
+insert into category values('13',' 開発');
+insert into category values('14',' その他');
+
+
+
