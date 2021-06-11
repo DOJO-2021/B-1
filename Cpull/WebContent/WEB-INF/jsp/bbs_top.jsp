@@ -4,42 +4,48 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>掲示板トップ</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_top.css">
 </head>
 <body>
-	<h1>掲示板トップ</h1>
-	<form method="POST" action="/Cpull/BbsServlet">
-		<input type="text" name="bbs_seach" placeholder="検索したいワードを入力">
-		<input type="submit" name="submit" value="検索">
-		<table>
-		<tr>
-			<th>悩み</th>
-			<th>質問</th>
-		</tr>
-		<tr>
-			<td>
-			<select name="kind">
-				<option value="personal">パーソナルスキルコース</option>
-				<option value="IT">IT基礎コース</option>
-				<option value="Java">Java基礎コース</option>
-				<option value="develope">開発演習</option>
-			</select>
-			</td>
-			<td>
-			<select name="kind">
-				<option value="personal">パーソナルスキルコース</option>
-				<option value="IT">IT基礎コース</option>
-				<option value="Java">Java基礎コース</option>
-				<option value="develope">開発演習</option>
-			</select>
-			</td>
-		</tr>
-		</table>
-	</form>
-	<h2>掲示板の書き込み一覧を表示します</h2>
-	<form method="POST" >
+	<header>
+	<!-- 後からヘッダー追加 -->
+	</header>
 
-	</form>
+	<main>
+		<h1>掲示板トップ</h1>
+		<form method="POST" action="/Cpull/BbsServlet">
+			<input type="text" name="bbs_search" placeholder="検索したいワードを入力">
+			<input type="submit" name="submit" value="検索">
+			<table>
+			<tr>
+				<th>悩み</th>
+				<th>質問</th>
+			</tr>
+			<tr>
+				<td>
+				<select name="kind">
+					<option value="personal">パーソナルスキルコース</option>
+					<option value="IT">IT基礎コース</option>
+					<option value="Java">Java基礎コース</option>
+					<option value="develope">開発演習</option>
+				</select>
+				</td>
+				<td>
+				<select name="kind">
+					<option value="personal">パーソナルスキルコース</option>
+					<option value="IT">IT基礎コース</option>
+					<option value="Java">Java基礎コース</option>
+					<option value="develope">開発演習</option>
+				</select>
+				</td>
+			</tr>
+			</table>
+		</form>
+		<h2>掲示板の書き込み一覧を表示します</h2>
+		<form>
+			<a href="bbs_list.jsp"><input type="submit" name="bbs_list" value="一覧"></a>
+		</form>
+	</main>
 </body>
 </html>
