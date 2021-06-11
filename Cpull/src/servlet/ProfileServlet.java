@@ -61,7 +61,7 @@ public class ProfileServlet extends HttpServlet {
 
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
-		List<Bc> cardList = bDao.select(new Bc(0, user_name, user_k_name, full_name, zipcode , address, tel, fax, email, remarks));
+		List<Bc> cardList = bDao.select(new Bc(0, user_name, user_company, user_prefecture, user_hobby , user_skill, user_birth, user_remarks));
 
 
 		// 検索結果をリクエストスコープに格納する
