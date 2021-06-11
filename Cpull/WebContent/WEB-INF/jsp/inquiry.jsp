@@ -10,7 +10,7 @@
 	<header> </header>
 	<main>
 		<p>お問い合わせフォーム</p>
-		<form><!-- フォームの属性 method="GET" action="内容送信のURL" -->
+		<form method="POST" action="/Cpull/InquiryServlet"><!-- フォームの属性 method="POST action="内容送信の場所" -->
 			<div>
 				お問い合わせの件名<br> <input type="text" name="subject"
 					placeholder="お問い合わせ">
