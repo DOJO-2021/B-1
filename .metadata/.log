@@ -1617,3 +1617,60 @@ Binding(CTRL+-,
 
 !ENTRY org.eclipse.wst.html.ui 1 1 2021-06-11 10:27:13.423
 !MESSAGE No line style provider for org.eclipse.wst.html.SCRIPT
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:01.266
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:01.267
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@322b500a[org.springframework.tooling.boot.ls:1.23.0.202010230633(id=997)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:01.273
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:01.310
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:08.650
+!MESSAGE Boot LS startup time from start to initialized: 7368ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.191
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.tdTVnEcBisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.198
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.201
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.202
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.203
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.203
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.tdTVnEcB => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.207
+!MESSAGE classpath=38 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.210
+!MESSAGE buffering callback sts4.classpath.tdTVnEcB Cpull false 38
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.211
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.212
+!MESSAGE classpath=35 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.215
+!MESSAGE buffering callback sts4.classpath.tdTVnEcB DojoSample false 35
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.216
+!MESSAGE executing callback sts4.classpath.tdTVnEcB 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-06-11 10:35:09.297
+!MESSAGE executing callback sts4.classpath.tdTVnEcB SUCCESS [終了しました]
+
+!ENTRY org.eclipse.ui 2 2 2021-06-11 10:40:18.108
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
