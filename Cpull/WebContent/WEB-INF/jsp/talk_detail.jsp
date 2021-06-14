@@ -23,9 +23,9 @@
 			aaaaaaaaaaaaaaaaaaaaaaa<br>
 			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!
 			</div>
-
-			<a href="zoomのリンク">入室</a> <!-- zoomのリンク先を貼る -->
-			<a href="talk_top.jsp">一覧へ戻る</a>
+		<!-- トークルームの詳細 -->
+			<a href="https://devforum.zoom.us/t/embed-code-on-htmlwebsite-page-for-zoom-streaming-directly-to/13350">入室</a> <!-- zoomのリンク先を貼る -->
+			<a href="/jsp/talk_top.jsp">一覧へ戻る</a>
 	</main>
 
 </body>
