@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,8 +14,8 @@
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
   <main>
-    <h1><c:out value="${r_result.title}" /></h1>
-    <a href="${r_result.backTo}">ログインページへ</a>
+    <h1><c:out value="${result.title}" /></h1>
+    <a href="${result.backTo}">ログインページへ</a>
   </main>
 </body>
 </html>
