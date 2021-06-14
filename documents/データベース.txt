@@ -29,8 +29,8 @@ insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'cssについて',
 'cssでの文章の配置や文字の大きさを思い通りに動かすことができません。
 　どうすればいいですか？アドバイスください！！','2021',0,11);
 
-insert into reply values(null,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
-'HTML&CSSの基本の教科書のp145のCSSでのページのスタイルを調整するを見ればいけると思います！');
+insert into reply values(null,'dojohanako@seplus2021.onmicrosoft.com',0,
+'HTML&CSSの基本の教科書のp145のCSSでのページのスタイルを調整するを見ればいけると思います！','道場花子');
 
 insert into inquiry values('dojohanako@seplus2021.onmicrosoft.com',null,'明日のトークルームについて',
 '明日のトークルームで新しく地方出身者で集まれる部屋を作ってほしいです','');
