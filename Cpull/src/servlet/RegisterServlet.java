@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.UserDAO;
+
 /* ※ここにdao,modelをインポートする */
 /**
  * Servlet implementation class RegisterServlet
@@ -58,6 +60,22 @@ public class RegisterServlet extends HttpServlet {
 		String user_remarks = request.getParameter("REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
+
+		// 登録処理を行う
+		UserDAO uDao = new UserDAO();
+		if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image))) {
+			// 登録成功
+			request.setAttribute("result",
+			new Result("登録に成功しました。",  "/Cpull/LoginServlet")); // Resultmodelの作成
+		}
+		else {
+			// 登録失敗
+			request.setAttribute("result",
+			new Result("登録に失敗しました！", "/Cpull/LoginServlet"));
+		}
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/r_result.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }

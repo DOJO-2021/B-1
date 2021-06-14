@@ -13,8 +13,8 @@
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
   <main>
-    <h1>登録が完了しました！</h1>
-    <a href="/Cpull/LoginServlet">ログインページへ</a>
+    <h1><c:out value="${r_result.title}" /></h1>
+    <a href="${r_result.backTo}">ログインページへ</a>
   </main>
 </body>
 </html>
