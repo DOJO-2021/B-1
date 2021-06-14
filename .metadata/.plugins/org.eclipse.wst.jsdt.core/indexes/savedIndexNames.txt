@@ -9,6 +9,5 @@ INDEX VERSION 1.4+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.wst.j
 109705252.index
 484306786.index
 290502943.index
-484306786.index
 <<<<<<< HEAD
 805569905.index
