@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import model.Inquiry;
+
 public class InquiryDAO {
 	// 引数inquirycardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(Inquiry inquirycard) {
@@ -16,10 +18,10 @@ public class InquiryDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する //後で参照ファイルを指定
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/Cpull/inquiry", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into BC values(null, null, ?, ?, ?,)";
+			String sql = "insert into Inquiry values(null, 0, ?, ?, ?,)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -33,8 +35,8 @@ public class InquiryDAO {
 			} else {
 				pStmt.setString(2, "null");
 			}
-			if (inquirycard.getRegistdate() != null) {
-				pStmt.setTimestamp(3, inquirycard.getRegistdate());
+			if (inquirycard.getTs() != null) {
+				pStmt.setTimestamp(3, inquirycard.getTs());
 			} else {
 				pStmt.setTimestamp(3, null);
 			}
