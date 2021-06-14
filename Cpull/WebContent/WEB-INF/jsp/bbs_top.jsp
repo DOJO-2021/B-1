@@ -29,6 +29,7 @@
 					<option value="IT">IT基礎コース</option>
 					<option value="Java">Java基礎コース</option>
 					<option value="develope">開発演習</option>
+					<option value="others">その他</option>
 				</select>
 				</td>
 				<td>
@@ -37,6 +38,7 @@
 					<option value="IT">IT基礎コース</option>
 					<option value="Java">Java基礎コース</option>
 					<option value="develope">開発演習</option>
+					<option value="others">その他</option>
 				</select>
 				</td>
 			</tr>
@@ -44,7 +46,7 @@
 		</form>
 		<h2>掲示板のスレッド一覧を表示します</h2>
 		<form>
-			<a href="bbs_list.jsp"><input type="submit" name="bbs_list" value="一覧"></a>
+			<a href="/WEB-INF/jsp/bbs_list.jsp">テスト<!-- <input type="submit" name="bbs_list" value="一覧"> --></a>
 		</form>
 		<h2>質問・悩みを投稿する</h2>
 		<form>
