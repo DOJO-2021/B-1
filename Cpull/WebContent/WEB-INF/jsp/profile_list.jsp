@@ -20,7 +20,8 @@
 <hr>
 
 <c:forEach var="e" items="${cardList}" >
-	<form method="POST" action="/Cpull/profileServlet.java">
+	<form method="POST" action="/Cpull/ProfileServlet.java">
+	画像<input type="text" name="USER_IMAGE" value="${e.user_image}"><br>
 	名前<input type="text" name="USER_NAME" value="${e.user_name}"><br>
 	よみかた<input type="text" name="USER_K_NAME" value="${e.user_k_name}"><br>
 	会社名<input type="text" name="USER_COMPANY" value="${e.user_company}"><br>
@@ -28,11 +29,11 @@
 	趣味<input type="text" name="USER_HOBBY" value="${e.user_hobby}"><br>
 	特技<input type="text" name="USER_SKILL" value="${e.user_skill}"><br>
 	誕生日<input type="text" name="USER_BIRTH" value="${e.user_birth}"><br>
-	備考<input type="text" name="USER_REMARKS" value="${e.USER_REMARKS}"><br>
+	備考<input type="text" name="USER_REMARKS" value="${e.user_remarks}"><br>
 
 
 	</form>
-	<hr>
+
 </c:forEach>
 
 

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,35 +8,32 @@
 </head>
 <body>
 <h1>スレッド編集</h1>
-<form  method="POST" action="/Cpull/BbsEditServlet">
+<form action="">
 タイトル<br>
 	<input type="text" name="title" value="${e.title}">
 内容<br>
 	<input type="text" name="detail" value="${e.detail}">
-			<table>
-			<tr>
-				<th>悩み</th>
-				<th>質問</th>
-			</tr>
-			<tr>
-				<td>
-				<select name="kind">
-					<option value="personal">パーソナルスキルコース</option>
-					<option value="IT">IT基礎コース</option>
-					<option value="Java">Java基礎コース</option>
-					<option value="develope">開発演習</option>
-				</select>
-				</td>
-				<td>
-				<select name="kind">
-					<option value="personal">パーソナルスキルコース</option>
-					<option value="IT">IT基礎コース</option>
-					<option value="Java">Java基礎コース</option>
-					<option value="develope">開発演習</option>
-				</select>
-				</td>
-			</tr>
-			</table>
+<div>
+	<label for="kind">悩み</label>
+	<select id="kind" name="kind">
+		<option value="personal">パーソナル</option>
+		<option value="it_basic">IT基礎</option>
+		<option value="java_basic">Java基礎</option>
+		<option value="development">開発演習</option>
+		<option value="other">その他</option>
+	</select>
+</div>
+
+<div>
+	<label for="kind">質問</label>
+	<select id="kind" name="kind">
+		<option value="personal">パーソナル</option>
+		<option value="it_basic">IT基礎</option>
+		<option value="everyone">Java基礎</option>
+		<option value="development">開発演習</option>
+		<option value="other">その他</option>
+	</select>
+</div>
 
 <div>
 	<label for="kind">公開範囲</label>

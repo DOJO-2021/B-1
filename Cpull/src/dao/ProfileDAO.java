@@ -8,29 +8,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Bc;
+import model.User;
 
-public class BcDAO {
+public class ProfileDAO {
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<Bc> select(Bc param) {
+	public List<User> select(User param) {
 		Connection conn = null;
-		List<Bc> cardList = new ArrayList<Bc>();
+		List<User> cardList = new ArrayList<User>();
 
 		try {
 			// JDBCドライバを読み込む
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Cpull", "sa", "");
 
 			// SQL文を準備する
 			String sql = "select businesscard_id, company_name, department_name, full_name, zipcode, address, tel, fax, email, remarks from BC where company_name like ? and full_name like ? and address like ?";
-			PreparedStatement pStmt = conn.prepareStatement(sql);
+			PreparedStatement pStmt = conn.prepareStatement(sql);//決まり文句
 
 
 			// SQL文を完成させる
 			if (param.getCompany_name() != null) {
-			pStmt.setString(1, "%" + param.getCompany_name() + "%");
+			pStmt.setString(1, "%" + param.getCompany_name() + "%");//?の部分に上書きされる
 			}
 			else {
 			pStmt.setString(1, "%");
@@ -53,20 +53,18 @@ public class BcDAO {
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				Bc card = new Bc(
-				rs.getInt("businesscard_id"),
-				rs.getString("company_name"),
-				rs.getString("department_name"),
-				rs.getString("full_name"),
-				rs.getString("zipcode"),
-				rs.getString("address"),
-				rs.getString("tel"),//プロフィールの結果記入
-				rs.getString("fax"),
-				rs.getString("email"),
-				rs.getString("remarks")
+				User card = new User(
+				rs.getInt("user_name"),
+				rs.getString("user_k_name"),
+				rs.getString("user_company"),
+				rs.getString("user_prefecture"),
+				rs.getString("user_hobby"),
+				rs.getString("user_skill"),
+				rs.getString("user_birth"),//プロフィールの結果記入
+				rs.getString("user_remarks")
 				);
 
-				cardList.add(card);
+				cardList.add(card);//kopipe
 			}
 		}
 		catch (SQLException e) {
@@ -91,7 +89,7 @@ public class BcDAO {
 		}
 
 		// 結果を返す
-		return cardList;
+		return cardList;//copipe
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
@@ -104,7 +102,7 @@ public class BcDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Cpull", "sa", "");
 
 			// SQL文を準備する
 			String sql = "insert into BC values (null, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -195,7 +193,7 @@ public class BcDAO {
 	}
 
 	// 引数cardで指定されたレコードを更新し、成功したらtrueを返す
-	public boolean update(Bc card) {
+	public boolean update(User card) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -204,7 +202,7 @@ public class BcDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Cpull", "sa", "");
 
 			// SQL文を準備する
 			String sql = "update BC set company_name=?, department_name=?, full_name=?, zipcode=?, address=?, tel=?, fax=?, email=?, remarks=? where businesscard_id=?";

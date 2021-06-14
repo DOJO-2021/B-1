@@ -11,10 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import model.Bc;
+import dao.ProfileDAO;
+import model.User;
 
 /**
- * Servlet implementation class SearchServlet
+ * Servlet implementation class ProfileServlet
  */
 @WebServlet("/ProfileServlet")
 public class ProfileServlet extends HttpServlet {
@@ -61,14 +62,14 @@ public class ProfileServlet extends HttpServlet {
 
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
-		List<Bc> cardList = bDao.select(new Bc(0, user_name, user_company, user_prefecture, user_hobby , user_skill, user_birth, user_remarks));
+		List<User> cardList = bDao.select(new User(0, user_name, user_company, user_prefecture, user_hobby , user_skill, user_birth, user_remarks));
 
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/search_result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_list.jsp");
 		dispatcher.forward(request, response);
 	}
 }
