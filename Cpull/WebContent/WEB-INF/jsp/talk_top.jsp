@@ -20,7 +20,7 @@
 		<div id="wrapper">
 			<!-- トークルームの題名 -->
 			<div class="talkroom_box">
-				<a href= "/WEB-INF/jsp/talk_detail.jsp">雑談部屋</a>
+				<a href="/jsp/talk_detail.jsp">雑談部屋</a>
 				<a href="aaa.jsp">お昼ご飯自慢</a>
 				<a href="bbb.jsp">地方出身者あつまれ！</a>
 				<a href="ccc.jsp">関東勢あつまれ</a>

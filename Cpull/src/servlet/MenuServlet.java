@@ -23,6 +23,7 @@ public class MenuServlet extends HttpServlet {
 
 
 		//コメントアウト外すとServed at / Cpull画面が出てくるので一旦保留↓
+		//まだログイン画面?Servletができていないから、全部ページができたらできるはず？
 
 //		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 //		HttpSession session = request.getSession();
