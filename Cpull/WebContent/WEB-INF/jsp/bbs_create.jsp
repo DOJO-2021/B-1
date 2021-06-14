@@ -20,6 +20,26 @@
 			<table>
 			<tr>
 				<th>悩み</th>
+				<th>質問</th>
+			</tr>
+			<tr>
+				<td>
+				<select name="kind">
+					<option value="personal">パーソナルスキルコース</option>
+					<option value="IT">IT基礎コース</option>
+					<option value="Java">Java基礎コース</option>
+					<option value="develope">開発演習</option>
+				</select>
+				</td>
+				<td>
+				<select name="kind">
+					<option value="personal">パーソナルスキルコース</option>
+					<option value="IT">IT基礎コース</option>
+					<option value="Java">Java基礎コース</option>
+					<option value="develope">開発演習</option>
+				</select>
+				</td>
+			</tr>
 			</table>
 		</form>
 	</main>
