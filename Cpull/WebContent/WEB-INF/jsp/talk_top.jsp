@@ -20,12 +20,24 @@
 		<div id="wrapper">
 			<!-- トークルームの題名 -->
 			<div class="talkroom_box">
-				<a href="/jsp/talk_detail.jsp">雑談部屋</a>
-				<a href="aaa.jsp">お昼ご飯自慢</a>
-				<a href="bbb.jsp">地方出身者あつまれ！</a>
-				<a href="ccc.jsp">関東勢あつまれ</a>
-				<a href="ddd.jsp">動物好きあつまれ</a>
-				<a href="eee.jsp">男子集合！</a>
+				<input type="submit"  class="updatebtn"name="submit" value="1">
+				<p>雑談部屋</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet" >雑談部屋</a>-->
+				<input type="submit"  class="updatebtn"name="submit" value="2">
+				<p>お昼ご飯自慢</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet">お昼ご飯自慢</a>-->
+				<input type="submit"  class="updatebtn"name="submit" value="3">
+				<p>関東勢あつまれ</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet">関東勢あつまれ</a>-->
+				<input type="submit"  class="updatebtn"name="submit" value="4">
+				<p>動物好きあつまれ</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet">動物好きあつまれ</a>-->
+				<input type="submit"  class="updatebtn"name="submit" value="5">
+				<p>男子集合！</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet">男子集合！</a>-->
+				<input type="submit"  class="updatebtn"name="submit" value="6">
+				<p>女子集合！</p>
+					<!-- <a href="/Cpull/TalkroomDetailServlet"></a>-->
 			</div>
 		</div>
 	</main>
