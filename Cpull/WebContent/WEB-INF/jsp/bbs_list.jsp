@@ -15,7 +15,9 @@
 	<main>
 		<!-- サブメニュー追加 -->
 		<h1>ここにスレッド一覧が表示される</h1>
-
+		<c:forEach var="e" items="${bbsList}">
+			スレッド${e.bbs_title}
+		</c:forEach>
 	</main>
 </body>
 </html>
