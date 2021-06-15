@@ -48,15 +48,14 @@ public class ProfileServlet extends HttpServlet {
 			return;
 		}
 
-		// リクエストパラメータを取得する
-		// リクエストパラメータを取得する
+		// リクエストパラメータを取得する 直すところ　profile_topのデータ
 				request.setCharacterEncoding("UTF-8");
 				String user_name = request.getParameter("USER_NAME");
 				String user_company = request.getParameter("USER_COMPANY");
 				String user_prefecture = request.getParameter("USER_PREFECTURE");
 				String user_hobby = request.getParameter("USER_HOBBY");
 				String user_skill = request.getParameter("USER_SKILL");
-				String user_birth = request.getParameter("USER_BIRTH");
+				Date user_birth = request.getParameter("USER_BIRTH");
 				String user_remarks = request.getParameter("USER_REMARKS");
 
 

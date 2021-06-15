@@ -20,12 +20,12 @@
 
 		<!-- トークルームの詳細 -->
 			<div class="room_detail">
-			bbbbbbbbbbbbbbbb<br>
-			bbbbbbbbbbbbbbbbbbbbbb!
+			みなさんの今日の昼食は何ですか？<br>
+			みんなでわいわいお昼ご飯を食べましょう～！
 			</div>
 		<!-- トークルームの詳細 -->
 			<a href="https://us04web.zoom.us/j/78449923830?pwd=TWRFVFJKdUNUa01GQ3puWENQZzlsdz09">入室</a> <!-- zoomのリンク先を貼る -->
-			<a href="/jsp/talk_top.jsp">一覧へ戻る</a>
+			<a href="/Cpull/TalkroomServlet">一覧へ戻る</a>
 	</main>
 
 </body>
