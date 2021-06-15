@@ -21,10 +21,10 @@ public class ProfileDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/Cpull", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select businesscard_id, company_name, department_name, full_name, zipcode, address, tel, fax, email, remarks from BC where company_name like ? and full_name like ? and address like ?";
+			String sql = "select user_name, user_k_name, user_company, user_prefecture, user_hobby, user_skill, user_birth, user_remarks from BC where company_name like ? and full_name like ? and address like ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);//決まり文句
 
 
@@ -54,7 +54,7 @@ public class ProfileDAO {
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
 				User card = new User(
-				rs.getInt("user_name"),
+				rs.getString("user_name"),//profile_list.jspのデータ入れる
 				rs.getString("user_k_name"),
 				rs.getString("user_company"),
 				rs.getString("user_prefecture"),
@@ -93,7 +93,7 @@ public class ProfileDAO {
 	}
 
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(Bc card) {
+	public boolean insert(User card) {
 		Connection conn = null;
 		boolean result = false;
 
