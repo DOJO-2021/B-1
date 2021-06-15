@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.InquiryDAO;
 import model.Inquiry;
@@ -26,7 +27,7 @@ public class InquiryServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		//ログインの部分は後でコメントアウトを外す
-		//		HttpSession session = request.getSession();
+				HttpSession session = request.getSession();
 		//		if (session.getAttribute("id") == null) {
 		//			response.sendRedirect("/Cpull/LoginServlet");
 		//			return;
@@ -44,7 +45,7 @@ public class InquiryServlet extends HttpServlet {
 					throws ServletException, IOException {
 				// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				//ログインの部分は後でコメントアウトを外す
-//				HttpSession session = request.getSession();
+				HttpSession session = request.getSession();
 //				if (session.getAttribute("id") == null) {
 //					response.sendRedirect("/Cpull/LoginServlet");
 //					return;
@@ -52,11 +53,14 @@ public class InquiryServlet extends HttpServlet {
 
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
+				//String user_id = (String) session.getAttribute("id");
 				String subject= request.getParameter("SUBJECT");
 				String message= request.getParameter("MESSAGE");
+
+				//System.out.println(user_id); //ちゃんと入ってるかコンソールで確認
 				// 登録処理を行う
 				InquiryDAO iDao = new InquiryDAO();
-				iDao.insert(new Inquiry(null, 0, subject, message, null)); //ユーザーID,お問い合わせID,件名,内容,お問い合わせ時刻
+				iDao.insert(new Inquiry(/*user_id,*/ 0, subject, message, null)); //ユーザーID,お問い合わせID,件名,内容,お問い合わせ時刻
 
 				// 結果ページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/i_result.jsp");

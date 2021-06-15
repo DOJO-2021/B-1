@@ -12,12 +12,12 @@
 		<p>お問い合わせフォーム</p>
 		<form method="POST" action="/Cpull/InquiryServlet"><!-- フォームの属性 method="POST action="内容送信の場所" -->
 			<div>
-				お問い合わせの件名<br> <input type="text" name="subject"
+				お問い合わせの件名<br> <input type="text" name="SUBJECT"
 					placeholder="お問い合わせ">
 			</div>
 			<div>
 				お問い合わせの内容<br>
-				<textarea name="message" placeholder="トークルームにこんな部屋が欲しい！など"></textarea>
+				<textarea name="MESSAGE" placeholder="トークルームにこんな部屋が欲しい！など"></textarea>
 			</div>
 			<div>
 				<input type="submit" name="submit" value="送信">
