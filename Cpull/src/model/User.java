@@ -1,6 +1,6 @@
-//BC.javaを入れる
 package model;
 import java.io.Serializable;
+import java.util.Date;
 
 public class User implements Serializable {
 	private String user_id;
@@ -12,14 +12,14 @@ public class User implements Serializable {
 	private String user_prefecture;
 	private String user_hobby;
 	private String user_skill;
-	private String user_birth;
+	private Date user_birth;
 	private String user_remarks;
 	private int user_range;
 	private String user_image;
 
 	//引数があるコンストラクタ
 	public User(String user_id, String user_name, String user_pw, String user_k_name, String user_company,
-			int user_class, String user_prefecture, String user_hobby, String user_skill, String user_birth,
+			int user_class, String user_prefecture, String user_hobby, String user_skill, Date user_birth,
 			String user_remarks, int user_range, String user_image) {
 		super();
 		this.user_id = user_id;
@@ -49,17 +49,17 @@ public class User implements Serializable {
 		this.user_prefecture = "";
 		this.user_hobby = "";
 		this.user_skill = "";
-		this.user_birth = "";
+		this.user_birth = new Date();
 		this.user_remarks = "";
 		this.user_range = 0;
 		this.user_image = "";
 	}
 
-	public int getUser_id() {
+	public String getUser_id() {
 		return user_id;
 	}
 
-	public void setUser_id(int user_id) {
+	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
 
@@ -95,11 +95,11 @@ public class User implements Serializable {
 		this.user_company = user_company;
 	}
 
-	public String getUser_class() {
+	public int getUser_class() {
 		return user_class;
 	}
 
-	public void setUser_class(String user_class) {
+	public void setUser_class(int user_class) {
 		this.user_class = user_class;
 	}
 
@@ -127,27 +127,27 @@ public class User implements Serializable {
 		this.user_skill = user_skill;
 	}
 
-	public String getUser_birth() {
+	public Date getUser_birth() {
 		return user_birth;
 	}
 
-	public void setUser_birth(String user_birth) {
+	public void setUser_birth(Date user_birth) {
 		this.user_birth = user_birth;
 	}
 
 	public String getUser_remarks() {
-		return remarks;
+		return user_remarks;
 	}
 
 	public void setUser_remarks(String user_remarks) {
 		this.user_remarks = user_remarks;
 	}
 
-	public String getUser_range() {
+	public int getUser_range() {
 		return user_range;
 	}
 
-	public void setUser_range(String user_range) {
+	public void setUser_range(int user_range) {
 		this.user_range = user_range;
 	}
 
