@@ -1,12 +1,13 @@
 INDEX VERSION 1.4+C:\pleiades\workspace\B-1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-109705252.index
 <<<<<<< HEAD
 484306786.index
 805569905.index
-1981302153.index
 >>>>>>> 3d7ad4d8106e2f809a531a724515fad744049f8a
+1981302153.index
 290502943.index
 2429804499.index
+484306786.index
 2828276529.index
-=======
+1637107785.index
 789448723.index
+=======
