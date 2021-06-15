@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,8 +28,8 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
-		/* if (session.getAttribute("id") == null) {
+		/* HttpSession session = request.getSession();
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		} */
@@ -41,9 +42,9 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		/* if (session.getAttribute("id") == null) {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		/* if (session.getAttribute("id") == null) { // この処理いらない
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		} */
@@ -58,7 +59,9 @@ public class RegisterServlet extends HttpServlet {
 		String user_prefecture = request.getParameter("USER_PREFECTURE");
 		String user_hobby = request.getParameter("USER_HOBBY");
 		String user_skill = request.getParameter("USER_SKILL");
-		Date user_birth = request.getParameter("USER_BIRTH"); // Date型への変換、どうしよう？
+		String user_birth = request.getParameter("USER_BIRTH");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+		fmt.parse(user_birth);
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");

@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,7 +59,9 @@ public class MypageServlet extends HttpServlet {
 		String user_prefecture = request.getParameter("USER_PREFECTURE");
 		String user_hobby = request.getParameter("USER_HOBBY");
 		String user_skill = request.getParameter("USER_SKILL");
-		Date user_birth = request.getParameter("USER_BIRTH"); // Date型への変換、どうしよう？
+		String user_birth = request.getParameter("USER_BIRTH");
+		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+		fmt.parse(user_birth);
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
