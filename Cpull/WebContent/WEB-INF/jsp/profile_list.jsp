@@ -21,7 +21,9 @@
 
 <c:forEach var="e" items="${cardList}" >
 	<form method="POST" action="/Cpull/ProfileServlet.java">
-	画像<input type="text" name="USER_IMAGE" value="${e.user_image}"><br>
+
+	<!-- 画像保留 -->
+
 	名前<input type="text" name="USER_NAME" value="${e.user_name}"><br>
 	よみかた<input type="text" name="USER_K_NAME" value="${e.user_k_name}"><br>
 	会社名<input type="text" name="USER_COMPANY" value="${e.user_company}"><br>
