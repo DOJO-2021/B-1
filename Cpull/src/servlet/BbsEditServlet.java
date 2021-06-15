@@ -22,7 +22,7 @@ public class BbsEditServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
@@ -30,8 +30,13 @@ public class BbsEditServlet extends HttpServlet {
 			//	if (session.getAttribute("user_id") == null) {
 			//		response.sendRedirect("/B-1/LoginServlet");
 			//		return;
-			//	}
 
+		//スレッド新規作成ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_create.jsp");
+		dispatcher.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String user_id = request.getParameter("user_id");

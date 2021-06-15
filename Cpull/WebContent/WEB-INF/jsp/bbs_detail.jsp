@@ -17,6 +17,7 @@
 コメント欄<br>
 	<input type="text" name="comment_list" value="${e.comment_list}">
 
+
 <div>
 <form action="" method="POST">
 コメント<br>
