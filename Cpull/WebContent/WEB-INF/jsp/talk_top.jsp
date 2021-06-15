@@ -20,27 +20,24 @@
 		<div id="wrapper">
 			<!-- トークルームの題名 -->
 			<div class="talkroom_box">
-			<form action="/Cpull/TalkroomDetailServlet" method = "get">
+			<form action="/Cpull/TalkroomDetailServlet" method = "post">
 				<input type="submit"  class="talkroom"name="room" value="1">
 				<p>雑談部屋</p>
-			</form>
-			<form action="/Cpull/TalkroomDetailServlet" method = "get">
 				<input type="submit"  class="talkroom"name="room" value="2">
 				<p>お昼ご飯自慢</p>
-			</form>
-			<form action="/Cpull/TalkroomDetailServlet" method = "get">
 				<input type="submit"  class="talkroom"name="room" value="3">
-				<p>関東勢あつまれ</p>
+				<p>地方出身者あつまれ！</p>
 			</form>
 				<input type="submit"  class="talkroom"name="room" value="4">
-				<p>動物好きあつまれ</p>
+				<p>動物好きの方話しましょう</p>
 				<input type="submit"  class="talkroom"name="room" value="5">
-				<p>男子集合！</p>
+				<p>バスケ好きな人！</p>
 				<input type="submit"  class="talkroom"name="room" value="6">
-				<p>女子集合！</p>
+				<p>野球好きな人</p>
 
 			</div>
 		</div>
+
 	</main>
 
 </body>

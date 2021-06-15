@@ -20,12 +20,12 @@
 
 		<!-- トークルームの詳細 -->
 			<div class="room_detail">
-			cccccccccccccc<br>
-			cccccccccccccccccccc!
+			みなさんどこの出身ですか？<br>
+			ご当地トーク楽しみましょう～！
 			</div>
 		<!-- トークルームの詳細 -->
 			<a href="https://us04web.zoom.us/j/79570038670?pwd=RTI0b0NqWUZsS01GYTV6ODJhMkFSUT09">入室</a> <!-- zoomのリンク先を貼る -->
-			<a href="/jsp/talk_top.jsp">一覧へ戻る</a>
+			<a href="/Cpull/TalkroomServlet">一覧へ戻る</a>
 	</main>
 
 </body>

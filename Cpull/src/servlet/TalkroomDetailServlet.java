@@ -27,11 +27,11 @@ public class TalkroomDetailServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String roomNum = request.getParameter("room");
 
-//		if (roomNum.equals("1")) { //valueの値（１～３）が一致していれば各jspへフォワードさせる
-//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/talk_detail1.jsp");
-//			dispatcher.forward(request, response);
-//		}
-		if(roomNum.equals("2")) {
+		if(roomNum.equals("1")) {//valueの値（１～３）が一致していれば各jspへフォワードさせる
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/talk_detail1.jsp");
+			dispatcher.forward(request, response);
+		}
+		else if(roomNum.equals("2")) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/talk_detail2.jsp");
 			dispatcher.forward(request, response);
 		}

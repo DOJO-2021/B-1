@@ -20,12 +20,12 @@
 
 		<!-- トークルームの詳細 -->
 			<div class="room_detail">
-			aaaaaaaaaaaaaaaaaaaaaaa<br>
-			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!
+			DOJO受講者、講師の方や運営局の方！<br>
+			みんなでわいわい話しましょう！
 			</div>
 		<!-- トークルームの詳細 -->
-			<a href="https://us04web.zoom.us/j/79100249462?pwd=cjZybE1uZ2lzL1dBV0l6Uy9ndVVKdz09">入室</a> <!-- zoomのリンク先を貼る -->
-			<a href="/Cpull/TalkroomServlet">一覧へ戻る</a><!-- Jsp直接指定無理だからサーブレットでページ遷移させる -->
+			<a href="https://us04web.zoom.us/j/78449923830?pwd=TWRFVFJKdUNUa01GQ3puWENQZzlsdz09">入室</a> <!-- zoomのリンク先を貼る -->
+			<a href="/Cpull/TalkroomServlet">一覧へ戻る</a>
 	</main>
 
 </body>
