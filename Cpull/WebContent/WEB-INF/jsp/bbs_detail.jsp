@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 </head>
 <body>
 <h1>掲示板詳細</h1>
+
 タイトル<br>
 	<input type="text" name="title" value="${e.title}">
 内容<br>
@@ -16,7 +18,7 @@
 	<input type="text" name="comment_list" value="${e.comment_list}">
 
 <div>
-<form action="">
+<form action="" method="POST">
 コメント<br>
 	<textarea name="message"></textarea>
 	<input type="submit" name="submit" value="回答">
