@@ -3,125 +3,159 @@ package model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-	private int businesscard_id;
-	private String company_name;
-	private String department_name;
-	private String full_name;
-	private String zipcode;
-	private String address;
-	private String tel;
-	private String fax;
-	private String email;
-	private String remarks;
+	private String user_id;
+	private String user_name;
+	private String user_pw;
+	private String user_k_name;
+	private String user_company;
+	private int user_class;
+	private String user_prefecture;
+	private String user_hobby;
+	private String user_skill;
+	private String user_birth;
+	private String user_remarks;
+	private int user_range;
+	private String user_image;
 
 	//引数があるコンストラクタ
-	public User(int businesscard_id, String company_name, String department_name, String full_name, String zipcode,
-			String address, String tel, String fax, String email, String remarks) {
+	public User(String user_id, String user_name, String user_pw, String user_k_name, String user_company,
+			int user_class, String user_prefecture, String user_hobby, String user_skill, String user_birth,
+			String user_remarks, int user_range, String user_image) {
 		super();
-		this.businesscard_id = businesscard_id;
-		this.company_name = company_name;
-		this.department_name = department_name;
-		this.full_name = full_name;
-		this.zipcode = zipcode;
-		this.address = address;
-		this.tel = tel;
-		this.fax = fax;
-		this.email = email;
-		this.remarks = remarks;
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_pw = user_pw;
+		this.user_k_name = user_k_name;
+		this.user_company = user_company;
+		this.user_class = user_class;
+		this.user_prefecture = user_prefecture;
+		this.user_hobby = user_hobby;
+		this.user_skill = user_skill;
+		this.user_birth = user_birth;
+		this.user_remarks = user_remarks;
+		this.user_range = user_range;
+		this.user_image = user_image;
 	}
 
 	//引数がないコンストラクタ（デフォルトコンストラクタ）
 	public User() {
 		super();
-		this.businesscard_id = 0;
-		this.company_name = "";
-		this.department_name = "";
-		this.full_name = "";
-		this.zipcode = "";
-		this.address = "";
-		this.tel = "";
-		this.fax = "";
-		this.email = "";
-		this.remarks = "";
+		this.user_id = "";
+		this.user_name = "";
+		this.user_pw = "";
+		this.user_k_name = "";
+		this.user_company = "";
+		this.user_class = 0;
+		this.user_prefecture = "";
+		this.user_hobby = "";
+		this.user_skill = "";
+		this.user_birth = "";
+		this.user_remarks = "";
+		this.user_range = 0;
+		this.user_image = "";
 	}
 
-	public int getBusinesscard_id() {
-		return businesscard_id;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setBusinesscard_id(int businesscard_id) {
-		this.businesscard_id = businesscard_id;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getCompany_name() {
-		return company_name;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
-	public String getDepartment_name() {
-		return department_name;
+	public String getUser_pw() {
+		return user_pw;
 	}
 
-	public void setDepartment_name(String department_name) {
-		this.department_name = department_name;
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
 	}
 
-	public String getFull_name() {
-		return full_name;
+	public String getUser_k_name() {
+		return user_k_name;
 	}
 
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setUser_k_name(String user_k_name) {
+		this.user_k_name = user_k_name;
 	}
 
-	public String getZipcode() {
-		return zipcode;
+	public String getUser_company() {
+		return user_company;
 	}
 
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
+	public void setUser_company(String user_company) {
+		this.user_company = user_company;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getUser_class() {
+		return user_class;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setUser_class(String user_class) {
+		this.user_class = user_class;
 	}
 
-	public String getTel() {
-		return tel;
+	public String getUser_prefecture() {
+		return user_prefecture;
 	}
 
-	public void setTel(String tel) {
-		this.tel = tel;
+	public void setUser_prefecture(String user_prefecture) {
+		this.user_prefecture = user_prefecture;
 	}
 
-	public String getFax() {
-		return fax;
+	public String getUser_hobby() {
+		return user_hobby;
 	}
 
-	public void setFax(String fax) {
-		this.fax = fax;
+	public void setUser_hobby(String user_hobby) {
+		this.user_hobby = user_hobby;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getUser_skill() {
+		return user_skill;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUser_skill(String user_skill) {
+		this.user_skill = user_skill;
 	}
 
-	public String getRemarks() {
+	public String getUser_birth() {
+		return user_birth;
+	}
+
+	public void setUser_birth(String user_birth) {
+		this.user_birth = user_birth;
+	}
+
+	public String getUser_remarks() {
 		return remarks;
 	}
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
+	public void setUser_remarks(String user_remarks) {
+		this.user_remarks = user_remarks;
+	}
+
+	public String getUser_range() {
+		return user_range;
+	}
+
+	public void setUser_range(String user_range) {
+		this.user_range = user_range;
+	}
+
+	public String getUser_image() {
+		return user_image;
+	}
+
+	public void setUser_image(String user_image) {
+		this.user_image = user_image;
 	}
 }
