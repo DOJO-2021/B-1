@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +8,8 @@
 <link rel="stylesheet" href="/Cpull/css/bbs_create.css">
 </head>
 <body>
+<!-- ヘッダー追加 -->
+
 <h1>スレッド編集</h1>
 <form  method="POST" action="/Cpull/BbsEditServlet">
 

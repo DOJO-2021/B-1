@@ -11,52 +11,53 @@ import java.util.List;
 import model.Reply;
 
 //引数cardで指定されたレコードを登録し、成功したらtrueを返す
-//	public boolean insert(Reply card) {
+// public boolean insert(Reply card) {
 	//	Connection conn = null;
 		//boolean result = false;
-		//全件取得用メソッド
-		  public List<Reply> selectAllReply() {
-		    // メソッドの結果として返すリスト
-		    List<Reply> results = new ArrayList<Reply>();
+	public class BbsReplyDAO{
+		// 引数inquirycardで指定されたレコードを登録し、成功したらtrueを返す
+		public boolean insert(Reply replycard) {
+			Connection conn = null;
+			boolean result = false;
 
-		try {
-			// JDBCドライバを読み込む
-			Class.forName("org.h2.Driver");
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
 
-			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "insert into reply values (null, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (card.getbbs_id() != null) {
-				pStmt.setString(1, card.getbbs_id());
+			if (replycard.getbbs_id() != null) {
+				pStmt.setString(1, replycard.getbbs_id());
 			}
 			else {
 				pStmt.setString(1, "null");
 			}
-			if (card.getuser_id() != null) {
-				pStmt.setString(2, card.getuser_id());
+			if (replycard.getuser_id() != null) {
+				pStmt.setString(2, replycard.getuser_id());
 			}
 			else {
 				pStmt.setString(2, "null");
 			}
-			if (card.getuser_name() != null) {
-				pStmt.setString(3, card.getuser_name());
+			if (replycard.getuser_name() != null) {
+				pStmt.setString(3, replycard.getuser_name());
 			}
 			else {
 				pStmt.setString(3, "null");
 			}
-			if (card.getreply_range() != null) {
-				pStmt.setString(4, card.getreply_range());
+			if (replycard.getreply_range() != null) {
+				pStmt.setString(4, replycard.getreply_range());
 			}
 			else {
 				pStmt.setString(4, "null");
 			}
-			if (card.getreply_contens() != null) {
-				pStmt.setString(5, card.getreply_contents());
+			if (replycard.getreply_contens() != null) {
+				pStmt.setString(5, replycard.getreply_contents());
 			}
 			else {
 				pStmt.setString(5, "null");
