@@ -16,7 +16,7 @@
     <form method="POST" action="/Cpull/LoginServlet">
       ID<input type="text" name="ID"><br>
       PW<input type="password" name="PW"><br>
-      ログイン<input type="submit" name="LOGIN" value="ログイン">
+      <input type="submit" name="LOGIN" value="ログイン">
     </form>
     <a href="/Cpull/LoginServlet">アカウント作成はこちらから</a>
   </main>
