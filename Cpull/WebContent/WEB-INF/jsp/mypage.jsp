@@ -4,9 +4,19 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>マイページ</title>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/mypage.css">
 </head>
 <body>
+  <header>
+    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+  </header>
+  <main>
+    <h1>マイページ</h1>
+    <form method="POST" action="/Cpull/RegisterServlet">
 
+    </form>
+  </main>
 </body>
 </html>
