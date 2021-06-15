@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.UserDAO;
+import model.User;
+
 /**
  * Servlet implementation class MypageServlet
  */
@@ -43,6 +46,30 @@ public class MypageServlet extends HttpServlet {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String user_id = request.getParameter("USER_ID");
+		String user_name = request.getParameter("USER_NAME");
+		String user_pw = request.getParameter("USER_PW");
+		String user_k_name = request.getParameter("USER_K_NAME");
+		String user_company = request.getParameter("USER_COMPANY");
+		int user_class = Integer.parseInt(request.getParameter("USER_CLASS")); // 区分はどのように数値取ってくる？
+		String user_prefecture = request.getParameter("USER_PREFECTURE");
+		String user_hobby = request.getParameter("USER_HOBBY");
+		String user_skill = request.getParameter("USER_SKILL");
+		Date user_birth = request.getParameter("USER_BIRTH"); // Date型への変換、どうしよう？
+		String user_remarks = request.getParameter("USER_REMARKS");
+		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
+		String user_image = request.getParameter("USER_IMAGE");
+
+		// 登録処理を行う
+		// 登録成功と登録失敗、どうする？
+		UserDAO uDao = new UserDAO();
+		uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image))
+
+		// 結果ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		dispatcher.forward(request, response);
 	}
 
 }
