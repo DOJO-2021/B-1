@@ -20,7 +20,7 @@
 				<textarea name="MESSAGE" placeholder="トークルームにこんな部屋が欲しい！など"></textarea>
 			</div>
 			<div>
-				<input type="submit" name="submit" value="送信">
+				<input type="submit" name="submit" value="送信" onClick="linkCheck(1)">
 			</div>
 		</form>
 	</main>
