@@ -15,7 +15,6 @@ import dao.UserDAO;
 import model.Result;
 import model.User;
 
-/* ※ここにdao,modelをインポートする */
 /**
  * Servlet implementation class RegisterServlet
  */
@@ -62,6 +61,7 @@ public class RegisterServlet extends HttpServlet {
 		String user_birth = request.getParameter("USER_BIRTH");
 		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
 		fmt.parse(user_birth);
+		PreparedStatement.setDate(1,new java.sql.Date(user_birth));
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
