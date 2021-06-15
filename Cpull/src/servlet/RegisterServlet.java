@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
+import model.Result;
+import model.User;
 
 /* ※ここにdao,modelをインポートする */
 /**
@@ -26,10 +28,10 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		/* if (session.getAttribute("id") == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
-		}
+		} */
 		// 登録ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
 			dispatcher.forward(request, response);
@@ -41,10 +43,10 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		/* if (session.getAttribute("id") == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
-		}
+		} */
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("USER_ID");
@@ -61,6 +63,7 @@ public class RegisterServlet extends HttpServlet {
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
 
+		// PWチェック入れる(java p.568参照)
 		// 登録処理を行う
 		UserDAO uDao = new UserDAO();
 		if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image))) {

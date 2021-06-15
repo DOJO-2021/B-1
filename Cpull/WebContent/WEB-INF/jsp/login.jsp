@@ -18,7 +18,7 @@
       PW<input type="password" name="PW"><br>
       <input type="submit" name="LOGIN" value="ログイン">
     </form>
-    <a href="/Cpull/LoginServlet">アカウント作成はこちらから</a>
+    <a href="/Cpull/RegisterServlet">アカウント作成はこちらから</a>
   </main>
 </body>
 </html>
