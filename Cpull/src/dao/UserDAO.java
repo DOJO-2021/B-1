@@ -19,7 +19,7 @@ public class UserDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/Cpull/cpull", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SELECT文を準備する
 			String sql = "select count(*) from M_USER where USER_ID = ? and USER_PW = ?";
@@ -73,7 +73,7 @@ public class UserDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/Cpull/cpull", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "INSERT INTO M_USER (user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image)"
@@ -197,7 +197,7 @@ public class UserDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/Cpull/cpull", "sa", "sa");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "update M_USER set user_name=?, user_pw=?, user_k_name=?, user_company=?, user_class=?, user_prefecture=?, user_hobby=?, user_skill=?, user_birth=?, user_remarks=?, user_range=?, user_image=?"
