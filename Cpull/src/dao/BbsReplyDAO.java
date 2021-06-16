@@ -28,39 +28,28 @@ import model.Reply;
 				conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into reply values (null, ?, ?, ?, ?)";
+			String sql = "insert into reply values (0, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (replycard.getBbs_id() != null) {
-				pStmt.setString(1, replycard.getBbs_id());
+			if (replycard.getUser_id() != null) {
+				pStmt.setString(1, replycard.getUser_id());
 			}
 			else {
 				pStmt.setString(1, "null");
 			}
-			if (replycard.getUser_id() != null) {
-				pStmt.setString(2, replycard.getUser_id());
+			if (replycard.getUser_name() != null) {
+				pStmt.setString(2, replycard.getUser_name());
 			}
 			else {
 				pStmt.setString(2, "null");
 			}
-			if (replycard.getUser_name() != null) {
-				pStmt.setString(3, replycard.getUser_name());
+
+			if (replycard.getReply_contents() != null) {
+				pStmt.setString(3, replycard.getReply_contents());
 			}
 			else {
 				pStmt.setString(3, "null");
-			}
-			if (replycard.getReply_range() != null) {
-				pStmt.setString(4, replycard.getReply_range());
-			}
-			else {
-				pStmt.setString(4, "null");
-			}
-			if (replycard.getReply_contents() != null) {
-				pStmt.setString(5, replycard.getReply_contents());
-			}
-			else {
-				pStmt.setString(5, "null");
 			}
 
 
@@ -103,7 +92,7 @@ import model.Reply;
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select *from reply ";
+				String sql = "select *from reply where bbs_id like ? ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を実行し、結果表を取得する
@@ -111,7 +100,7 @@ import model.Reply;
 
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
-					reply card = new reply(
+					Reply card = new Reply(
 					rs.getInt("bbs_id"),
 					rs.getString("user_id"),
 					rs.getString("user_name"),

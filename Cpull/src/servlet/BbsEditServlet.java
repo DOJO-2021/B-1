@@ -32,7 +32,7 @@ public class BbsEditServlet extends HttpServlet {
 			//		return;
 
 		//スレッド新規作成ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_create.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -54,8 +54,11 @@ public class BbsEditServlet extends HttpServlet {
 
 					bDao.update(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));// 更新成功
 				}
-				else {
+				else if(request.getParameter("SUBMIT").equals("削除")) {
 					bDao.delete(bbs_id) ;	// 削除成功
+				}
+				else {
+					bDao.insert(new BBS());
 				}
 				// 掲示板トップページにフォワードする
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");

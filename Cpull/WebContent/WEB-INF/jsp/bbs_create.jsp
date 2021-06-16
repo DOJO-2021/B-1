@@ -6,12 +6,13 @@
 	<meta charset="UTF-8">
 	<title>スレッド新規作成</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_create.css">
+	<link rel="stylesheet" href="/Cpull/css/common.css">
+<link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 </head>
 <body>
-	<header>
-	<!-- 後からヘッダー追加 -->
-	</header>
-
+  <header>
+    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+  </header>
 	<main>
 		<!-- サブメニュー追加 -->
 		<form method="POST" action="/Cpull/BbsCreateServlet">

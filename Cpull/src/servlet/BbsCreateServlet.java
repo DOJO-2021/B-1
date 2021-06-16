@@ -57,7 +57,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 
 		// 登録を行う
 		BbsDAO bDao = new BbsDAO();
-		 BbsDAO.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
+		 bDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
 
 
 		// 掲示板トップページにフォワードする

@@ -5,18 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>スレッド編集</title>
-<link rel="stylesheet" href="/Cpull/css/bbs_create.css">
+<link rel="stylesheet" href="/Cpull/css/bbs_edit.css">
+<link rel="stylesheet" href="/Cpull/css/common.css">
+<link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 </head>
 <body>
 <!-- ヘッダー追加 -->
-
+<header>
+    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+</header>
 <h1>スレッド編集</h1>
 <form  method="POST" action="/Cpull/BbsEditServlet">
 
 タイトル<br>
-	<input type="text" name="title" value="${bbs.title}">
+	<input type="text" name="title" value="${bbs.title}"><br>
 内容<br>
-	<input type="text" name="detail" value="${bbs.detail}">
+	<input type="text" name="detail" value="${bbs.detail}"><br>
 
 			<table>
 			<tr>

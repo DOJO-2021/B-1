@@ -29,6 +29,9 @@ public Reply() {
 	this.reply_range = 0;
 	this.reply_contents ="";
 }
+public Reply(int int1, String string, String string2, int int2, int int3) {
+	// TODO 自動生成されたコンストラクター・スタブ
+}
 public int getBbs_id() {
 	return bbs_id;
 }
