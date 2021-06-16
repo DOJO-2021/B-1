@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -27,10 +30,10 @@ public class ProfileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Cpull/LoginServlet");
-			return;
-		}
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/Cpull/LoginServlet");
+//			return;
+//		}
 
 		// 自己紹介トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_top.jsp");
@@ -43,10 +46,10 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Cpull/LoginServlet");
-			return;
-		}
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/Cpull/LoginServlet");
+//			return;
+//		}
 
 		// リクエストパラメータを取得する 直すところ　profile_topのデータ
 				request.setCharacterEncoding("UTF-8");
@@ -55,13 +58,21 @@ public class ProfileServlet extends HttpServlet {
 				String user_prefecture = request.getParameter("USER_PREFECTURE");
 				String user_hobby = request.getParameter("USER_HOBBY");
 				String user_skill = request.getParameter("USER_SKILL");
-				Date user_birth = request.getParameter("USER_BIRTH");
+				String user_birth = request.getParameter("USER_BIRTH");
+				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
+				try {
+					Date date = sdFormat.parse(user_birth);
+				} catch (ParseException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				}
+
 				String user_remarks = request.getParameter("USER_REMARKS");
 
 
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
-		List<User> cardList = bDao.select(new User(0, user_name, user_company, user_prefecture, user_hobby , user_skill, user_birth, user_remarks));
+		List<User> cardList = bDao.select(new User("", user_name,"","", user_company,0, user_prefecture, user_hobby , user_skill, user_birth, user_remarks,0,""));
 
 
 		// 検索結果をリクエストスコープに格納する
