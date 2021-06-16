@@ -20,6 +20,18 @@
 			<li><a href="/Cpull/LoginServlet">ログアウト</a></li>
 		</ul>
 		</nav>
+		<nav>
+	<ul>
+		<li><a href="/Cpull/BbsListServlet">一覧</a></li>
+		<li><a href="/Cpull/BbsCreateServlet">新規作成</a></li>
+		<li>
+			<form method="POST" action="/Cpull/BbsServlet">
+				<input type="text" name="bbs_search" placeholder="検索したいワードを入力">
+				<input type="submit" name="submit" value="検索">
+			</form>
+		</li>
+	</ul>
+</nav>
 	</header>
 
 
