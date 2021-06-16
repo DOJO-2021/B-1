@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="/Cpull/css/common.css">
 </head>
 <body>
-	<header> </header>
+	<header>
+		<jsp:include page="/WEB-INF/jsp/header.jsp" />
+	</header>
 	<main>
 		<p>お問い合わせ入力内容</p>
 		<!-- ID<input type="text" name="USER_ID" value="${Inquiry.user_id}"><br> -->

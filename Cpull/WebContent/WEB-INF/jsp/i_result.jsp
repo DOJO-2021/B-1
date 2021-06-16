@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +9,11 @@
 <link rel="stylesheet" href="/Cpull/css/i_result.css">
 </head>
 <body>
-<header> </header>
+	<header>
+		<jsp:include page="/WEB-INF/jsp/header.jsp" />
+	</header>
 	<main>
-	<p>送信が完了しました！</p>
+		<p>送信が完了しました！</p>
 	</main>
 
 </body>
