@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>お問い合わせ送信完了</title>
+<link rel="stylesheet" href="/Cpull/css/common.css">
+<link rel="stylesheet" href="/Cpull/css/i_result.css">
 </head>
 <body>
 <header> </header>

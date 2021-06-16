@@ -24,7 +24,7 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select bbs_title from bbs where bbs_title like ?";
+			String sql = "select user_id,bbs_id,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category from bbs where bbs_title like ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -87,7 +87,7 @@ public class BbsDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "insert into BBS values (?,null,?,?,?,?,?)";
@@ -168,7 +168,7 @@ public class BbsDAO {
 			Class.forName("org.h2.Driver");
 
 			// データベースに接続する
-			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/data/simpleBC", "sa", "");
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
 			String sql = "update bbs set user_id=?,bbs_title=?,bbs_details=?,bbs_pw=?,bbs_range=?,bbs_category where bbs_id=?";
@@ -199,56 +199,65 @@ public class BbsDAO {
 			else {
 				pStmt.setString(4, "null");
 			}
-			if (card.getPostal() != null) {
-				pStmt.setString(5, card.getPostal());
+			if (card.getBbs_range() != 0) {
+				pStmt.setInt(5, card.getBbs_range());
 			}
 			else {
-				pStmt.setString(5, "null");
+				pStmt.setInt(5, 0);
 			}
-			if (card.getAddress() != null) {
-				pStmt.setString(6, card.getAddress());
-			}
-			else {
-				pStmt.setString(6, "null");
-			}
-			if (card.getTel() != null) {
-				pStmt.setString(7, card.getTel());
+			if (card.getBbs_category() != 0) {
+				pStmt.setInt(6, card.getBbs_category());
 			}
 			else {
-				pStmt.setString(7, "null");
+				pStmt.setInt(6, 0);
 			}
-			if (card.getFax() != null) {
-				pStmt.setString(8, card.getFax());
-			}
-			else {
-				pStmt.setString(8, "null");
-			}
-			if (card.getCellphone() != null) {
-				pStmt.setString(9, card.getCellphone());
-			}
-			else {
-				pStmt.setString(9, "null");
-			}
-			if (card.getMail() != null) {
-				pStmt.setString(10, card.getMail());
-			}
-			else {
-				pStmt.setString(10, "null");
-			}
-			if (card.getLast_update() != null) {
-				pStmt.setString(11, card.getLast_update());
-			}
-			else {
-				pStmt.setString(11, "null");
-			}
-			if (card.getRemarks() != null) {
-				pStmt.setString(12, card.getRemarks());
-			}
-			else {
-				pStmt.setString(12, "null");
-			}
+			pStmt.setInt(13, card.getBbs_id());
 
-			pStmt.setInt(13, card.getId());
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(int bbs_id) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
+
+			// SQL文を準備する
+			String sql = "delete from BBS where bbs_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, bbs_id);
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
