@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/register.css">
 </head>
 <body>
+<div class="wrapper">
   <header>
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
@@ -43,5 +44,6 @@
       <input type="submit" name="REGIST" value="登録"><br>
     </form>
   </main>
+</div>
 </body>
 </html>

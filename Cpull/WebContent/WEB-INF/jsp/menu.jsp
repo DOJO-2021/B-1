@@ -13,17 +13,27 @@
 <body>
 	<header>
 	    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
-		<!-- あとからヘッダーを入れる -->
 	</header>
 
 	<main>
+		<div class = "wrapper">
 		<h1 class="top_name">メニュー</h1>
 		<div class="menu_box">
-			<a href="/Cpull/ProfileServlet">自己紹介</a> <a
-				href="/Cpull/TalkroomServlet">トークルーム</a> <a href="/Cpull/BbsServlet">掲示板</a>
-			<a href="/Cpull/MypageServlet">マイページ</a> <a
-				href="/Cpull/InquiryServlet">お問い合わせ</a> <a
-				href="/Cpull/LoginServlet">ログアウト</a>
+			<table>
+			<tr>
+			<td><a href="/Cpull/ProfileServlet" class="button">自己紹介</a></td>
+			<td><a href="/Cpull/TalkroomServlet" class="button">トークルーム</a></td>
+			</tr>
+			<tr>
+			<td><a href="/Cpull/BbsServlet" class="button">掲示板</a></td>
+			<td><a href="/Cpull/MypageServlet" class="button">マイページ</a></td>
+			</tr>
+			<tr>
+			<td><a href="/Cpull/InquiryServlet" class="button">お問い合わせ</a></td>
+			<td><a href="/Cpull/LoginServlet" class="button">ログアウト</a></td>
+			</tr>
+			</table>
+		</div>
 		</div>
 	</main>
 </body>

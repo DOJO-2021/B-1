@@ -5,6 +5,7 @@ import java.io.Serializable;
 
 public class LoginUser implements Serializable {
 	private String id;	// ログイン時のID
+	// private int user_class; // ログイン時、受講者orそれ以外のチェック
 
 	public LoginUser() {
 		this(null);
@@ -21,4 +22,22 @@ public class LoginUser implements Serializable {
 	public void setUserId(String id) {
 		this.id = id;
 	}
+
+	/*
+	 public LoginUser() {
+		this(null);
+	}
+
+	public LoginUser(int user_class) {
+		this.user_class = user_class;
+	}
+
+	public int getUser_class() {
+		return user_class;
+	}
+
+	public void setUserId(String id) {
+		this.id = id;
+	}
+	 */
 }
