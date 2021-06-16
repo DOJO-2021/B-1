@@ -48,7 +48,6 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 // リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("user_id");
-		int bbs_id =Integer.parseInt(request.getParameter("bbs_id"));
 		String bbs_title = request.getParameter("bbs_title");
 		String bbs_details = request.getParameter("bbs_details");
 		String bbs_pw = request.getParameter("bbs_pw");
