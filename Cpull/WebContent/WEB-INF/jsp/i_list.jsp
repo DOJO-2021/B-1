@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>お問い合わせ内容リスト</title>
+<link rel="stylesheet" href="/Cpull/css/common.css">
 </head>
 <body>
 	<header> </header>
