@@ -45,7 +45,10 @@
 			</table>
 		</form>
 		<h2>掲示板のスレッド一覧を表示します</h2>
-		<a href="/Cpull/BbsListServlet">一覧</a>
+		<!-- <a href="/Cpull/BbsListServlet">一覧</a>-->
+		<form method="POST" action="/Cpull/BbsListServlet">
+			<input type="submit" name="list" value="一覧">
+		</form>
 		<h2>質問・悩みを投稿する</h2>
 		<a href="/Cpull/BbsCreateServlet">新規作成</a>
 	</main>
