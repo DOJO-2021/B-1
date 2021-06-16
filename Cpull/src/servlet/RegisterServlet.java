@@ -52,8 +52,8 @@ public class RegisterServlet extends HttpServlet {
 		String user_pw = request.getParameter("USER_PW");
 		String user_k_name = request.getParameter("USER_K_NAME");
 		String user_company = request.getParameter("USER_COMPANY");
-		// int user_class = Integer.parseInt(request.getParameter("USER_CLASS")); // 区分はどのように数値取ってくる？
-		/*
+		int user_class = Integer.parseInt(request.getParameter("USER_CLASS"));
+		 /*
 		String user_prefecture = request.getParameter("USER_PREFECTURE");
 		String user_hobby = request.getParameter("USER_HOBBY");
 		String user_skill = request.getParameter("USER_SKILL");
@@ -69,15 +69,15 @@ public class RegisterServlet extends HttpServlet {
 		// 登録処理を行う
 		UserDAO uDao = new UserDAO();
 		if (request.getParameter("REGIST").equals("登録")) {
-			if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, 0, null, null, null, null, null, 0, null))) {
-				// 登録成功
-				request.setAttribute("result",
-					new Result("登録に成功しました。",  "/Cpull/LoginServlet"));
+			if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, null, null, null, null, null, 0, null))) {
+			// 登録成功
+			request.setAttribute("result",
+			new Result("登録に成功しました。",  "/Cpull/LoginServlet"));
 			}
 			else {
 			// 登録失敗
 			request.setAttribute("result",
-					new Result("登録に失敗しました！", "/Cpull/LoginServlet"));
+			new Result("登録に失敗しました！", "/Cpull/LoginServlet"));
 			}
 		}
 		// 結果ページにフォワードする
