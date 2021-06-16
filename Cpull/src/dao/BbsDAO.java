@@ -24,7 +24,7 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select bbs_title from bbs where bbs_title like ?";
+			String sql = "select user_id,bbs_id,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category from bbs where bbs_title like ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる

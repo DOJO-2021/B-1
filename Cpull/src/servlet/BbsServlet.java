@@ -45,7 +45,7 @@ public class BbsServlet extends HttpServlet {
 		request.setAttribute("bbsList", bbsList);
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_searchresult.jsp");
 		dispatcher.forward(request, response);
 	}
 

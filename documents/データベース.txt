@@ -7,7 +7,7 @@ user_skill varchar(50),user_birth date,user_remarks varchar(100),
 user_range int,user_image varchar(50),primary key (user_id));
 
 Create table bbs(user_id varchar(50) not null,bbs_id int auto_increment not null,bbs_title varchar(50) not null,
-bbs_details varchar(1000) not null,bbs_pw char(4) not null,bbs_range int not null,bbs_category int not null,primary key (user_id));
+bbs_details varchar(1000) not null,bbs_pw char(4) not null,bbs_range int not null,bbs_category int not null,primary key (bbs_id));
 
 Create table reply(bbs_id int auto_increment not null,user_id varchar(50) not null,reply_range int not null,
 reply_contents varchar(1000) not null,user_name varchar(20), primary key(bbs_id));

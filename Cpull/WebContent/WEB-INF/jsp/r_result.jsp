@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/r_result.css">
 </head>
 <body>
+<div class="wrapper">
   <header>
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
@@ -17,5 +18,6 @@
     <h1><c:out value="${result.title}" /></h1>
     <a href="${result.backTo}">ログインページへ</a>
   </main>
+</div>
 </body>
 </html>

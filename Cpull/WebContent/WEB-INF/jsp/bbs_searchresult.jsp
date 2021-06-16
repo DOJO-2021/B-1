@@ -4,14 +4,15 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>スレッド一覧</title>
-	<link rel="stylesheet" href="/Cpull/css/bbs_list.css">
+	<title>スレッド検索結果</title>
+	<link rel="stylesheet" href="/Cpull/css/bbs_searchresult.css">
 	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 </head>
 <body>
 	<div class="wrapper">
 		<main>
-			<!-- 後でサブメニュー追加 -->
+			<!-- サブメニュー追加 -->
+			${bbsList.size()}件ヒットしました！
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
 				<input type="submit" name="bbs_title" value="${e.bbs_title}">
