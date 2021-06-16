@@ -32,7 +32,7 @@
 	特技<input type="text" name="USER_SKILL" value="${e.user_skill}"><br>
 	誕生日<input type="text" name="USER_BIRTH" value="${e.user_birth}"><br>
 	備考<input type="text" name="USER_REMARKS" value="${e.user_remarks}"><br>
-
+	<hr><!-- 線のスタイル変えるのアリ（点線とか！） -->
 
 	</form>
 

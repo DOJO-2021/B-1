@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
 import model.Result;
@@ -42,14 +41,18 @@ public class MypageServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		HttpSession session = request.getSession();
+		/*
+		 HttpSession session = request.getSession();
+
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
+		*/
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String user_id = request.getParameter("USER_ID");
+		String user_id = (String)session.getAttribute("id");
+		// String user_id = request.getParameter("USER_ID");
 		String user_name = request.getParameter("USER_NAME");
 		String user_pw = request.getParameter("USER_PW");
 		String user_k_name = request.getParameter("USER_K_NAME");
@@ -59,10 +62,8 @@ public class MypageServlet extends HttpServlet {
 		String user_hobby = request.getParameter("USER_HOBBY");
 		String user_skill = request.getParameter("USER_SKILL");
 		String user_birth = request.getParameter("USER_BIRTH");
-		/*
-		SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
-		fmt.parse(user_birth);
-		*/
+		// SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
+		// fmt.parse(user_birth);
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");

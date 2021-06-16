@@ -9,19 +9,16 @@
 	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 </head>
 <body>
-	<header>
-	<!-- 後でヘッダー追加 -->
-	</header>
-
-	<main>
-		<!-- 後でサブメニュー追加 -->
-		<h1>ここにスレッドの一覧が表示される</h1>
-		<c:forEach var="e" items="${bbsList}">
-			<form method="POST" action="/Cpull/BbsDetailServlet">
-			<input type="submit" name="bbs_title" value="${e.bbs_title}">
-			<hr>
-			</form>
-		</c:forEach>
-	</main>
+	<div class="wrapper">
+		<main>
+			<!-- 後でサブメニュー追加 -->
+			<c:forEach var="e" items="${bbsList}">
+				<form method="POST" action="/Cpull/BbsDetailServlet">
+				<input type="submit" name="bbs_title" value="${e.bbs_title}">
+				<hr>
+				</form>
+			</c:forEach>
+		</main>
+	</div>
 </body>
 </html>
