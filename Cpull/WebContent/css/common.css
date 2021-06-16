@@ -12,7 +12,7 @@ body {
 
 /*logoクラス*/
 .logo {
- margin: 50px 0 20px 0;
+ margin: 50px 0 20px 0; /*ロゴ中央揃え*/
  line-height: 0;
  text-align: center;
 }

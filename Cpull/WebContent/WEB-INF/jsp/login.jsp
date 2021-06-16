@@ -10,7 +10,9 @@
 </head>
 <body>
   <header>
-    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+	<h1 class="logo">
+      <a href="list.html"><img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130"></a>
+  </h1>
   </header>
   <main>
     <form method="POST" action="/Cpull/LoginServlet">
@@ -24,9 +26,11 @@
           <td><input type="password" name="PW"></td>
         </tr>
       </table>
-      <input type="submit" name="LOGIN" value="ログイン">
+      <div><input type="submit" name="LOGIN" value="ログイン"></div>
     </form>
+    <div class="create">
     <a href="/Cpull/RegisterServlet">アカウント作成はこちらから</a>
+    </div>
   </main>
 </body>
 </html>
