@@ -1,6 +1,9 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -55,13 +58,21 @@ public class ProfileServlet extends HttpServlet {
 				String user_prefecture = request.getParameter("USER_PREFECTURE");
 				String user_hobby = request.getParameter("USER_HOBBY");
 				String user_skill = request.getParameter("USER_SKILL");
-				Date user_birth = request.getParameter("USER_BIRTH");
+				String user_birth = request.getParameter("USER_BIRTH");
+				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
+				try {
+					Date date = sdFormat.parse(user_birth);
+				} catch (ParseException e) {
+					// TODO 自動生成された catch ブロック
+					e.printStackTrace();
+				}
+
 				String user_remarks = request.getParameter("USER_REMARKS");
 
 
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
-		List<User> cardList = bDao.select(new User(0, user_name, user_company, user_prefecture, user_hobby , user_skill, user_birth, user_remarks));
+		List<User> cardList = bDao.select(new User("", user_name,"","", user_company,0, user_prefecture, user_hobby , user_skill, user_birth, user_remarks,0,""));
 
 
 		// 検索結果をリクエストスコープに格納する

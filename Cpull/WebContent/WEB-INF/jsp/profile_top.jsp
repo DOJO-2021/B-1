@@ -48,7 +48,7 @@
         </td>
         <td>
           <label>誕生日<br>
-          <input type="text" name="USER_BIRTH">
+          <input type="date" name="USER_BIRTH" min="1900-01-01" max="2021-12-31">
           </label>
         </td>
       </tr>
