@@ -32,32 +32,32 @@ import model.Reply;
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (replycard.getbbs_id() != null) {
-				pStmt.setString(1, replycard.getbbs_id());
+			if (replycard.getBbs_id() != null) {
+				pStmt.setString(1, replycard.getBbs_id());
 			}
 			else {
 				pStmt.setString(1, "null");
 			}
-			if (replycard.getuser_id() != null) {
-				pStmt.setString(2, replycard.getuser_id());
+			if (replycard.getUser_id() != null) {
+				pStmt.setString(2, replycard.getUser_id());
 			}
 			else {
 				pStmt.setString(2, "null");
 			}
-			if (replycard.getuser_name() != null) {
-				pStmt.setString(3, replycard.getuser_name());
+			if (replycard.getUser_name() != null) {
+				pStmt.setString(3, replycard.getUser_name());
 			}
 			else {
 				pStmt.setString(3, "null");
 			}
-			if (replycard.getreply_range() != null) {
-				pStmt.setString(4, replycard.getreply_range());
+			if (replycard.getReply_range() != null) {
+				pStmt.setString(4, replycard.getReply_range());
 			}
 			else {
 				pStmt.setString(4, "null");
 			}
-			if (replycard.getreply_contens() != null) {
-				pStmt.setString(5, replycard.getreply_contents());
+			if (replycard.getReply_contents() != null) {
+				pStmt.setString(5, replycard.getReply_contents());
 			}
 			else {
 				pStmt.setString(5, "null");
@@ -93,7 +93,7 @@ import model.Reply;
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
 		public List<Reply> select(Reply param) {
 			Connection conn = null;
-			List<Reply> cardList = new ArrayList<Reply>();
+			List<Reply> replyList = new ArrayList<Reply>();
 
 			try {
 				// JDBCドライバを読み込む
@@ -111,23 +111,23 @@ import model.Reply;
 
 				// 結果表をコレクションにコピーする
 				while (rs.next()) {
-					Reply card = new Reply(
-					rs.getString("bbs_id"),
+					reply card = new reply(
+					rs.getInt("bbs_id"),
 					rs.getString("user_id"),
 					rs.getString("user_name"),
-					rs.getString("reply_range"),
-					rs.getString("reply_contents")
+					rs.getInt("reply_range"),
+					rs.getInt("reply_contents")
 							);
-					cardList.add(card);
+					replyList.add(card);
 				}
 			}
 			catch (SQLException e) {
 				e.printStackTrace();
-				cardList = null;
+				replyList = null;
 			}
 			catch (ClassNotFoundException e) {
 				e.printStackTrace();
-				cardList = null;
+				replyList = null;
 			}
 			finally {
 				// データベースを切断
@@ -137,13 +137,13 @@ import model.Reply;
 					}
 					catch (SQLException e) {
 						e.printStackTrace();
-						cardList = null;
+						replyList = null;
 					}
 				}
 			}
 
 			// 結果を返す
-			return cardList;
+			return replyList;
 		}
 
 }

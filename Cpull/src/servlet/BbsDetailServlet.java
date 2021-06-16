@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.BbsDAO;
 import dao.BbsReplyDAO;
 import model.Reply;
 
@@ -56,11 +55,11 @@ public class BbsDetailServlet extends HttpServlet {
 
 		// コメントを行う
 		BbsReplyDAO bDao = new BbsReplyDAO();
-		BbsReplyDAO.insert(new Reply(0,user_id,user_name,reply_range,reply_contents));
-		}
+		bDao.insert(new Reply(0,user_id,user_name,reply_range,reply_contents));
+
 		// 掲示板トップページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_detail.jsp");
-		dispatcher.forward(request, response);
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+	dispatcher.forward(request, response);
 
 	}
 
