@@ -36,10 +36,10 @@
           <td><input type="text" name="USER_COMPANY"></td>
         </tr>
       </table>
-      受講者<input type="checkbox" name="" value="0">
-      講師<input type="checkbox" name="" value="1">
-      事務局<input type="checkbox" name="" value="2">
-      その他<input type="checkbox" name="" value="3"><br>
+      受講者<input type="radio" name="USER_CLASS" value="0" checked>
+      講師<input type="radio" name="USER_CLASS" value="1">
+      事務局<input type="radio" name="USER_CLASS" value="2">
+      その他<input type="radio" name="USER_CLASS" value="3"><br>
       <input type="submit" name="REGIST" value="登録"><br>
     </form>
   </main>

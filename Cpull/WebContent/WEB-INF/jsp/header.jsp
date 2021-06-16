@@ -1,13 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+   <div class="wrapper">
+   <header class="header">
 
-<!-- 6-19行目を各ページに挿入する -->
+	<h1 class="logo">
+      <a href="list.html"><img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130"></a>
+  </h1>
 
-<header>
-	<img src="LOGO" alt="Cpull LOGO">
-
-	<nav>
-		<ul>
+        <ul id="nav">
 			<li><a href="/Cpull/ProfileServlet">自己紹介</a></li>
 			<li><a href="/Cpull/TalkroomServlet">トークルーム</a></li>
 			<li><a href="/Cpull/BbsServlet">掲示板</a></li>
@@ -15,10 +22,9 @@
 			<li><a href="/Cpull/InquiryServlet">お問い合わせ</a></li>
 			<li><a href="/Cpull/LoginServlet">ログアウト</a></li>
 		</ul>
-	</nav>
-</header>
 
-<!--
-header CSSについて
-横並びにして中央で並べる、liの丸を消す
- -->
+  </header>
+  </div>
+</body>
+</html>
+

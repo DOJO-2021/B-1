@@ -65,6 +65,7 @@ public class UserDAO {
 		Connection conn = null;
 		boolean result = false;
 
+
 		// System.out.println(card.toString()); // 項目が合っているかの確認
 
 		try {
@@ -110,12 +111,12 @@ public class UserDAO {
 			else {
 				pStmt.setString(5, null);
 			}
-			if (card.getUser_class() != 0) { // null?どうしよう
+			// if (card.getUser_class() != 0) {
 				pStmt.setInt(6, card.getUser_class());
-			}
-			else {
-				pStmt.setString(6, null);
-			}
+			// }
+			// else {
+			//	pStmt.setString(6, null);
+			// }
 			if (card.getUser_prefecture() != null) {
 				pStmt.setString(7, card.getUser_prefecture());
 			}
@@ -135,7 +136,7 @@ public class UserDAO {
 				pStmt.setString(9, null);
 			}
 			if (card.getUser_birth() != null) {
-				pStmt.setDate(10, card.getUser_birth());
+				pStmt.setString(10, card.getUser_birth());
 			}
 			else {
 				pStmt.setString(10, null);
@@ -146,12 +147,12 @@ public class UserDAO {
 			else {
 				pStmt.setString(11, null);
 			}
-			if (card.getUser_range() != null) {
+			// if (card.getUser_range() != null) {
 				pStmt.setInt(12, card.getUser_range());
-			}
-			else {
-				pStmt.setString(12, null);
-			}
+			// }
+			// else {
+			//	pStmt.setString(12, null);
+			//}
 			if (card.getUser_image() != null) {
 				pStmt.setString(13, card.getUser_image());
 			}
@@ -228,12 +229,12 @@ public class UserDAO {
 			else {
 				pStmt.setString(4, null);
 			}
-			if (card.getUser_class() != null) {
+			// if (card.getUser_class() != null) {
 				pStmt.setInt(5, card.getUser_class());
-			}
-			else {
-				pStmt.setInt(5, null);
-			}
+			// }
+			// else {
+			//	pStmt.setInt(5, null);
+			// }
 			if (card.getUser_prefecture() != null) {
 				pStmt.setString(6, card.getUser_prefecture());
 			}
@@ -253,7 +254,7 @@ public class UserDAO {
 				pStmt.setString(8, null);
 			}
 			if (card.getUser_birth() != null) {
-				pStmt.setDate(9, card.getUser_birth());
+				pStmt.setString(9, card.getUser_birth());
 			}
 			else {
 				pStmt.setDate(9, null);
@@ -264,19 +265,19 @@ public class UserDAO {
 			else {
 				pStmt.setString(10, null);
 			}
-			if (card.getUser_range() != null) {
+			// if (card.getUser_range() != null) {
 				pStmt.setInt(11, card.getUser_range());
-			}
-			else {
-				pStmt.setInt(11, null);
-			}
+			// }
+			// else {
+			//	pStmt.setInt(11, null);
+			// }
 			if (card.getUser_image() != null) {
 				pStmt.setString(12, card.getUser_image());
 			}
 			else {
 				pStmt.setString(12, null);
 			}
-			pStmt.setInt(13, card.getUser_id());
+			pStmt.setString(13, card.getUser_id());
 
 
 			// SQL文を実行する
