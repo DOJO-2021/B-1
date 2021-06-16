@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>掲示板トップ</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_top.css">
+	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 </head>
 <body>
 	<header>
