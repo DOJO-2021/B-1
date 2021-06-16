@@ -9,12 +9,13 @@
 <link rel="stylesheet" href="/Cpull/css/i_result.css">
 </head>
 <body>
-	<header>
-		<jsp:include page="/WEB-INF/jsp/header.jsp" />
-	</header>
-	<main>
-		<p>送信が完了しました！</p>
-	</main>
-
+	<div class="wrapper">
+		<header>
+			<jsp:include page="/WEB-INF/jsp/header.jsp" />
+		</header>
+		<main>
+			<p>送信が完了しました！</p>
+		</main>
+	</div>
 </body>
 </html>
