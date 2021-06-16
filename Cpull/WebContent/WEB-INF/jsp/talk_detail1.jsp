@@ -12,6 +12,7 @@
 </head>
 <body>
 	<header>
+	    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 		<!-- あとからヘッダーを入れる -->
 	</header>
 

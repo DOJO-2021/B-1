@@ -11,6 +11,7 @@
 </head>
 <body>
 	<header>
+	    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 		<ul>
 			<li><a href="/Cpull/ProfileServlet">自己紹介</a></li>
 			<li><a href="/Cpull/TalkroomServlet">トークルーム</a></li>
