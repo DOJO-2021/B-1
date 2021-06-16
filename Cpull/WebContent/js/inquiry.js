@@ -1,11 +1,13 @@
 'use strict';
 
 //送信ボタンが押された時に確認のダイアログ
-function linkCheck(btn){
-	if(btn == 1){
+function linkCheck(btn) {
+	if (btn == 1) {
+		href = "/Cpull/InquiryServlet";
+	}
 
-}
-
-if(window.confirm('この内容で送信してよろしいですか？')){
-
+	ret = confirm('この内容で送信してよろしいですか？');
+	if (ret == true) {
+		location.href = href;
+	}
 }

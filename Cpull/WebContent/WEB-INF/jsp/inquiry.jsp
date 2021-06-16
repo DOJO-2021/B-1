@@ -25,6 +25,6 @@
 		</form>
 	</main>
 
-
+<script src="/Cpull/js/inquiry.js"></script>
 </body>
 </html>
