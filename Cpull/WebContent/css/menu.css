@@ -5,8 +5,14 @@
   outline: 1px solid #ff0000;
 }
 
-.top-name {
-	float: center;
+
+.wrapper {
+ margin: 0 auto 0 auto;	/* nav中央揃え */
+ width: 900px;			/* 幅を固定 */
+}
+
+.top_name {
+  text-align: center;
 }
 
 .button {
@@ -14,11 +20,21 @@
   font-size     : 18pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
   cursor        : pointer;     /* カーソル   */
-  padding       : 12px 12px;   /* 余白       */
   background    : #ffa954;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
   line-height   : 1em;         /* 1行の高さ  */
   text-decoration: none;
   font-weight: bold;
-
+  width: 200px;
+  height: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  padding: 40px 40px;
+  margin-top: 10px;
 }
+
+.menu_box {
+	margin-top:-10px;
+	padding-left: 80px;
+}
+

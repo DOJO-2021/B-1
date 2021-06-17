@@ -9,11 +9,13 @@
 <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <header>
+<div class="wrapper">
+ <header>
 	<h1 class="logo">
-      <a href="list.html"><img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130"></a>
-  </h1>
-  </header>
+      <img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130">
+  	</h1>
+ </header>
+</div>
   <main>
     <form method="POST" action="/Cpull/LoginServlet">
       <table>

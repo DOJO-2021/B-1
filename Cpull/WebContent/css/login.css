@@ -1,5 +1,23 @@
 @charset "UTF-8";
 /*ログイン画面用*/
+
+
+
+
+/*logoクラス*/
+.logo {
+ margin: 50px 0 20px 0; /*ロゴ中央揃え*/
+ line-height: 0;
+ text-align: center;
+}
+
+/* wrapperクラス */
+.wrapper {
+ margin: 0 auto 0 auto;
+ width: 900px;			/* 幅を固定 */
+}
+
+
 table {
     margin-left: auto;
     margin-right: auto;

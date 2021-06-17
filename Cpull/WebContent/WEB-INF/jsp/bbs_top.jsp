@@ -22,21 +22,21 @@
 				</tr>
 				<tr>
 					<td>
-					<select name="kind">
-						<option value="personal">パーソナルスキルコース</option>
-						<option value="IT">IT基礎コース</option>
-						<option value="Java">Java基礎コース</option>
-						<option value="develope">開発演習</option>
-						<option value="others">その他</option>
+					<select name="kind1">
+						<option value="0">パーソナルスキルコース</option>
+						<option value="1">IT基礎コース</option>
+						<option value="2">Java基礎コース</option>
+						<option value="3">開発演習</option>
+						<option value="4">その他</option>
 					</select>
 					</td>
 					<td>
-					<select name="kind">
-						<option value="personal">パーソナルスキルコース</option>
-						<option value="IT">IT基礎コース</option>
-						<option value="Java">Java基礎コース</option>
-						<option value="develope">開発演習</option>
-						<option value="others">その他</option>
+					<select name="kind2">
+						<option value="10">パーソナルスキルコース</option>
+						<option value="11">IT基礎コース</option>
+						<option value="12">Java基礎コース</option>
+						<option value="13">開発演習</option>
+						<option value="14">その他</option>
 					</select>
 					</td>
 				</tr>
