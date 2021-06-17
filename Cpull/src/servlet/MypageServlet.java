@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -66,6 +67,13 @@ public class MypageServlet extends HttpServlet {
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
+
+		// セッションIDと一致するリストの検索
+		UserDAO sDao = new UserDAO();
+		List<User> cardList = sDao.select(new User(user_id, "", "", "", "", 0, "", "", "", "", "", 0, ""));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
 
 		// 更新を行う
 		UserDAO uDao = new UserDAO();
