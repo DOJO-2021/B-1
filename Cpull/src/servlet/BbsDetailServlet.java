@@ -36,6 +36,7 @@ public class BbsDetailServlet extends HttpServlet {
 					//		return;
 					//	}
 		//セッションスコープの取得
+		BBS getBBS =new GetBBS();
 		HttpSession session = request.getSession();
 		//セッションスコープからインスタンスを取得
 
@@ -77,7 +78,6 @@ public class BbsDetailServlet extends HttpServlet {
 
 		//リクエストスコープ
 		request.setCharacterEncoding("UTF-8");
-		int bbs_id =Integer.parseInt(request.getParameter("bbs_id"));
 		String user_id = request.getParameter("user_id");
 		String user_name = request.getParameter("user_name");
 		String reply_name = request.getParameter("reply_name");
