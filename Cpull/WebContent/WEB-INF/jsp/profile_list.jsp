@@ -18,6 +18,8 @@
 
 		<!-- メイン（ここから） -->
 		<h1>自己紹介一覧</h1>
+		<br>
+			${cardList.size()}件ヒットしました！
 		<hr>
 
 		<c:forEach var="e" items="${cardList}">

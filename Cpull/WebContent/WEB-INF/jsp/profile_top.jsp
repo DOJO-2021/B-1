@@ -46,11 +46,15 @@
 							name="USER_REMARKS">
 					</label></td>
 				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" id="search" name="serch" value="検索">
+					 <a href="/Cpull/ProfileListServlet">
+					 <input type="button" id="search" name="list" value="一覧">
+					 </a>
+					</td>
+				</tr>
 			</table>
-					<input type="submit" id="search" name="serch" value="検索">
 		</form>
-					 <input type="submit" id="search" name="list" value="一覧">
-
 		<!-- メイン（ここまで） -->
 		<!-- フッター（ここから） -->
 
