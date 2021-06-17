@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.User;
 
@@ -64,9 +66,6 @@ public class UserDAO {
 	public boolean insert(User card) { // cardリスト？確認
 		Connection conn = null;
 		boolean result = false;
-
-
-		// System.out.println(card.toString()); // 項目が合っているかの確認
 
 		try {
 			// JDBCドライバを読み込む
@@ -306,4 +305,76 @@ public class UserDAO {
 		// 結果を返す
 		return result;
 	}
+
+	// 引数paramで検索項目を指定し、検索結果のリストを返す
+		public List<User> select(User param) {
+			Connection conn = null;
+			List<User> cardList = new ArrayList<User>();
+
+			try {
+				// JDBCドライバを読み込む
+				Class.forName("org.h2.Driver");
+
+				// データベースに接続する
+				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
+
+				// SQL文を準備する
+				String sql = "SELECT * FROM M_USER WHERE user_id LIKE ? ";
+				PreparedStatement pStmt = conn.prepareStatement(sql);
+
+				// SQL文を完成させる
+				if (param.getUser_id() != null) {
+					pStmt.setString(1, "%" + param.getUser_id() + "%");
+				}
+				else {
+					pStmt.setString(1, "%");
+				}
+
+				// SQL文を実行し、結果表を取得する
+				ResultSet rs = pStmt.executeQuery();
+
+				// 結果表をコレクションにコピーする
+				while (rs.next()) {
+					User card = new User(
+					rs.getString("user_id"),
+					rs.getString("user_name"),
+					rs.getString("user_pw"),
+					rs.getString("user_k_name"),
+					rs.getString("user_company"),
+					rs.getInt("user_class"),
+					rs.getString("user_prefecture"),
+					rs.getString("user_hobby"),
+					rs.getString("user_skill"),
+					rs.getString("user_birth"),
+					rs.getString("user_remarks"),
+					rs.getInt("user_range"),
+					rs.getString("user_image")
+					);
+					cardList.add(card);
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+			catch (ClassNotFoundException e) {
+				e.printStackTrace();
+				cardList = null;
+			}
+			finally {
+				// データベースを切断
+				if (conn != null) {
+					try {
+						conn.close();
+					}
+					catch (SQLException e) {
+						e.printStackTrace();
+						cardList = null;
+					}
+				}
+			}
+
+			// 結果を返す
+			return cardList;
+		}
 }

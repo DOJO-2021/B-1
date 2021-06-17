@@ -20,7 +20,7 @@
         <table>
           <tr>
             <td>ID</td>
-            <td><input type="text" name="USER_ID" readonly></td>
+            <td><input type="text" name="id" readonly></td>
           </tr>
           <tr>
             <td>PW</td>
@@ -52,19 +52,19 @@
           </tr>
           <tr>
             <td>特技</td>
-            <td><input type="text" name="USER_SKILL"></td>
+            <td><input type="text" name="USER_SKILL" value="${e.user_skill}"></td>
           </tr>
           <tr>
             <td>誕生日</td>
-            <td><input type="date" name="USER_BIRTH" min="1900-01-01" max="2021-12-31"></td>
+            <td><input type="date" name="USER_BIRTH" min="1900-01-01" max="2021-12-31" value="${e.user_birth}"></td>
           </tr>
           <tr>
             <td>備考</td>
-            <td><input type="text" name="USER_REMARKS"></td>
+            <td><input type="text" name="USER_REMARKS" value="${e.user_remarks}"></td>
           </tr>
           <tr>
             <td>クラス</td>
-            <td><input type="radio" name="USER_CLASS" readonly><!-- ※受講者/運営表示させる --></td>
+            <td><input type="radio" name="USER_CLASS" value="${e.user_class}" readonly><!-- ※受講者/運営表示させる --></td>
           </tr>
           <tr>
             <td>公開範囲</td>
@@ -79,6 +79,7 @@
         <p>※は必須項目</p>
         <input type="submit" name="SUBMIT" value="更新">
       </form>
+      </c:forEach>
     </main>
   </div>
 </body>
