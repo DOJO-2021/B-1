@@ -15,7 +15,7 @@
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
   <main>
-    <h1><c:out value="${result.title}" /></h1>
+    <h1 class="top_name"><c:out value="${result.title}" /></h1>
     <a href="${result.backTo}">ログインページへ</a>
   </main>
 </div>

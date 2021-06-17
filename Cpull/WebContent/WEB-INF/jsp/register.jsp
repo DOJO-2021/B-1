@@ -2,21 +2,25 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>新規アカウント登録</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/register.css">
 </head>
+
 <body>
-<div class="wrapper">
   <header>
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
   </header>
+
   <main>
-    <h1>新規アカウント登録ページ</h1><br>
+  <div class="wrapper">
+    <h1 class="top_name">新規アカウント登録ページ</h1>
+
     <form method="POST" action="/Cpull/RegisterServlet">
-      <p>新しいIDとPWを入力してください！
+      <p>新しいIDとPWを入力してください！<br>
       <p>メールアドレスを入力してください<br>
       新しいID<input type="text" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
       <p>8文字以上16文字未満で登録してください
@@ -40,10 +44,10 @@
       受講者<input type="radio" name="USER_CLASS" value="0" checked>
       講師<input type="radio" name="USER_CLASS" value="1">
       事務局<input type="radio" name="USER_CLASS" value="2">
-      その他<input type="radio" name="USER_CLASS" value="3"><br>
+     その他<input type="radio" name="USER_CLASS" value="3"><br>
       <input type="submit" name="REGIST" value="登録"><br>
     </form>
+    </div>
   </main>
-</div>
 </body>
 </html>

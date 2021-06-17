@@ -95,6 +95,7 @@ import model.Reply;
 				String sql = "select *from reply where bbs_id like ? ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
+
 				// SQL文を実行し、結果表を取得する
 				ResultSet rs = pStmt.executeQuery();
 
