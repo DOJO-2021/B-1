@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>トークルーム詳細</title>
 <link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/talk_detail3.css">
+<link rel="stylesheet" href="css/talk_detail.css">
 </head>
 <body>
 	<header>
@@ -16,6 +16,8 @@
 	</header>
 
 	<main>
+	<div id="wrapper">
+	<div class="talkdetail_box">
 		<!-- トークルームの題名 -->
 		<h1 class="room_name">地方出身者あつまれ！</h1>
 
@@ -24,10 +26,11 @@
 			みなさんどこの出身ですか？<br> ご当地トーク楽しみましょう～！
 		</div>
 		<!-- トークルームの詳細 -->
-		<a
-			href="https://us04web.zoom.us/j/79570038670?pwd=RTI0b0NqWUZsS01GYTV6ODJhMkFSUT09">入室</a>
+		<a href="https://us04web.zoom.us/j/79570038670?pwd=RTI0b0NqWUZsS01GYTV6ODJhMkFSUT09" class="button1">入室</a>
 		<!-- zoomのリンク先を貼る -->
-		<a href="/Cpull/TalkroomServlet">一覧へ戻る</a>
+		<a href="/Cpull/TalkroomServlet" class="button2">一覧へ戻る</a>
+	</div>
+	</div>
 	</main>
 
 </body>

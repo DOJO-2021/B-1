@@ -9,7 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import dao.BbsDAO;
 import dao.BbsReplyDAO;
@@ -36,35 +35,41 @@ public class BbsDetailServlet extends HttpServlet {
 					//		return;
 					//	}
 		//セッションスコープの取得
-		BBS getBBS =new GetBBS();
-		HttpSession session = request.getSession();
+	//	HttpSession session = request.getSession();
 		//セッションスコープからインスタンスを取得
-
-		//リクエストスコープの時
-	//	request.setCharacterEncoding("UTF-8");
-	//	int bbs_id = Integer.parseInt(request.getParameter("bbs_id"));
-	//	String bbs_title = request.getParameter("bbs_title");
-	//	String bbs_details = request.getParameter("bbs_details");
-	//	String reply_contents = request.getParameter("reply_contents");
+	//	String bbs_id
+		//bbs_id b =(bbs_id) session.getAttribute("bbs_id");
 
 
 		//sql文を実行
-		//今回はダミーで掲示板idは”0001”で実行
-		String bbs_id ="0001";
+		//今回はダミーで掲示板idは”1”で実行
+		String bbs_id ="1";
+		int int_id = 1;
+//				Integer.parseInt(request.getParameter("bbs_id"));
+		System.out.println(int_id);
 		//詳細データを抽出（掲示板idをキーに）
 		BbsDAO bDao = new BbsDAO();
-		List<BBS> detail = bDao.select(new BBS("",0001,"","","",0,0));
+		List<BBS> bbsList = bDao.select(new BBS("",int_id,"","","",0,0));
 
 		//書き込みデータを抽出（掲示板idをキーに）
-		BbsReplyDAO brDao =new BbsReplyDAO();
-		List<Reply> comtents = brDao.select(new Reply(0001,"","","",0,""));
+		BbsReplyDAO brDao = new BbsReplyDAO();
+		List<Reply> replyList = brDao.select(new Reply(int_id,"","","",0,""));
 
+
+		// 検索結果をリクエストスコープに格納する
+				request.setAttribute("bbsList", bbsList);
+				request.setAttribute("replyList", replyList);
+
+		//リクエストスコープからインスタンスを取得
+			//	BBS bt =(BBS) request.getAttribute("bbs_title");
+			//	BBS bd =(BBS) request.getAttribute("bbs_details");
+			//	Reply rc =(Reply) request.getAttribute("Reply_contents");
 		//詳細データをセッションスコープに保存する
-		HttpSession session = request.getSession();
-		request.setAttribute("bbs_id", new Reply(bbs_id));
+	//	HttpSession session = request.getSession();
+	//	request.setAttribute("bbs_id", new Reply(bbs_id));
 
-		//スレッド新規作成ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_deteil.jsp");
+		//詳細ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_detail.jsp");
 		dispatcher.forward(request, response);
 
 
@@ -78,6 +83,7 @@ public class BbsDetailServlet extends HttpServlet {
 
 		//リクエストスコープ
 		request.setCharacterEncoding("UTF-8");
+		int bbs_id = Integer.parseInt(request.getParameter("bbs_id"));
 		String user_id = request.getParameter("user_id");
 		String user_name = request.getParameter("user_name");
 		String reply_name = request.getParameter("reply_name");
@@ -89,8 +95,8 @@ public class BbsDetailServlet extends HttpServlet {
 		BbsReplyDAO bDao = new BbsReplyDAO();
 		bDao.insert(new Reply(0,user_id,user_name,reply_name,reply_range,reply_contents));
 
-		// 掲示板トップページにフォワードする
-	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+		// detailページにフォワードする
+	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_detail.jsp");
 	dispatcher.forward(request, response);
 
 	}

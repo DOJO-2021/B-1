@@ -1,2 +1,45 @@
 @charset "UTF-8";
 /*トークルームの詳細画面用*/
+
+/**{
+  outline: 1px solid #ff0000;
+}*/
+
+.wrapper {
+ margin: 0 auto 0 auto;	/* nav中央揃え */
+ width: 900px;			/* 幅を固定 */
+}
+
+.talkdetail_box{
+ margin-top: 40px;
+
+}
+
+.room_name {
+  text-align: center;
+  margin-top: 100px;
+
+}
+
+.room_detail {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.button1, .button2 {
+  display       : inline-block;
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #ffa954;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  text-decoration: none;
+  font-weight: bold;
+  width: 200px;
+  height: 30px;
+  margin-top: 80px;
+  padding-top: 20px;
+  ;
+}
+
+

@@ -1,9 +1,9 @@
 @charset "UTF-8";
 /*メニュー画面用CSS*/
 
-*{
+/**{
   outline: 1px solid #ff0000;
-}
+}*/
 
 
 .wrapper {
@@ -11,8 +11,19 @@
  width: 900px;			/* 幅を固定 */
 }
 
+.logo {
+  text-align: center;
+}
+
+
 .top_name {
   text-align: center;
+  margin-top: 30px;
+}
+
+.menu_box {
+	margin-top: 40px;
+	padding-left: 80px;
 }
 
 .button {
@@ -31,10 +42,8 @@
   margin-left: 40px;
   padding: 40px 40px;
   margin-top: 10px;
+
 }
 
-.menu_box {
-	margin-top:-10px;
-	padding-left: 80px;
-}
+
 
