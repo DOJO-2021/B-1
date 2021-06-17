@@ -2,7 +2,9 @@
 /*ログイン画面用*/
 
 
-
+*{
+  outline: 1px solid #ff0000;
+}
 
 /*logoクラス*/
 .logo {
@@ -21,6 +23,7 @@
 table {
     margin-left: auto;
     margin-right: auto;
+    color: #333a56;
        }
 
 div { text-align : center ;
