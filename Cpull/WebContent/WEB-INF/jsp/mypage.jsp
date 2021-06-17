@@ -16,7 +16,7 @@
     </header>
     <main>
       <h1>マイページ</h1>
-      <c:forEach var="e" items="${cardList}">
+      <!-- <c:forEach var="e" items="${cardList}"> -->
       <form method="POST" action="/Cpull/MypageServlet">
         <table>
           <tr>
@@ -80,7 +80,7 @@
         <p>※は必須項目</p>
         <input type="submit" name="SUBMIT" value="更新">
       </form>
-      </c:forEach>
+      <!-- </c:forEach> -->
     </main>
   </div>
 </body>
