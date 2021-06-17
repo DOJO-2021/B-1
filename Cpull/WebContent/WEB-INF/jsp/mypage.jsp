@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,11 +20,11 @@
         <table>
           <tr>
             <td>ID</td>
-            <td><input type="text" name="USER_ID" value="${card.user_id}" readonly></td>
+            <td><input type="text" name="USER_ID" readonly></td>
           </tr>
           <tr>
             <td>PW</td>
-            <td><input type="password" name="USER_PW" value="${card.user_pw}" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
+            <td><input type="password" name="USER_PW" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
           </tr>
           <tr>
             <td>画像</td>
@@ -55,7 +56,7 @@
           </tr>
           <tr>
             <td>誕生日</td>
-            <td><input type="text" name="USER_BIRTH"></td>
+            <td><input type="date" name="USER_BIRTH" min="1900-01-01" max="2021-12-31"></td>
           </tr>
           <tr>
             <td>備考</td>
@@ -63,13 +64,19 @@
           </tr>
           <tr>
             <td>クラス</td>
-            <td><input type="radio" name="USER_CLASS" value="${card.user_class}" readonly><!-- ※受講者/運営表示させる --></td>
+            <td><input type="radio" name="USER_CLASS" readonly><!-- ※受講者/運営表示させる --></td>
           </tr>
           <tr>
             <td>公開範囲</td>
-            <td><input type="text" name="USER_RANGE"></td><!-- 公開範囲 -->
+            <td>
+              <select name="USER_RANGE">
+                <option value="0">公開</option>
+                <option value="1">非公開</option>
+              </select>
+            </td>
           </tr>
         </table>
+        <p>※は必須項目</p>
         <input type="submit" name="SUBMIT" value="更新">
       </form>
     </main>
