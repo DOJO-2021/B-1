@@ -32,6 +32,15 @@ public class MypageServlet extends HttpServlet {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
+		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
+		//セッションidを変数u_idに代入
+		//userモデルを作成（u_id,"",,,,)
+		// new user(u_id)
+		//上のモデルでdaoのセレクト分を実行して、lisｔ方の変数に代入
+
+		//上記のデータをリクエストスコープに保存
+
+
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);

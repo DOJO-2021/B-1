@@ -16,40 +16,39 @@
     </header>
     <main>
       <h1>マイページ</h1>
-      <!-- <c:forEach var="e" items="${cardList}"> -->
       <form method="POST" action="/Cpull/MypageServlet">
         <table>
           <tr>
             <td>ID</td>
-            <td><input type="text" name="id" value="${e.user_id}" readonly></td>
+            <td><input type="text" name="id" readonly></td>
           </tr>
           <tr>
             <td>PW</td>
-            <td><input type="password" name="USER_PW" value="${e.user_pw}" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
+            <td><input type="password" name="USER_PW" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
           </tr>
           <tr>
             <td>画像</td>
-            <td><input type="text" name="USER_IMAGE" value="${e.image}"></td>
+            <td><input type="text" name="USER_IMAGE"></td>
           </tr>
           <tr>
             <td>※氏名</td>
-            <td><input type="text" name="USER_NAME" value="${e.user_name}"></td> <!-- どうやって名前取り出す？ -->
+            <td><input type="text" name="USER_NAME"></td> <!-- どうやって名前取り出す？ -->
           </tr>
           <tr>
             <td>※よみかた</td>
-            <td><input type="text" name="USER_K_NAME" value="${e.user_k_name}"></td>
+            <td><input type="text" name="USER_K_NAME"></td>
           </tr>
           <tr>
             <td>※会社名</td>
-            <td><input type="text" name="USER_COMPANY" value="${e.user_company}"></td>
+            <td><input type="text" name="USER_COMPANY"></td>
           </tr>
           <tr>
             <td>出身</td>
-            <td><input type="text" name="USER_PREFECTURE" value="${e.user_prefecture}"></td>
+            <td><input type="text" name="USER_PREFECTURE"></td>
           </tr>
           <tr>
             <td>趣味</td>
-            <td><input type="text" name="USER_HOBBY" value="${e.user_hobby}"></td>
+            <td><input type="text" name="USER_HOBBY"></td>
           </tr>
           <tr>
             <td>特技</td>
@@ -80,7 +79,7 @@
         <p>※は必須項目</p>
         <input type="submit" name="SUBMIT" value="更新">
       </form>
-      <!-- </c:forEach> -->
+      </c:forEach>
     </main>
   </div>
 </body>
