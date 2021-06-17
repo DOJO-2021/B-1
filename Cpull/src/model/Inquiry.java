@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 public class Inquiry implements Serializable {
-	//private String user_id;
+	private String user_id;
 	private int inquiry_id;
 	private String subject;
 	private String message;
@@ -11,13 +11,13 @@ public class Inquiry implements Serializable {
 
 	//引数があるコンストラクタ
 	public Inquiry(
-			// String user_id,
+			 String user_id,
 			 int inquiry_id,
 			 String subject,
 			 String message,
 			 Timestamp ts) {
 	super();
-	//this.user_id = user_id;
+	this.user_id = user_id;
 	this.inquiry_id = inquiry_id;
 	this.subject = subject;
 	this.message = message;
@@ -27,7 +27,7 @@ public class Inquiry implements Serializable {
 	//引数がないコンストラクタ
 	public Inquiry() {
 		super();
-		//this.user_id = null;
+		this.user_id = null;
 		this.inquiry_id = 0;
 		this.subject = "";
 		this.message = "";
@@ -35,14 +35,14 @@ public class Inquiry implements Serializable {
 
 	}
 
-/*	public String getUser_id() {
+	public String getUser_id() {
 		return user_id;
 	}
 
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-*/
+
 	public int getInquiry_id() {
 		return inquiry_id;
 	}

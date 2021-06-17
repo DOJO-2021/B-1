@@ -17,7 +17,7 @@
  </header>
 </div>
   <main>
-    <form method="POST" action="/Cpull/LoginServlet">
+    <form method="POST" action="/Cpull/LoginServlet" id="form">
       <table>
         <tr>
           <td>ID</td>
@@ -34,5 +34,6 @@
     <a href="/Cpull/RegisterServlet">アカウント作成はこちらから</a>
     </div>
   </main>
+  <script src="/Cpull/js/login.js"></script>
 </body>
 </html>

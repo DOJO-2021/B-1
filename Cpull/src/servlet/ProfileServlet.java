@@ -30,10 +30,10 @@ public class ProfileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/Cpull/LoginServlet");
-//			return;
-//		}
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+		return;
+		}
 
 		// 自己紹介トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_top.jsp");
@@ -46,10 +46,10 @@ public class ProfileServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/Cpull/LoginServlet");
-//			return;
-//		}
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+			return;
+		}
 
 		// リクエストパラメータを取得する 直すところ　profile_topのデータ
 				request.setCharacterEncoding("UTF-8");

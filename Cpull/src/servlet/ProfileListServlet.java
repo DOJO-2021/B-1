@@ -27,9 +27,10 @@ public class ProfileListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/Cpull/LoginServlet");
-//			return;
+		if (session.getAttribute("id") == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+			return;
+		}
 
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
