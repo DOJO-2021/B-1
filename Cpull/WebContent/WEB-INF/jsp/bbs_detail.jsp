@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="model.BBS" %>
+<%@ page import="model.Reply" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<% String bbs_title = (String)request.getAttribute("bbs_id"); %>
+<% String bbs_details = (String)request.getAttribute("bbs_details"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,19 +23,20 @@
 <h1>掲示板詳細</h1>
 
 タイトル<br>
-	<input type="text" name="title" value="${Reply.bbs_title}">
+	<p><%= bbs_title %></p><br>
 内容<br>
-	<input type="text" name="detail" value="${Reply.bbs_detail}">
-
+	<p><%= bbs_details %></p><br>
 コメント欄<br>
-	<input type="text" name="comment_list" value="${Reply.comment_list}">
+	<c:forEach var="r" items="${replyList}" >
+		<p><c:out value="${r.reply_contents}"></c:out></p>
 
+	</c:forEach>
 
 <div>
-<form action="" method="POST">
+<form action="Cpull/BbsDetailServlet" method="POST">
 コメント<br>
 	<textarea name="message"></textarea>
-	<input type="submit" name="submit" value="回答">
+	<input type="submit" name="submit" value="回答"><br>
 	匿名にする？<br>
 	<input type="checkbox" name="how" value="name">
 </form>

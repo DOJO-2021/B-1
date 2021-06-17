@@ -1,2 +1,13 @@
 @charset "UTF-8";
 /*新規登録完了画面用*/
+
+/* wrapperクラス */
+.wrapper {
+ margin: 0 auto 0 auto;
+ width: 900px;			/* 幅を固定 */
+}
+
+.top_name {
+  text-align: center;
+  color: #52658f;
+}

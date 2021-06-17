@@ -12,10 +12,38 @@
 	<div class="wrapper">
 		<main>
 			<h1>掲示板トップ</h1>
+			<h2>キーワード・カテゴリーでスレッドを検索します</h2>
+			<h3>キーワード検索</h3>
+			入力されたキーワードをタイトルに含むスレッドを表示します
 			<form method="POST" action="/Cpull/BbsServlet">
 				<input type="text" name="bbs_search" placeholder="検索したいワードを入力">
-				<input type="submit" name="submit" value="検索">
-				<table>
+				<input type="submit" name="submit" value="検索"><br>
+			</form>
+			<h3>カテゴリー検索</h3>
+			<form method="POST" action="/Cpull/BbsCategoryServlet">
+				選択されたカテゴリーのスレッドを表示します<br>
+				<span>カテゴリーの種類を選んでください</span>
+				<label for="chkYes">
+ 				<input type="radio" id="chkYes" name="chkPassPort" onclick="ShowHideDiv()" />
+ 				悩み
+				</label>
+				<label for="chkNo">
+				 <input type="radio" id="chkNo" name="chkPassPort" onclick="ShowHideDiv()" />
+				 質問
+				</label>
+				<div id="dvPassport" style="display: none">
+				 カテゴリを選択してください：
+				 <select name="kind">
+				 	<option value="0">パーソナルスキルコース</option>
+					<option value="1">IT基礎コース</option>
+					<option value="2">Java基礎コース</option>
+					<option value="3">開発演習</option>
+					<option value="4">その他</option>
+				 </select>
+				</div>
+				<script src="/Cpull/js/bbs_category.js"></script>
+
+				<!-- <table>
 				<tr>
 					<th>悩み</th>
 					<th>質問</th>
@@ -40,7 +68,8 @@
 					</select>
 					</td>
 				</tr>
-				</table>
+				</table>-->
+				<input type="submit" name="submit" value="検索">
 			</form>
 			<h2>掲示板のスレッド一覧を表示します</h2>
 			<form method="POST" action="/Cpull/BbsListServlet">
