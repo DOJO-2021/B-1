@@ -12,6 +12,7 @@
 	<div class="wrapper">
 		<main>
 			<!-- 後でサブメニュー追加 -->
+			<h1>スレッド一覧</h1>
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
 				<input type="submit" name="bbs_title" value="${e.bbs_title}">

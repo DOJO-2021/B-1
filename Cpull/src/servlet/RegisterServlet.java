@@ -24,12 +24,6 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		/* HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/Cpull/LoginServlet");
-			return;
-		} */
 		// 登録ページにフォワードする
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/register.jsp");
 			dispatcher.forward(request, response);
@@ -39,12 +33,6 @@ public class RegisterServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// HttpSession session = request.getSession();
-		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-		/* if (session.getAttribute("id") == null) { // この処理いらない
-			response.sendRedirect("/Cpull/LoginServlet");
-			return;
-		} */
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String user_id = request.getParameter("USER_ID");

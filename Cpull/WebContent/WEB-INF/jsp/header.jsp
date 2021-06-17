@@ -5,13 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/header.css">
 </head>
 <body>
    <div class="wrapper">
    <header class="header">
 
 	<h1 class="logo">
-      <a href="list.html"><img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130"></a>
+     <img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130">
   </h1>
 
         <ul id="nav">
