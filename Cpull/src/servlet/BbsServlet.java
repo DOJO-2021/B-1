@@ -39,7 +39,7 @@ public class BbsServlet extends HttpServlet {
 
 		// 検索処理を行う
 		BbsDAO bDao = new BbsDAO();
-		List<BBS> bbsList = bDao.select(new BBS("",0,bbs_title,"","",0,0));
+		List<BBS> bbsList = bDao.wordselect(new BBS("",0,bbs_title,"","",0,0));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("bbsList", bbsList);
