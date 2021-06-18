@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BbsDAO;
+import dao.BbsDraftDAO;
 import model.BBS;
 /**
  * Servlet implementation class BbsCreateServlet
@@ -27,7 +28,7 @@ public class BbsCreateServlet extends HttpServlet {
 	//	if (session.getAttribute("user_id") == null) {
 		//	response.sendRedirect("/B-1/LoginServlet");
 			//return;
-		//}
+
 
 
 //スレッド新規作成ページにフォワードする
@@ -53,11 +54,18 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		String bbs_pw = request.getParameter("bbs_pw");
 		int bbs_range = Integer.parseInt(request.getParameter("bbs_range"));
 		int bbs_category = Integer.parseInt(request.getParameter("bbs_category"));
-
+		System.out.println(user_id);
+		System.out.println(bbs_title);
+		System.out.println(bbs_details);
+		System.out.println(bbs_pw);
 		// 登録を行う
 		BbsDAO bDao = new BbsDAO();
+		BbsDraftDAO dDao = new BbsDraftDAO();
+		 if (request.getParameter("submit").equals("作成")) {
 		 bDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
-
+		 } else if(request.getParameter("submit").equals("下書き")) {
+		dDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
+		 }
 
 		// 掲示板トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");

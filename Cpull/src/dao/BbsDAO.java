@@ -364,7 +364,7 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from bbs where bbs_id= 1";
+			String sql = "select * from BBS where bbs_id= 1";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
