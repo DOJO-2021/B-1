@@ -54,6 +54,7 @@ public class MypageServlet extends HttpServlet {
 		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
 		//セッションidを変数u_idに代入
 		String u_id = session.getAttribute("id").toString();
+		System.out.println(u_id);
 		//userモデルを作成（u_id,"",,,,)
 		// User user = new User(user_id);
 		// new user(u_id)

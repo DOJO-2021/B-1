@@ -19,10 +19,10 @@
   <div class="wrapper">
     <h1 class="top_name">新規アカウント登録ページ</h1>
 
-    <form method="POST" action="/Cpull/RegisterServlet">
+    <form class method="POST" action="/Cpull/RegisterServlet">
       <p>新しいIDとPWを入力してください！<br>
       <p>メールアドレスを入力してください<br>
-      新しいID<input type="text" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
+      新しいID<input class="" type="email" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
       <p>8文字以上16文字未満で登録してください
       <p>アルファベットと数字どちらも含むパスワードを設定してください<br>
       新しいPW<input type="text" name="USER_PW" required><br>
@@ -49,6 +49,7 @@
     </form>
     </div>
   </main>
+  <p id="output"></p>
   <script src="/Cpull/js/register.js"></script>
 </body>
 </html>
