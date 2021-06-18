@@ -30,7 +30,7 @@
 				</tr>
 			</table>
 			<div>
-				<input type="submit" name="LOGIN" value="ログイン">
+				<input type="submit" name="LOGIN" value="ログイン" class="button">
 			</div>
 		</form>
 		<div>
