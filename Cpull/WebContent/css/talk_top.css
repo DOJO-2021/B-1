@@ -17,6 +17,29 @@
   color: #52658f;
 }
 
+.top_name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+
+}
+
+.top_name::before,
+.top_name::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #e3bf00;
+}
+
+.top_name::before {
+	margin-right: 20px;
+}
+.top_name::after {
+	margin-left: 20px;
+}
 .button {
   display       : inline-block;
   font-size     : 18pt;        /* 文字サイズ */
