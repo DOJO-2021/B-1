@@ -34,11 +34,16 @@ public class MypageServlet extends HttpServlet {
 		}
 		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
 		//セッションidを変数u_idに代入
+		String user_id = session.getAttribute("id").toString();
 		//userモデルを作成（u_id,"",,,,)
+		// User user = new User(user_id);
 		// new user(u_id)
 		//上のモデルでdaoのセレクト分を実行して、lisｔ方の変数に代入
-
-		//上記のデータをリクエストスコープに保存
+		// セッションIDと一致するリストの検索
+		UserDAO sDao = new UserDAO();
+		List<User> cardList = sDao.select(new User(user_id));
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
 
 
 		// マイページにフォワードする
@@ -77,12 +82,6 @@ public class MypageServlet extends HttpServlet {
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
 
-		// セッションIDと一致するリストの検索
-		UserDAO sDao = new UserDAO();
-		List<User> cardList = sDao.select(new User(user_id, "", "", "", "", 0, "", "", "", "", "", 0, ""));
-
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
 
 		// 更新を行う
 		UserDAO uDao = new UserDAO();

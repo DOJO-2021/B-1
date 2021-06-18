@@ -1,9 +1,10 @@
 'use strict';
 
 function ShowHideDiv() {
-	var chkYes = document.getElementById("chkYes");
-	var chkNo = document.getElementById("chkNo");
-	var dvPassport = document.getElementById("dvPassport");
-	dvPassport.style.display = chkYes.checked ? "block" : "none";
-	dvPassport.style.display = chkNo.checked ? "block" : "none";
+	var worry = document.getElementById("worry");
+	var question = document.getElementById("question");
+	var worryPass = document.getElementById("worryPass");
+	var questionPass = document.getElementById("questionPass");
+	worryPass.style.display = worry.checked ? "block" : "none";
+	questionPass.style.display = question.checked ? "block" : "none";
 }

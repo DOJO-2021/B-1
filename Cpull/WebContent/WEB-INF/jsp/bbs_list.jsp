@@ -6,7 +6,9 @@
 	<meta charset="UTF-8">
 	<title>スレッド一覧</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_list.css">
+	<link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+	<jsp:include page = "/WEB-INF/jsp/submenu.jsp"/>
 </head>
 <body>
 	<div class="wrapper">
