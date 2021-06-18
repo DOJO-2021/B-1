@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="/Cpull/css/bbs_top.css">
 	<link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
-	<jsp:include page = "/WEB-INF/jsp/submenu.jsp"/>
 </head>
 <body>
 	<div class="wrapper">
@@ -62,7 +61,9 @@
 				<input type="submit" name="list" value="一覧">
 			</form>
 			<h2>質問・悩みを投稿する</h2>
-			<a href="/Cpull/BbsCreateServlet">新規作成</a>
+			<form method="GET" action="/Cpull/BbsCreateServlet">
+				<input type="submit" name="create" value="新規作成">
+			</form>
 		</main>
 	</div>
 </body>
