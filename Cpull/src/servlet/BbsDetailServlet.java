@@ -53,7 +53,7 @@ public class BbsDetailServlet extends HttpServlet {
 
 		//書き込みデータを抽出（掲示板idをキーに）
 		BbsReplyDAO brDao = new BbsReplyDAO();
-		List<Reply> replyList = brDao.replyselect(new Reply(bbs_id,"","","",0,""));
+		List<Reply> replyList = brDao.replyselect(new Reply(bbs_id,"","",0,""));
 
 
 		// 検索結果をリクエストスコープに格納する
@@ -86,14 +86,13 @@ public class BbsDetailServlet extends HttpServlet {
 		int bbs_id = Integer.parseInt(request.getParameter("bbs_id"));
 		String user_id = request.getParameter("user_id");
 		String user_name = request.getParameter("user_name");
-		String reply_name = request.getParameter("reply_name");
 		int reply_range =Integer.parseInt(request.getParameter("reply_range"));
 		String reply_contents = request.getParameter("reply_contents");
 
 
 		// コメントを行う
 		BbsReplyDAO bDao = new BbsReplyDAO();
-		bDao.insert(new Reply(0,user_id,user_name,reply_name,reply_range,reply_contents));
+		bDao.insert(new Reply(0,user_id,user_name,reply_range,reply_contents));
 
 		// detailページにフォワードする
 	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_detail.jsp");

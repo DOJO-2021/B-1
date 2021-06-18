@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.BbsDAO;
+import dao.BbsDraftDAO;
 import model.BBS;
 /**
  * Servlet implementation class BbsCreateServlet
@@ -56,8 +57,11 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 
 		// 登録を行う
 		BbsDAO bDao = new BbsDAO();
+		 if (request.getParameter("submit").equals("作成")) {
 		 bDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
-
+		 } else if(request.getParameter("submit").equals("下書き")) {
+		dDao.insert(new Draft(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category))
+		 }
 
 		// 掲示板トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");

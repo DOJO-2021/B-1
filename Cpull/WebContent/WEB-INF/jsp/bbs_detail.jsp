@@ -3,7 +3,7 @@
 <%@ page import="model.BBS" %>
 <%@ page import="model.Reply" %>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<% String bbs_title = (String)request.getAttribute("bbs_id"); %>
+<% String bbs_title = (String)request.getAttribute("bbs_title"); %>
 <% String bbs_details = (String)request.getAttribute("bbs_details"); %>
 
 <!DOCTYPE html>

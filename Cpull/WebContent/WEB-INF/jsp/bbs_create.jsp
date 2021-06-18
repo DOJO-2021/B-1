@@ -17,9 +17,9 @@
 		<!-- サブメニュー追加 -->
 		<form method="POST" action="/Cpull/BbsCreateServlet">
 		タイトル<br>
-			<input type="text" name="bbs_title" placeholder="スレッドタイトルを入力" id="new_title"><br>
+			<input type="text" name="bbs_title" placeholder="スレッドタイトルを入力" ><br>
 		詳細<br>
-			<input type="text" name="bbs_details" placeholder="スレッドの内容を入力" id="new_detail"><br>
+			<input type="text" name="bbs_details" placeholder="スレッドの内容を入力"><br>
 			<table>
 			<tr>
 				<th>悩み</th>
