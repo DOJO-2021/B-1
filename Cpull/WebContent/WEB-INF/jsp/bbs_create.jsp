@@ -35,7 +35,7 @@
 					<option value="4">その他</option>
 				</select>
 				</td>
-				<td>
+				<!-- <td>
 				<select name="bbs_category">
 					<option value="0">パーソナルスキルコース</option>
 					<option value="1">IT基礎コース</option>
@@ -43,7 +43,7 @@
 					<option value="3">開発演習</option>
 					<option value="4">その他</option>
 				</select>
-				</td>
+				</td>-->
 			</tr>
 			</table>
 	<div>
@@ -54,16 +54,16 @@
 			</select>
 	</div>
 
-<div>
-	パスワード<br>
-	<input type="text" name="bbs_pw">
-</div>
-<div>
-	<input type="submit" name="submit"  value="下書き">
-	<input type="submit" name="submit" value="作成">
-</div>
+	<div>
+		パスワード<br>
+		<input type="text" name="bbs_pw">
+	</div>
+	<div>
+		<input type="submit" name="submit"  value="下書き">
+		<input type="submit" name="submit" value="作成">
+	</div>
 
-		</form>
+</form>
 	</main>
 </body>
 </html>
