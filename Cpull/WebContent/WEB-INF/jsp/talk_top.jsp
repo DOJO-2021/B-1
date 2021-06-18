@@ -24,42 +24,42 @@
 			<div class="talkroom_box">
 				<form action="/Cpull/TalkroomDetailServlet" method="post">
 					<ul class="roomlist1">
-					<li>
+					<li class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="1"></dd>
-							<dt>雑談部屋</dt>
+							<dd><input type="submit" class="button" name="room" value="1"></dd>
+							<dt class="word">雑談部屋</dt>
 						</dl>
 					</li>
-					<li>
+					<li class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="2"></dd>
-							<dt>お昼ご飯自慢</dt>
+							<dd><input type="submit" class="button" name="room" value="2"></dd>
+							<dt class="word">お昼ご飯自慢</dt>
 						</dl>
 					</li>
-					<li>
+					<li class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="3"></dd>
-							<dt>地方出身者あつまれ！</dt>
+							<dd><input type="submit" class="button" name="room" value="3"></dd>
+							<dt class="word">地方出身者あつまれ！</dt>
 						</dl>
 					</li>
 					</ul>
 					<ul class="roomlist2">
-					<li>
+					<li  class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="4"></dd>
-							<dt>動物好きの方話しましょう</dt>
+							<dd><input type="submit" class="button" name="room" value="4"></dd>
+							<dt class="word">動物好きの方話しましょう</dt>
 						</dl>
 					</li>
-					<li>
+					<li  class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="5"></dd>
-						    <dt>バスケ好きな人！</dt>
+							<dd><input type="submit" class="button" name="room" value="5"></dd>
+						    <dt class="word">バスケ好きな人！</dt>
 						</dl>
 					</li>
-					<li>
+					<li  class="item">
 						<dl>
-							<dd><input type="submit" class="talkroom" name="room" value="6"></dd>
-							<dt>野球好きな人</dt>
+							<dd><input type="submit" class="button" name="room" value="6"></dd>
+							<dt class="word">野球好きな人</dt>
 						</dl>
 					</li>
 					</ul>

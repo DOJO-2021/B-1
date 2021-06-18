@@ -14,7 +14,7 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 		<main>
-			<p>送信が完了しました！</p>
+			<h1 class="top_name">送信が完了しました！</h1>
 		</main>
 	</div>
 </body>

@@ -13,7 +13,6 @@
 <body>
 	<div class="wrapper">
 		<main>
-			<!-- サブメニュー追加 -->
 			<h1>検索結果</h1>
 			${bbsList.size()}件ヒットしました！
 			<c:forEach var="e" items="${bbsList}">

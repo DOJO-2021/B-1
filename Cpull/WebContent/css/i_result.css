@@ -1,2 +1,8 @@
 @charset "UTF-8";
 /*問い合わせ送信完了画面用*/
+
+/*top_nameクラス*/
+.top_name {
+  text-align: center;
+  color: #52658f;
+}
