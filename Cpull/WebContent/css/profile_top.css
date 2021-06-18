@@ -1,2 +1,59 @@
 @charset "UTF-8";
 /*自己紹介トップ画面用*/
+
+/**{
+  outline: 1px solid #ff0000;
+}
+*/
+
+.wrapper {
+ margin: 0 auto 0 auto;	/* nav中央揃え */
+ width: 900px;			/* 幅を固定 */
+}
+
+
+.top_name {
+  text-align: center;
+  color: #52658f;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+}
+
+td {
+	padding-left: 60px;
+}
+
+.button1, .button2 {
+  display       : inline-block;
+  font-size     : 16pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  background    : #ffa954;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  text-decoration: none;
+  font-weight: bold;
+  width: 100px;
+  height: 30px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  margin-top: 20px;
+  /*margin-left: 150px;*/
+
+}
+
+.msg {
+	margin-top: 40px;
+	text-align: center;
+}
+
+a {
+  text-decoration: none;
+}

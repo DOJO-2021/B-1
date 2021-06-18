@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>全てのプロフィール一覧</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/profile_list.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -17,11 +18,12 @@
 
 
 		<!-- メイン（ここから） -->
-		<h1>自己紹介一覧</h1>
+		<h1 class="top_name">自己紹介一覧</h1>
 		<br>
-			${cardList.size()}件ヒットしました！
+			<div class="msg">${cardList.size()}件ヒットしました！</div>
 		<hr>
 
+		<div class="list_box">
 		<c:forEach var="e" items="${cardList}">
 			<form method="POST" action="/Cpull/ProfileServlet.java">
 
@@ -35,11 +37,15 @@
 				特技<input type="text" name="USER_SKILL" value="${e.user_skill}"><br>
 				誕生日<input type="text" name="USER_BIRTH" value="${e.user_birth}"><br>
 				備考<input type="text" name="USER_REMARKS" value="${e.user_remarks}"><br>
-				<hr><!-- 線のスタイル変えるのアリ（点線とか！） -->
+
+
 
 			</form>
 
 		</c:forEach>
+		</div>
+
+		<hr><!-- 線のスタイル変えるのアリ（点線とか！） -->
 
 
 	</div>

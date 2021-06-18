@@ -5,16 +5,20 @@
 <head>
 <meta charset="UTF-8">
 <title>自己紹介｜トップ</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/profile_top.css">
 </head>
 <body>
 	<div class="wrapper">
 		<header>
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
+
 		<!-- メイン（ここから） -->
-		<h1>自己紹介トップ</h1>
+
+		<h1 class="top_name">自己紹介トップ</h1>
 		<form method="POST" action="/Cpull/ProfileServlet">
+
 			<table>
 				<tr>
 					<td><label>氏名<br> <input type="text"
@@ -47,9 +51,11 @@
 					</label></td>
 				</tr>
 				<tr>
-					<td colspan="2"><input type="submit" id="search" name="serch" value="検索">
+					<td colspan="2"><input type="submit" id="search" name="serch" value="検索" class="button1">
+
+				<div class="msg">登録者すべてのプロフィールを閲覧できます</div>
 					 <a href="/Cpull/ProfileListServlet">
-					 <input type="button" id="search" name="list" value="一覧">
+					 <input type="button" id="search" name="list" value="一覧" class="button2">
 					 </a>
 					</td>
 				</tr>

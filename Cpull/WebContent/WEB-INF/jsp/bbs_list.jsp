@@ -6,12 +6,13 @@
 	<meta charset="UTF-8">
 	<title>スレッド一覧</title>
 	<link rel="stylesheet" href="/Cpull/css/bbs_list.css">
+	<link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 	<jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+	<jsp:include page = "/WEB-INF/jsp/submenu.jsp"/>
 </head>
 <body>
 	<div class="wrapper">
 		<main>
-			<!-- 後でサブメニュー追加 -->
 			<h1>スレッド一覧</h1>
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
