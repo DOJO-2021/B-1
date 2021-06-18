@@ -12,7 +12,9 @@
 
 <body>
 	<header>
-	    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
+	<h1 class="logo">
+     <img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130">
+  	</h1>
 	</header>
 
 	<main>

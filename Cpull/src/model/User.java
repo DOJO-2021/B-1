@@ -48,6 +48,12 @@ public class User implements Serializable {
 		this.user_image = user_image;
 	}
 
+	// 引数が1つのコンストラクタ
+	public User(String user_id) {
+		super();
+		this.user_id = user_id;
+	}
+
 	//引数がないコンストラクタ（デフォルトコンストラクタ）
 	public User() {
 		super();

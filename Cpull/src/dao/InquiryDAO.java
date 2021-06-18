@@ -21,17 +21,17 @@ public class InquiryDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into Inquiry values(null,?, ?, ?,)";
+			String sql = "insert into Inquiry values(?, null, ?, ?, ?,)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
 
-			/*if (inquirycard.getUser_id() != null) {
+			if (inquirycard.getUser_id() != null) {
 				pStmt.setString(1, inquirycard.getUser_id());
 			} else {
 				pStmt.setString(1, "null");
 			}
-			*/
+
 			if (inquirycard.getSubject() != null) {
 				pStmt.setString(1, inquirycard.getSubject());
 			} else {

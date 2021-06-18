@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,6 +32,15 @@ public class MypageServlet extends HttpServlet {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
+		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
+		//セッションidを変数u_idに代入
+		//userモデルを作成（u_id,"",,,,)
+		// new user(u_id)
+		//上のモデルでdaoのセレクト分を実行して、lisｔ方の変数に代入
+
+		//上記のデータをリクエストスコープに保存
+
+
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
@@ -66,6 +76,13 @@ public class MypageServlet extends HttpServlet {
 		String user_remarks = request.getParameter("USER_REMARKS");
 		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
 		String user_image = request.getParameter("USER_IMAGE");
+
+		// セッションIDと一致するリストの検索
+		UserDAO sDao = new UserDAO();
+		List<User> cardList = sDao.select(new User(user_id, "", "", "", "", 0, "", "", "", "", "", 0, ""));
+
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
 
 		// 更新を行う
 		UserDAO uDao = new UserDAO();
