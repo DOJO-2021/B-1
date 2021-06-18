@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import dao.InquiryDAO;
 import model.Inquiry;
+import model.LoginUser;
 
 /**
  * Servlet implementation class InquiryServlet
@@ -54,10 +55,11 @@ public class InquiryServlet extends HttpServlet {
 
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				String user_id = session.getAttribute("id").toString();
+				LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+				String user_id = user_id_id.getId();
 				String subject= request.getParameter("SUBJECT");
 				String message= request.getParameter("MESSAGE");
-				System.out.println(user_id); //ちゃんと入ってるかコンソールで確認
+				//System.out.println(user_id); //ちゃんと入ってるかコンソールで確認
 				// 登録処理を行う
 				InquiryDAO iDao = new InquiryDAO();
 				iDao.insert(new Inquiry(user_id, 0, subject, message, null)); //ユーザーID,お問い合わせID,件名,内容,お問い合わせ時刻

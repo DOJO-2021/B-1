@@ -47,6 +47,13 @@ public class LoginServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("id", new LoginUser(id));
 
+
+//テスト成功
+//		request.setCharacterEncoding("UTF-8");
+//		LoginUser user_id = (LoginUser) session.getAttribute("id");
+//		String user_id_id = user_id.getId();
+//		System.out.println(user_id_id); //ちゃんと入ってるかコンソールで確認
+
 		// セッションスコープにクラス(受講者orその他)を格納する
 		// HttpSession session = request.getSession();
 		// session.setAttribute("user_class", new LoginUser(user_class));
