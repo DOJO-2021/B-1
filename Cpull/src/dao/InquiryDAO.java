@@ -33,19 +33,19 @@ public class InquiryDAO {
 			}
 
 			if (inquirycard.getSubject() != null) {
-				pStmt.setString(1, inquirycard.getSubject());
-			} else {
-				pStmt.setString(1, "null");
-			}
-			if (inquirycard.getMessage() != null) {
-				pStmt.setString(2, inquirycard.getMessage());
+				pStmt.setString(2, inquirycard.getSubject());
 			} else {
 				pStmt.setString(2, "null");
 			}
-			if (inquirycard.getTs() != null) {
-				pStmt.setTimestamp(3, inquirycard.getTs());
+			if (inquirycard.getMessage() != null) {
+				pStmt.setString(3, inquirycard.getMessage());
 			} else {
-				pStmt.setTimestamp(3, null);
+				pStmt.setString(3, "null");
+			}
+			if (inquirycard.getTs() != null) {
+				pStmt.setTimestamp(4, inquirycard.getTs());
+			} else {
+				pStmt.setTimestamp(4, null);
 			}
 
 			// SQL文を実行する
