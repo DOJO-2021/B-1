@@ -2,8 +2,8 @@
 /*全画面共通*/
 html {
       font-size: 16px;
-      font-family: sans-serif;
-      }
+      font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+    }
 
      /*全画面の背景色*/
 body {

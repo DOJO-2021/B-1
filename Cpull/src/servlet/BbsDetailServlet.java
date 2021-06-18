@@ -43,17 +43,17 @@ public class BbsDetailServlet extends HttpServlet {
 
 		//sql文を実行
 		//今回はダミーで掲示板idは”1”で実行
-		String bbs_id ="1";
-		int int_id = 1;
+		//String bbs_id ="1";
+		int bbs_id = 1;
 //				Integer.parseInt(request.getParameter("bbs_id"));
-		System.out.println(int_id);
+		//System.out.println(int_id);
 		//詳細データを抽出（掲示板idをキーに）
 		BbsDAO bDao = new BbsDAO();
-		List<BBS> bbsList = bDao.select(new BBS("",int_id,"","","",0,0));
+		List<BBS> bbsList = bDao.detailselect(new BBS("",bbs_id,"","","",0,0));
 
 		//書き込みデータを抽出（掲示板idをキーに）
 		BbsReplyDAO brDao = new BbsReplyDAO();
-		List<Reply> replyList = brDao.select(new Reply(int_id,"","","",0,""));
+		List<Reply> replyList = brDao.replyselect(new Reply(bbs_id,"","","",0,""));
 
 
 		// 検索結果をリクエストスコープに格納する

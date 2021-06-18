@@ -4,7 +4,7 @@
 
 /*logoクラス*/
 .logo {
- margin: 50px 0 20px 0; /*ロゴ中央揃え*/
+ margin: 15px 0 10px 0; /*ロゴ中央揃え*/
  line-height: 0;
  text-align: center;
 }
@@ -25,8 +25,8 @@
   text-align: center;
   background-color: #ffa954;
   float: left;
-  height: 50px;
-  line-height: 50px;
+  height: 40px;
+  line-height: 40px;
   margin-right: 2px;
 }
 

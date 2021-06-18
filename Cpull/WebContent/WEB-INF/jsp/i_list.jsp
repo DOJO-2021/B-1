@@ -17,8 +17,12 @@
 			<!-- ID<input type="text" name="USER_ID" value="${Inquiry.user_id}"><br> -->
 			<table>
 				<tr>
+					<th>ユーザーID</th>
+					<th><input type="text" name="USER_ID" value="dojohanako@seplus2021.onmicrosoft.com"></th>
+				</tr>
+				<tr>
 					<th>お問い合わせID</th>
-					<th><input type="text" name="Inquiry_id" value="3"></th>
+					<th><input type="text" name="INQUIRY_ID" value="1"></th>
 				</tr>
 				<tr>
 					<th>件名</th>
@@ -35,6 +39,34 @@
 						value="2021-06-15 11:49:03.339862"></th>
 				</tr>
 			</table>
+			<hr>
+						<table>
+				<tr>
+					<th>ユーザーID</th>
+					<th><input type="text" name="USER_ID" value="dojohanako@seplus2021.onmicrosoft.com"></th>
+				</tr>
+				<tr>
+					<th>お問い合わせID</th>
+					<th><input type="text" name="INQUIRY_ID" value="2"></th>
+				</tr>
+				<tr>
+					<th>件名</th>
+					<th><input type="text" name="SUBJECT" value="ログアウトについて"></th>
+				</tr>
+				<tr>
+					<th>内容</th>
+					<th><input type="text" name="MESSAGE"
+						value="ログアウトできません！"></th>
+				</tr>
+				<tr>
+					<th>お問い合わせ時刻</th>
+					<th><input type="text" name="TS"
+						value="2021-06-18 11:39:26.752841"></th>
+				</tr>
+			</table>
+			<hr>
+
+
 		</main>
 	</div>
 </body>

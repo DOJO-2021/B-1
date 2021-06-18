@@ -33,3 +33,8 @@ div { text-align : center ;
   text-align: center;
   display: block;
 }
+
+/* ID/PWアラートの色 */
+#output {
+	color: #ff0000;
+}
