@@ -10,11 +10,7 @@ import java.util.List;
 
 import model.Reply;
 
-//引数cardで指定されたレコードを登録し、成功したらtrueを返す
-// public boolean insert(Reply card) {
-	//	Connection conn = null;
-		//boolean result = false;
-	public class BbsReplyDAO{
+public class BbsReplyDAO{
 		// 引数inquirycardで指定されたレコードを登録し、成功したらtrueを返す
 		public boolean insert(Reply replycard) {
 			Connection conn = null;
@@ -28,7 +24,7 @@ import model.Reply;
 				conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "insert into reply values (0, ?, ?, ?, ?)";
+			String sql = "insert into reply values (null, ?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -45,11 +41,17 @@ import model.Reply;
 				pStmt.setString(2, "null");
 			}
 
-			if (replycard.getReply_contents() != null) {
-				pStmt.setString(3, replycard.getReply_contents());
+			if (replycard.getReply_range() !=0) {
+				pStmt.setInt(4, replycard.getReply_range());
 			}
 			else {
-				pStmt.setString(3, "null");
+				pStmt.setInt(4, 0);
+			}
+			if (replycard.getReply_contents() != null) {
+				pStmt.setString(5, replycard.getReply_contents());
+			}
+			else {
+				pStmt.setString(5, "null");
 			}
 
 
@@ -80,7 +82,7 @@ import model.Reply;
 		return result;
 	}
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-		public List<Reply> select(Reply param) {
+		public List<Reply> replyselect(Reply param) {
 			Connection conn = null;
 			List<Reply> replyList = new ArrayList<Reply>();
 
@@ -92,7 +94,7 @@ import model.Reply;
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "select *from reply where bbs_id like ? ";
+				String sql = "select * from reply where bbs_id= 1 ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 
@@ -106,7 +108,7 @@ import model.Reply;
 					rs.getString("user_id"),
 					rs.getString("user_name"),
 					rs.getInt("reply_range"),
-					rs.getInt("reply_contents")
+					rs.getString("reply_contents")
 							);
 					replyList.add(card);
 				}
