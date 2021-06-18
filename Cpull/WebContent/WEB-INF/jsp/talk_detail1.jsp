@@ -17,7 +17,7 @@
 
 	<main>
 	<div id="wrapper">
-	<div class="talkdetail_box">
+	  <div class="talkdetail_box">
 		<!-- トークルームの題名 -->
 		<h1 class="room_name">雑談部屋</h1>
 
@@ -28,7 +28,7 @@
 		<a href="https://us04web.zoom.us/j/78449923830?pwd=TWRFVFJKdUNUa01GQ3puWENQZzlsdz09" class="button1">入室</a>
 		<!-- zoomのリンク先を貼る -->
 		<a href="/Cpull/TalkroomServlet" class="button2">一覧へ戻る</a>
-	</div>
+	  </div>
 	</div>
 	</main>
 

@@ -2,9 +2,9 @@
 /*トークルームのトップ画面用*/
 
 
-*{
+/**{
   outline: 1px solid #ff0000;
-}
+}*/
 
 
 .wrapper {
@@ -14,9 +14,10 @@
 
 .top_name {
   text-align: center;
+  color: #52658f;
 }
 
-.talkroom {
+.button {
   display       : inline-block;
   font-size     : 18pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
@@ -27,18 +28,18 @@
   text-decoration: none;
   font-weight: bold;
   width: 250px;
-  height: 50px;
-  padding: 60px 10px;
-  margin-top: 10px;
+  height: 100px;
+  margin-right: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+    outline: none;
 
 }
 
 .talkroom_box {
 	margin-top:-10px;
-	padding-left: 80px;
+
 }
 
 .roomlist1, .roomlist2 {
@@ -47,7 +48,6 @@
 	max-width: 1024px;
 	margin: 0 auto;
 	padding: 0;
-
 }
 
 li.roomlist1, li.roomlist2 {
@@ -58,4 +58,10 @@ li.roomlist1, li.roomlist2 {
 
 }
 
+.item {
+	float: left;
+}
 
+.word {
+	text-align: center;
+}

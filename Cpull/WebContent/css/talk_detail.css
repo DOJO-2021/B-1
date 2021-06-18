@@ -18,6 +18,7 @@
 .room_name {
   text-align: center;
   margin-top: 100px;
+  color: #52658f;
 
 }
 
@@ -39,7 +40,17 @@
   height: 30px;
   margin-top: 80px;
   padding-top: 20px;
-  ;
+  outline: none;
 }
+
+.button1 {
+	margin-left: 450px;
+}
+
+
+.button2 {
+	margin-left: 200px;
+}
+
 
 
