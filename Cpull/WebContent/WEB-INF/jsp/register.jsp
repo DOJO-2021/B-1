@@ -49,5 +49,6 @@
     </form>
     </div>
   </main>
+  <script src="/Cpull/js/register.js"></script>
 </body>
 </html>

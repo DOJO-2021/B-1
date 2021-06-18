@@ -54,6 +54,7 @@ public class RegisterServlet extends HttpServlet {
 		*/
 
 		// PWチェック入れる(java p.568参照)
+
 		// 登録処理を行う
 		UserDAO uDao = new UserDAO();
 		if (request.getParameter("REGIST").equals("登録")) {
