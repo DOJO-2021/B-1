@@ -73,10 +73,13 @@ public class ProfileServlet extends HttpServlet {
 		// 検索処理を行う
 		ProfileDAO bDao = new ProfileDAO();
 		List<User> cardList = bDao.select(new User("", user_name,"","", user_company,0, user_prefecture, user_hobby , user_skill, user_birth, user_remarks,0,""));
-
+		List<User> cardList_name = bDao.select_name(new User("", user_name,"","", user_company,0, user_prefecture, user_hobby , user_skill, user_birth, user_remarks,0,""));
+		List<User> cardList_birthday = bDao.select_birthday(new User("", user_name,"","", user_company,0, user_prefecture, user_hobby , user_skill, user_birth, user_remarks,0,""));
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("cardList", cardList);
+		request.setAttribute("cardList", cardList_name);
+		request.setAttribute("cardList", cardList_birthday);
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/profile_list.jsp");
