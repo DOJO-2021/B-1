@@ -43,7 +43,7 @@
 						<option value="3">開発演習</option>
 						<option value="4">その他</option>
 					 </select><br>
-					 <input type="submit" name="submit" value="悩みで検索">
+					 <input type="submit" name="submit" value="悩みで検索" class="troublesearch_button">
 				</div>
 				<div id="questionPass" style="display: none">
 					カテゴリを選択してください：
@@ -54,7 +54,7 @@
 						<option value="13">開発演習</option>
 						<option value="14">その他</option>
 					</select><br>
-					<input type="submit" name="submit" value="質問で検索">
+					<input type="submit" name="submit" value="質問で検索" class="guestionsearch_button">
 				</div>
 				<script src="/Cpull/js/bbs_category.js"></script>
 			</form>

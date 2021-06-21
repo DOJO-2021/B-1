@@ -73,6 +73,35 @@ border-bottom: 2px solid #ccc100;
 }
 /*list_buttonクラスここまで*/
 
+/*troublesearch_buttonクラス*/
+.troublesearch_button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.troublesearch_button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*troublesearch_buttonクラスここまで*/
+
+
+
+/*guestionsearch_buttonクラス*/
+.guestionsearch_button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.guestionsearch_button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*guestionsearch_buttonクラスここまで*/
 /*boxクラス*/
 .box {
 	 margin-left: 190px;/*文字を左寄せ中央*/
