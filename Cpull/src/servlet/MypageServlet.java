@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
+import model.LoginUser;
 import model.Result;
 import model.User;
 
@@ -33,6 +34,22 @@ public class MypageServlet extends HttpServlet {
 			return;
 		}
 
+		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
+		//セッションidを変数u_idに代入
+		// String u_id = session.getAttribute("id").toString();
+		request.setCharacterEncoding("UTF-8");
+		LoginUser Luser_id = (LoginUser) session.getAttribute("id");
+		String u_id = Luser_id.getId();
+		//userモデルを作成（u_id,"",,,,)
+		// User user = new User(user_id);
+		// new user(u_id)
+		//上のモデルでdaoのセレクト分を実行して、lisｔ方の変数に代入
+		// セッションIDと一致するリストの検索
+		UserDAO sDao = new UserDAO();
+		List<User> cardList = sDao.select(new User(u_id));
+		// 検索結果をリクエストスコープに格納する
+		request.setAttribute("cardList", cardList);
+
 		// マイページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/mypage.jsp");
 		dispatcher.forward(request, response);
@@ -51,24 +68,11 @@ public class MypageServlet extends HttpServlet {
 			return;
 		}
 
-		//セッションスコープのidをキーにm_userテーブルからデータを取得するdaoを作成
-		//セッションidを変数u_idに代入
-		String u_id = session.getAttribute("id").toString();
-		System.out.println(u_id);
-		//userモデルを作成（u_id,"",,,,)
-		// User user = new User(user_id);
-		// new user(u_id)
-		//上のモデルでdaoのセレクト分を実行して、lisｔ方の変数に代入
-		// セッションIDと一致するリストの検索
-		UserDAO sDao = new UserDAO();
-		List<User> cardList = sDao.select(new User(u_id));
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("cardList", cardList);
 
 		// リクエストパラメータを取得する
-		request.setCharacterEncoding("UTF-8");
-		String user_id = (String)session.getAttribute("id");
-		// String user_id = request.getParameter("USER_ID");
+		// request.setCharacterEncoding("UTF-8");
+		// String user_id = (String)session.getAttribute("id");
+		String user_id = request.getParameter("USER_ID");
 		String user_name = request.getParameter("USER_NAME");
 		String user_pw = request.getParameter("USER_PW");
 		String user_k_name = request.getParameter("USER_K_NAME");
@@ -91,17 +95,17 @@ public class MypageServlet extends HttpServlet {
 			if (uDao.update(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image))) {
 				// 更新成功
 				request.setAttribute("result",
-				new Result("更新に成功しました。", "/Cpull/MypageServlet"));
+				new Result("更新に成功しました。", "/Cpull/MenuServlet", "メニューへ"));
 			}
 			else {
 				// 更新失敗
 				request.setAttribute("result",
-				new Result("更新に失敗しました。", "/Cpull/MypageServlet"));
+				new Result("更新に失敗しました。", "/Cpull/MenuServlet", "メニューへ"));
 			}
 		}
 
 		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/result.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/r_result.jsp");
 		dispatcher.forward(request, response);
 	}
 

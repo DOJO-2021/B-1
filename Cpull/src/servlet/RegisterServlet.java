@@ -61,12 +61,12 @@ public class RegisterServlet extends HttpServlet {
 			if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, null, null, null, null, null, 0, null))) {
 			// 登録成功
 			request.setAttribute("result",
-			new Result("登録に成功しました。",  "/Cpull/LoginServlet"));
+			new Result("登録に成功しました。",  "/Cpull/LoginServlet", "ログインページへ"));
 			}
 			else {
 			// 登録失敗
 			request.setAttribute("result",
-			new Result("登録に失敗しました！", "/Cpull/LoginServlet"));
+			new Result("登録に失敗しました！", "/Cpull/LoginServlet", "ログインページへ"));
 			}
 		}
 		// 結果ページにフォワードする
