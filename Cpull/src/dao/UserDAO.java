@@ -256,7 +256,7 @@ public class UserDAO {
 				pStmt.setString(9, card.getUser_birth());
 			}
 			else {
-				pStmt.setDate(9, null);
+				pStmt.setString(9, null);
 			}
 			if (card.getUser_remarks() != null) {
 				pStmt.setString(10, card.getUser_remarks());
@@ -324,7 +324,7 @@ public class UserDAO {
 
 				// SQL文を完成させる
 				if (param.getUser_id() != null) {
-					pStmt.setString(1, "%" + param.getUser_id() + "%");
+					pStmt.setString(1, param.getUser_id());
 				}
 				else {
 					pStmt.setString(1, "%");

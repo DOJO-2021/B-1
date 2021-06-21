@@ -11,16 +11,18 @@
 </head>
 <body>
 	<div class="wrapper">
+
 		<main>
-			<h1>掲示板トップ</h1>
-			<h2>キーワード・カテゴリーでスレッドを検索します</h2>
-			<h3>キーワード検索</h3>
+			<h1 class="top_name1">掲示板トップ</h1>
+			<div class="box">
+			<h2 class="top_name2">キーワード・カテゴリーでスレッドを検索します</h2>
+			<h3 class="top_name3">キーワード検索</h3>
 			入力されたキーワードをタイトルに含むスレッドを表示します
 			<form method="POST" action="/Cpull/BbsServlet">
 				<input type="text" name="bbs_search" placeholder="検索したいワードを入力">
-				<input type="submit" name="submit" value="検索"><br>
+				<input type="submit" name="submit" value="検索" class="search_button"><br>
 			</form>
-			<h3>カテゴリー検索</h3>
+			<h3 class="top_name3">カテゴリー検索</h3>
 			<form method="POST" action="/Cpull/BbsCategoryServlet">
 				選択されたカテゴリーのスレッドを表示します<br>
 				<span>カテゴリーの種類を選んでください：</span>
@@ -41,7 +43,7 @@
 						<option value="3">開発演習</option>
 						<option value="4">その他</option>
 					 </select><br>
-					 <input type="submit" name="submit" value="悩みで検索">
+					 <input type="submit" name="submit" value="悩みで検索" class="troublesearch_button">
 				</div>
 				<div id="questionPass" style="display: none">
 					カテゴリを選択してください：
@@ -52,17 +54,19 @@
 						<option value="13">開発演習</option>
 						<option value="14">その他</option>
 					</select><br>
-					<input type="submit" name="submit" value="質問で検索">
+					<input type="submit" name="submit" value="質問で検索" class="guestionsearch_button">
 				</div>
 				<script src="/Cpull/js/bbs_category.js"></script>
 			</form>
-			<h2>掲示板のスレッド一覧を表示します</h2>
+			<h2 class="top_name2">掲示板のスレッド一覧を表示します</h2>
 			<form method="POST" action="/Cpull/BbsListServlet">
-				<input type="submit" name="list" value="一覧">
+				<input type="submit" name="list" value="一覧" class="list_button">
 			</form>
-			<h2>質問・悩みを投稿する</h2>
+			<h2 class="top_name2">質問・悩みを投稿する</h2>
 				<a href="/Cpull/BbsCreateServlet" class="button">スレッド新規作成</a>
+		</div>
 		</main>
 	</div>
+
 </body>
 </html>

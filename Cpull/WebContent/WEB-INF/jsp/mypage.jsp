@@ -24,7 +24,7 @@
         <table>
           <tr>
             <td>ID</td>
-            <td><input type="text" name="id" value="${e.user_id}" readonly></td>
+            <td><input type="text" name="USER_ID" value="${e.user_id}" readonly></td>
           </tr>
           <tr>
             <td>PW</td>
@@ -67,10 +67,6 @@
             <td><input type="text" name="USER_REMARKS" value="${e.user_remarks}"></td>
           </tr>
           <tr>
-            <td>クラス(0:受講者、1:講師、2:事務局、3:その他)</td>
-            <td><input type="text" name="USER_CLASS" value="${e.user_class}" readonly><!-- ※受講者/運営表示させる --></td>
-          </tr>
-          <tr>
             <td>公開範囲</td>
             <td>
               <select name="USER_RANGE">
@@ -80,6 +76,7 @@
             </td>
           </tr>
         </table>
+        <input type="hidden" name="USER_CLASS" value="${e.user_class}" readonly>
         <p>※は必須項目</p>
         <input type="submit" name="SUBMIT" value="更新">
       </form>
