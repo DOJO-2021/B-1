@@ -1,2 +1,87 @@
 @charset "UTF-8";
 /*掲示板トップ画面用*/
+
+
+/*wrapperクラス*/
+.wrapper {
+ margin: 0 auto 0 auto;	/* nav中央揃え */
+ width: 900px;			/* 幅を固定 */
+}
+
+/*top_name1クラス(見出し1)*/
+.top_name1 {
+text-align: center;
+ color: #52658f;
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 26px;
+text-align: center;
+}
+.top_name1::before,
+.top_name1::after {
+content: '';
+width: 70px;
+height: 3px;
+background-color: #e3bf00;
+}
+.top_name1::before {
+margin-right: 20px;
+}
+.top_name1::after {
+margin-left: 20px;
+}
+/*top_name1クラス(見出し1)ここまで*/
+
+
+/*top_name2クラス(見出し2)*/
+.top_name2 {
+color: #333a56;
+}
+/*top_name3クラス(見出し3)*/
+.top_name3 {
+color: #333a56;
+}
+
+
+/*search_buttonクラス*/
+.search_button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.search_button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*search_buttonクラスここまで*/
+
+
+/*list_buttonクラス*/
+.list_button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.list_button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*list_buttonクラスここまで*/
+
+/*boxクラス*/
+.box {
+	 margin-left: 190px;/*文字を左寄せ中央*/
+	 }
+
+main {
+color: #333a56;/*文章の文字*/
+}
+
+a {
+text-decoration:none;/*スレッド新規作成下線無し*/
+}
