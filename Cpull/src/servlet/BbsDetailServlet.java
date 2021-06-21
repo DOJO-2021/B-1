@@ -86,6 +86,8 @@ public class BbsDetailServlet extends HttpServlet {
 
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+//		String user_id = user_id_id.getId();
 		String user_id = request.getParameter("user_id");
 		String user_name = request.getParameter("user_name");
 		String reply_range_string= request.getParameter("reply_range");
