@@ -5,11 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import model.BBS;
+import model.Draft;
 
 public class BbsDraftDAO{
 	// 引数inquirycardで指定されたレコードを登録し、成功したらtrueを返す
-	public boolean insert(BBS draftcard) {
+	public boolean insert(Draft draftcard) {
 		Connection conn = null;
 		boolean result = false;
 
@@ -30,32 +30,32 @@ public class BbsDraftDAO{
 					else {
 						pStmt.setString(1, "null");
 					}
-					if (draftcard.getBbs_title() != null) {
-						pStmt.setString(2, draftcard.getBbs_title());
+					if (draftcard.getDraft_title() != null) {
+						pStmt.setString(2, draftcard.getDraft_title());
 					}
 					else {
 						pStmt.setString(2, "null");
 					}
-					if (draftcard.getBbs_details() != null) {
-						pStmt.setString(3, draftcard.getBbs_details());
+					if (draftcard.getDraft_details() != null) {
+						pStmt.setString(3, draftcard.getDraft_details());
 					}
 					else {
 						pStmt.setString(3, "null");
 					}
-					if (draftcard.getBbs_pw() != null) {
-						pStmt.setString(4, draftcard.getBbs_pw());
+					if (draftcard.getDraft_pw() != null) {
+						pStmt.setString(4, draftcard.getDraft_pw());
 					}
 					else {
 						pStmt.setString(4, "null");
 					}
-					if (draftcard.getBbs_range() != 0) {
-						pStmt.setInt(5, draftcard.getBbs_range());
+					if (draftcard.getDraft_range() != 0) {
+						pStmt.setInt(5, draftcard.getDraft_range());
 					}
 					else {
 						pStmt.setInt(5, 0);
 					}
-					if (draftcard.getBbs_category() != 0) {
-						pStmt.setInt(6, draftcard.getBbs_category());
+					if (draftcard.getDraft_category() != 0) {
+						pStmt.setInt(6, draftcard.getDraft_category());
 					}
 					else {
 						pStmt.setInt(6, 0);

@@ -15,6 +15,7 @@
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 </header>
 <h1>スレッド編集</h1>
+<c:forEach var="e" items="${cardList}" >
 <form  method="POST" action="/Cpull/BbsEditServlet">
 
 タイトル<br>
@@ -60,14 +61,12 @@
 	パスワード<br>
 	<input type="text" name="bbs_pw">
 </div>
-
-
-
 <div>
 	<input type="submit" name="submit" value="下書き保存">
 	<input type="submit" name="submit" value="更新">
 	<input type="submit" name="submit" value="削除">
 </div>
 </form>
+</c:forEach>
 </body>
 </html>

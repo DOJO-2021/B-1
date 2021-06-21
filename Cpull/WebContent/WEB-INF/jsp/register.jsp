@@ -20,6 +20,7 @@
     <h1 class="top_name">新規アカウント登録ページ</h1>
 
     <form class method="POST" action="/Cpull/RegisterServlet">
+    <div class="box">
       <p>新しいIDとPWを入力してください！<br>
       <p>メールアドレスを入力してください<br>
       新しいID<input class="" type="email" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
@@ -45,7 +46,8 @@
       講師<input type="radio" name="USER_CLASS" value="1">
       事務局<input type="radio" name="USER_CLASS" value="2">
      その他<input type="radio" name="USER_CLASS" value="3"><br>
-      <input type="submit" name="REGIST" value="登録"><br>
+      <input type="submit" name="REGIST" value="登録" class="button"><br>
+   </div>
     </form>
     </div>
   </main>

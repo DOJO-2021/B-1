@@ -61,9 +61,7 @@
 				<input type="submit" name="list" value="一覧">
 			</form>
 			<h2>質問・悩みを投稿する</h2>
-			<form method="GET" action="/Cpull/BbsCreateServlet">
-				<input type="submit" name="create" value="新規作成">
-			</form>
+				<a href="/Cpull/BbsCreateServlet" class="button">スレッド新規作成</a>
 		</main>
 	</div>
 </body>

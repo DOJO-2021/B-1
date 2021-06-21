@@ -2,9 +2,7 @@
 /*ログイン画面用*/
 
 
-*{
-  outline: 1px solid #ff0000;
-}
+
 
 /*logoクラス*/
 .logo {
@@ -18,23 +16,45 @@
  margin: 0 auto 0 auto;
  width: 900px;			/* 幅を固定 */
 }
+/*buttonクラス*/
+.button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*buttonクラスここまで*/
 
-
-table {
-    margin-left: auto;
-    margin-right: auto;
-    color: #333a56;
-       }
-
-div { text-align : center ;
-     }
 
 .create {
-  text-align: center;
-  display: block;
+text-align: center;
+display: block;
 }
+
+
+
+
+a {
+text-decoration:none;
+}
+table {
+margin-left: auto;
+margin-right: auto;
+color: #333a56;
+       }
+
+div {
+text-align : center ;
+     }
+
+
 
 /* ID/PWアラートの色 */
 #output {
-	color: #ff0000;
-}
+color: #ff0000;
+        }

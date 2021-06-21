@@ -9,10 +9,11 @@
 </head>
 <body>
    <div class="wrapper">
+
    <header class="header">
 
 	<h1 class="logo">
-     <img src="images/Cpull_logo.png" alt="CpullLOGO" width="240" height="130">
+     <img src="images/Cpull_logo.png" alt="CpullLOGO" width="180" height="90">
   </h1>
 
         <ul id="nav">
@@ -26,6 +27,6 @@
 
   </header>
   </div>
+
 </body>
 </html>
-
