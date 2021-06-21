@@ -25,8 +25,7 @@
 			<option value="0">五十音順</option>
 			<option value="1">誕生日順</option>
 			<option value="2">登録順</option>
-		</select>
-		<input type="submit" name="profsort" value="実行">
+		</select> <input type="submit" name="profsort" value="実行">
 		<hr>
 
 		<div class="list_box">
@@ -36,51 +35,133 @@
 					<!-- 画像保留 -->
 					<table>
 						<tr>
-							<td>氏名<br>
-							<input type="text" name="USER_NAME" value="${e.user_name}">
+							<td>氏名<br> <input type="text" name="USER_NAME"
+								value="${e.user_name}">
 							</td>
-							<td>よみかた<br>
-							<input type="text" name="USER_K_NAME" value="${e.user_k_name}">
+							<td>よみかた<br> <input type="text" name="USER_K_NAME"
+								value="${e.user_k_name}">
 							</td>
 						</tr>
 						<tr>
-							<td>会社名<br>
-							<input type="text" name="USER_COMPANY" value="${e.user_company}">
+							<td>会社名<br> <input type="text" name="USER_COMPANY"
+								value="${e.user_company}">
 							</td>
-							<td>出身<br>
-							<input type="text" name="USER_PREFECTURE"
+							<td>出身<br> <input type="text" name="USER_PREFECTURE"
 								value="${e.user_prefecture}">
 							</td>
 						</tr>
 						<tr>
-							<td>趣味<br>
-							<input type="text" name="USER_HOBBY" value="${e.user_hobby}">
+							<td>趣味<br> <input type="text" name="USER_HOBBY"
+								value="${e.user_hobby}">
 							</td>
-							<td>特技<br>
-							<input type="text" name="USER_SKILL" value="${e.user_skill}">
+							<td>特技<br> <input type="text" name="USER_SKILL"
+								value="${e.user_skill}">
 							</td>
 						</tr>
 						<tr>
-							<td>誕生日<br>
-							<input type="text" name="USER_BIRTH" value="${e.user_birth}">
+							<td>誕生日<br> <input type="text" name="USER_BIRTH"
+								value="${e.user_birth}">
 							</td>
-							<td>備考<br>
-							<input type="text" name="USER_REMARKS" value="${e.user_remarks}">
+							<td>備考<br> <input type="text" name="USER_REMARKS"
+								value="${e.user_remarks}">
 							</td>
 						</tr>
 					</table>
-
-
-
+					<hr>
+					<!-- 線のスタイル変えるのアリ（点線とか！） -->
 				</form>
-
 			</c:forEach>
 		</div>
 
-		<hr>
-		<!-- 線のスタイル変えるのアリ（点線とか！） -->
+		<div class="list_box">
+			<c:forEach var="e" items="${cardList_name}">
+				<form method="POST" action="/Cpull/ProfileServlet.java">
 
+					<!-- 画像保留 -->
+					<table>
+						<tr>
+							<td>氏名<br> <input type="text" name="USER_NAME"
+								value="${e.user_name}">
+							</td>
+							<td>よみかた<br> <input type="text" name="USER_K_NAME"
+								value="${e.user_k_name}">
+							</td>
+						</tr>
+						<tr>
+							<td>会社名<br> <input type="text" name="USER_COMPANY"
+								value="${e.user_company}">
+							</td>
+							<td>出身<br> <input type="text" name="USER_PREFECTURE"
+								value="${e.user_prefecture}">
+							</td>
+						</tr>
+						<tr>
+							<td>趣味<br> <input type="text" name="USER_HOBBY"
+								value="${e.user_hobby}">
+							</td>
+							<td>特技<br> <input type="text" name="USER_SKILL"
+								value="${e.user_skill}">
+							</td>
+						</tr>
+						<tr>
+							<td>誕生日<br> <input type="text" name="USER_BIRTH"
+								value="${e.user_birth}">
+							</td>
+							<td>備考<br> <input type="text" name="USER_REMARKS"
+								value="${e.user_remarks}">
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<!-- 線のスタイル変えるのアリ（点線とか！） -->
+				</form>
+			</c:forEach>
+		</div>
 
+		<div class="list_box">
+			<c:forEach var="e" items="${cardList_birthday}">
+				<form method="POST" action="/Cpull/ProfileServlet.java">
+
+					<!-- 画像保留 -->
+					<table>
+						<tr>
+							<td>氏名<br> <input type="text" name="USER_NAME"
+								value="${e.user_name}">
+							</td>
+							<td>よみかた<br> <input type="text" name="USER_K_NAME"
+								value="${e.user_k_name}">
+							</td>
+						</tr>
+						<tr>
+							<td>会社名<br> <input type="text" name="USER_COMPANY"
+								value="${e.user_company}">
+							</td>
+							<td>出身<br> <input type="text" name="USER_PREFECTURE"
+								value="${e.user_prefecture}">
+							</td>
+						</tr>
+						<tr>
+							<td>趣味<br> <input type="text" name="USER_HOBBY"
+								value="${e.user_hobby}">
+							</td>
+							<td>特技<br> <input type="text" name="USER_SKILL"
+								value="${e.user_skill}">
+							</td>
+						</tr>
+						<tr>
+							<td>誕生日<br> <input type="text" name="USER_BIRTH"
+								value="${e.user_birth}">
+							</td>
+							<td>備考<br> <input type="text" name="USER_REMARKS"
+								value="${e.user_remarks}">
+							</td>
+						</tr>
+					</table>
+					<hr>
+					<!-- 線のスタイル変えるのアリ（点線とか！） -->
+				</form>
+			</c:forEach>
+		</div>
 	</div>
 </body>
 </html>
