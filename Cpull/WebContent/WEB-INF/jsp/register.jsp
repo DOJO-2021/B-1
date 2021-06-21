@@ -23,11 +23,24 @@
     <div class="box">
       <p>新しいIDとPWを入力してください！<br>
       <p>メールアドレスを入力してください<br>
-      新しいID<input class="" type="email" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
+      <table>
+        <tr>
+          <td>新しいID</td>
+          <td><input class="" type="email" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required></td>
+        </tr>
+      </table>
       <p>8文字以上16文字未満で登録してください
       <p>アルファベットと数字どちらも含むパスワードを設定してください<br>
-      新しいPW<input type="password" name="USER_PW" required><br>
-      新しいPW(再確認)<input type="password" name="CONFIRM" oninput="event(this)" required><br>
+      <table>
+        <tr>
+          <td>新しいPW</td>
+          <td><input type="password" name="USER_PW" maxlength="15" required></td>
+        </tr>
+        <tr>
+          <td>新しいPW(再確認)</td>
+          <td><input type="password" name="CONFIRM" oninput="event(this)" required></td>
+        </tr>
+      </table>
       <p>氏名・よみかた・会社名を入力してください<br>
       <table>
         <tr>
@@ -50,9 +63,9 @@
       <input type="submit" name="REGIST" value="登録" class="button"><br>
    </div>
     </form>
+    <p id="output"></p>
     </div>
   </main>
-  <p id="output"></p>
   <script src="/Cpull/js/register.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ public class Result implements Serializable {
 		return message;
 	}
 
-	public void setMessage(String Message) {
+	public void setMessage(String message) {
 		this.message = message;
 	}
 }
