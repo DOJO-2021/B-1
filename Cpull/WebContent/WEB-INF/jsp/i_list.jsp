@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>お問い合わせ内容リスト</title>
 <link rel="stylesheet" href="/Cpull/css/common.css">
+<link rel="stylesheet" href="/Cpull/css/i_list.css">
 </head>
 <body>
 	<div class="wrapper">
@@ -13,9 +14,11 @@
 			<jsp:include page="/WEB-INF/jsp/header.jsp" />
 		</header>
 		<main>
-			<p>お問い合わせ入力内容</p>
+			<h1 class="top_name">お問い合わせ入力内容</h1>
 			<!-- ID<input type="text" name="USER_ID" value="${Inquiry.user_id}"><br> -->
-			<table>
+
+			<table class="list">
+
 				<tr>
 					<th>ユーザーID</th>
 					<th><input type="text" name="USER_ID" value="dojohanako@seplus2021.onmicrosoft.com"></th>
@@ -40,7 +43,7 @@
 				</tr>
 			</table>
 			<hr>
-						<table>
+						<table class="list">
 				<tr>
 					<th>ユーザーID</th>
 					<th><input type="text" name="USER_ID" value="dojohanako@seplus2021.onmicrosoft.com"></th>
@@ -63,11 +66,14 @@
 					<th><input type="text" name="TS"
 						value="2021-06-18 11:39:26.752841"></th>
 				</tr>
+
 			</table>
+
 			<hr>
 
 
 		</main>
 	</div>
+
 </body>
 </html>
