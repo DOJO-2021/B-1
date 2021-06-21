@@ -15,9 +15,9 @@
   </header>
 	<main>
 		<!-- サブメニュー追加 -->
+		<h1>スレッド新規作成</h1>
 		<form method="POST" action="/Cpull/BbsCreateServlet">
 		タイトル<br>
-
 			<input type="text" name="bbs_title" placeholder="スレッドタイトルを入力" ><br>
 		詳細<br>
 			<input type="text" name="bbs_details" placeholder="スレッドの内容を入力"><br>
@@ -60,7 +60,8 @@
 		<input type="text" name="bbs_pw">
 	</div>
 	<div>
-		<input type="submit" name="submit"  value="下書き">
+		<input type="submit" name="submit"  value="下書き保存">
+		<input type="submit" name="submit"  value="下書き読み込み">
 		<input type="submit" name="submit" value="作成">
 	</div>
 

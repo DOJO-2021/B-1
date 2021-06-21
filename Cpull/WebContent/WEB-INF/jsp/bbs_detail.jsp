@@ -18,16 +18,14 @@
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
 
-	<h1>掲示板詳細</h1>
+	<h1>スレッド詳細</h1>
 
-	タイトル
-	<br>
-	<p>${bbsList.get(0).bbs_title}</p>
-	<br> 内容
-	<br>
-	<p>${bbsList.get(0).bbs_details}</p><br> コメント欄<br>
+	タイトル<br>
+	<p>${bbsList.get(0).bbs_title}</p><br>
+	 内容<br>
+	<p>${bbsList.get(0).bbs_details}</p><br>
+	 コメント欄<br>
 		<c:forEach var="r" items="${replyList}">
-
 			<p>
 				<c:out value="${r.reply_contents}"></c:out>
 			</p>
@@ -36,7 +34,6 @@
 				<input type="hidden"name="user_id" value="${r.user_id}">
 				 <input type="hidden" name="user_name" value="${r.user_name}">
 				 コメント<br>
-
 				<textarea name="reply_contents"></textarea>
 				<div>
 					<input type="submit" name="submit" value="回答"><br>

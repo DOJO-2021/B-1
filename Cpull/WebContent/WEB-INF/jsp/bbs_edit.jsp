@@ -19,12 +19,11 @@
 <h1>スレッド編集</h1>
 <c:forEach var="e" items="${bbsList}" >
 <form  method="POST" action="/Cpull/BbsEditServlet">
-<input type="hidden"name="bbs_id" value="${e.bbs_id}">
-タイトル<br>
-	<input type="text" name="title" value="${e.bbs_title}"><br>
-内容<br>
-	<input type="text" name="detail" value="${e.bbs_details}"><br>
-
+	<input type="hidden"name="bbs_id" value="${e.bbs_id}">
+	タイトル<br>
+		<input type="text" name="title" value="${e.bbs_title}"><br>
+	内容<br>
+		<input type="text" name="detail" value="${e.bbs_details}"><br>
 			<table>
 			<tr>
 				<th>悩み</th>
@@ -52,23 +51,23 @@
 			</tr>
 			</table>
 
-<div>
-	<label for="bbs_range">公開範囲</label>
-	<select id="kind" name="bbs_range"value="${e.bbs_range}">
-		<option value="0">すべての人</option>
-		<option value="1">受講者のみ</option>
-	</select>
-</div>
-<div>
-	パスワード<br>
-	<input type="text" name="bbs_pw" value="${e.bbs_pw}">
-</div>
-<div>
-	<input type="submit" name="submit" value="下書き保存">
-	<input type="submit" name="submit" value="更新">
-	<input type="submit" name="submit" value="削除">
-</div>
+		<div>
+			<label for="bbs_range">公開範囲</label>
+			<select id="kind" name="bbs_range"value="${e.bbs_range}">
+				<option value="0">すべての人</option>
+				<option value="1">受講者のみ</option>
+			</select>
+		</div>
+		<div>
+		パスワード<br>
+			<input type="text" name="bbs_pw" value="${e.bbs_pw}">
+		</div>
+		<div>
+			<input type="submit" name="submit" value="更新">
+			<input type="submit" name="submit" value="削除">
+		</div>
 </form>
 </c:forEach>
+	<a href="/Cpull/BbsDraftSerlvet"><input type="submit" name="submit" value="下書き保存"></a>
 </body>
 </html>

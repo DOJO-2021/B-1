@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.BbsDraftDAO;
-import model.BBS;
+import model.Draft;
 
 /**
  * Servlet implementation class BbsDraftSerlvet
@@ -26,7 +26,7 @@ public class BbsDraftSerlvet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-			if (session.getAttribute("user_id") == null) {
+			if (session.getAttribute("id") == null) {
 				response.sendRedirect("/B-1/LoginServlet");
 			return;
 			}
@@ -47,21 +47,21 @@ public class BbsDraftSerlvet extends HttpServlet {
 
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("user_id") == null) {
+		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/B-1/LoginUserServlet");
 			return;
 		}
 		// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
 				String user_id = request.getParameter("user_id");
-				String bbs_title = request.getParameter("bbs_title");
-				String bbs_details = request.getParameter("bbs_details");
-				String bbs_pw = request.getParameter("bbs_pw");
-				int bbs_range = Integer.parseInt(request.getParameter("bbs_range"));
-				int bbs_category = Integer.parseInt(request.getParameter("bbs_category"));
+				String draft_title = request.getParameter("bbs_title");
+				String draft_details = request.getParameter("bbs_details");
+				String draft_pw = request.getParameter("bbs_pw");
+				int draft_range = Integer.parseInt(request.getParameter("bbs_range"));
+				int draft_category = Integer.parseInt(request.getParameter("bbs_category"));
 				// 登録を行う
 				BbsDraftDAO drDao = new BbsDraftDAO();
-				drDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
+				drDao.insert(new Draft(user_id,0,draft_title,draft_details,draft_pw,draft_range,draft_category));
 		doGet(request, response);
 	}
 
