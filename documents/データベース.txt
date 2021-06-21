@@ -3,7 +3,7 @@
 Create table m_user
 (user_id varchar(50) not null,user_name varchar(20) not null,user_pw varchar(20) not null,user_k_name varchar(20) not null,
 user_company varchar(50) not null,user_class int not null,user_prefecture varchar(50),user_hobby varchar(50),
-user_skill varchar(50),user_birth date,user_remarks varchar(100),
+user_skill varchar(50),user_birth varchar(20),user_remarks varchar(100),
 user_range int,user_image varchar(50),primary key (user_id));
 
 Create table bbs(user_id varchar(50) not null,bbs_id int auto_increment not null,bbs_title varchar(50) not null,

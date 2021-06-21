@@ -96,6 +96,7 @@ public class BbsEditServlet extends HttpServlet {
 
 				//int bbs_category = Integer.parseInt(request.getParameter("bbs_category"));
 
+				System.out.println(bbs_id);
 
 				// 更新または削除を行う
 				BbsDAO bDao = new BbsDAO();
