@@ -1,16 +1,12 @@
 @charset "UTF-8";
 /*アカウント新規登録画面用*/
 
-*{
-  outline: 1px solid #ff0000;
-}
 
 table {
-    margin-left: auto;
-    margin-right: auto;
+text-align : left ;
        }
 
-div { text-align : center ;
+div { text-align : left ;
       color: #333a56;
      }
 
@@ -48,3 +44,24 @@ div { text-align : center ;
 	margin-left: 20px;
 }
 /*top_nameクラス(見出し)ここまで*/
+
+
+/*boxクラス*/
+.box {
+	 margin-left: 205px;/*文字中央寄せ*/
+	 }
+
+
+/*buttonクラス*/
+.button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*buttonクラスここまで*/

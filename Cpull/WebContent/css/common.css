@@ -6,7 +6,22 @@ html {
     }
 
      /*全画面の背景色*/
+
+
+
+
 body {
-      background-color: #f7f5e6;
-      }
+    background-color: #f7f5e6;            /* 背景色 */
+    width: 100%;
+    border-top:20px solid #ffa954;
+    border-right:20px solid #ffa954;
+    border-bottom:20px solid #52658f;
+    border-left:20px solid #52658f;/* 枠線 */
+    box-sizing:border-box;
+}
+@media screen and (max-width: 767px){
+body {
+    border: 10px solid #ffa954;/* SP枠線の幅 */
+}
+}
 

@@ -32,7 +32,7 @@
           </tr>
           <tr>
             <td>画像</td>
-            <td><input type="text" name="USER_IMAGE" value="${e.image}"></td>
+            <td><input type="text" name="USER_IMAGE" value="${e.user_image}"></td>
           </tr>
           <tr>
             <td>※氏名</td>
@@ -67,15 +67,15 @@
             <td><input type="text" name="USER_REMARKS" value="${e.user_remarks}"></td>
           </tr>
           <tr>
-            <td>クラス</td>
-            <td><input type="radio" name="USER_CLASS" value="${e.user_class}" readonly><!-- ※受講者/運営表示させる --></td>
+            <td>クラス(0:受講者、1:講師、2:事務局、3:その他)</td>
+            <td><input type="text" name="USER_CLASS" value="${e.user_class}" readonly><!-- ※受講者/運営表示させる --></td>
           </tr>
           <tr>
             <td>公開範囲</td>
             <td>
               <select name="USER_RANGE">
                 <option value="0">公開</option>
-                <option value="1">非公開</option>
+                <option value="1" selected>非公開</option>
               </select>
             </td>
           </tr>

@@ -8,10 +8,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.BbsDAO;
 import dao.BbsDraftDAO;
 import model.BBS;
+import model.Draft;
+import model.LoginUser;
 /**
  * Servlet implementation class BbsCreateServlet
  */
@@ -24,47 +27,50 @@ public class BbsCreateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
-//		HttpSession session = request.getSession();
-	//	if (session.getAttribute("user_id") == null) {
-		//	response.sendRedirect("/B-1/LoginServlet");
-			//return;
+		 HttpSession session = request.getSession();
+		if (session.getAttribute("user_id") == null) {
+			response.sendRedirect("/B-1/LoginServlet");
+			return;
+
+		}
 
 
 
-//スレッド新規作成ページにフォワードする
-RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_create.jsp");
-dispatcher.forward(request, response);
-}
+		//スレッド新規作成ページにフォワードする
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_create.jsp");
+		dispatcher.forward(request, response);
+	}
 
 /**
 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 */
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 // もしもログインしていなかったらログインサーブレットにリダイレクトする
-//HttpSession session = request.getSession();
-//if (session.getAttribute("user_id") == null) {
-//	response.sendRedirect("/B-1/LoginUserServlet");
-//	return;
-//}
+	HttpSession session = request.getSession();
+		if (session.getAttribute("user_id") == null) {
+			response.sendRedirect("/B-1/LoginUserServlet");
+	return;
+	}
 // リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		String user_id = request.getParameter("user_id");
+		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+		String user_id = user_id_id.getId();
 		String bbs_title = request.getParameter("bbs_title");
 		String bbs_details = request.getParameter("bbs_details");
 		String bbs_pw = request.getParameter("bbs_pw");
 		int bbs_range = Integer.parseInt(request.getParameter("bbs_range"));
 		int bbs_category = Integer.parseInt(request.getParameter("bbs_category"));
-		System.out.println(user_id);
-		System.out.println(bbs_title);
-		System.out.println(bbs_details);
-		System.out.println(bbs_pw);
+		//System.out.println(user_id);
+		//System.out.println(bbs_title);
+		//System.out.println(bbs_details);
+		//System.out.println(bbs_pw);
 		// 登録を行う
 		BbsDAO bDao = new BbsDAO();
-		BbsDraftDAO dDao = new BbsDraftDAO();
+		BbsDraftDAO drDao = new BbsDraftDAO();
 		 if (request.getParameter("submit").equals("作成")) {
 		 bDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
 		 } else if(request.getParameter("submit").equals("下書き")) {
-		dDao.insert(new BBS(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
+		drDao.insert(new Draft(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
 		 }
 
 		// 掲示板トップページにフォワードする

@@ -16,7 +16,7 @@
   </header>
   <main>
     <h1 class="top_name"><c:out value="${result.title}" /></h1>
-    <a href="${result.backTo}">ログインページへ</a>
+    <a href="${result.backTo}"><c:out value="${result.message}"></c:out></a>
   </main>
 </div>
 </body>
