@@ -13,8 +13,9 @@
 <body>
 	<div class="wrapper">
 		<main>
-			<h1>スレッド一覧</h1>
-			<h3>カテゴリー検索</h3>
+			<h1 class="top_name1">スレッド一覧</h1>
+			<div class="box">
+			<h3 class="top_name3">カテゴリー検索</h3>
 			<p><form method="POST" action="/Cpull/BbsCategoryServlet">
 			選択されたカテゴリーのスレッドを表示します<br>
 			カテゴリーの種類を選んでください：
@@ -35,7 +36,7 @@
 					<option value="3">開発演習</option>
 					<option value="4">その他</option>
 				 </select><br>
-				 <input type="submit" name="submit" value="悩みで検索">
+				 <input type="submit" name="submit" value="悩みで検索" class="troublesearch_button">
 			</div>
 			<div id="questionPass" style="display: none">
 				カテゴリを選択してください：
@@ -46,16 +47,18 @@
 					<option value="13">開発演習</option>
 					<option value="14">その他</option>
 				</select><br>
-				<input type="submit" name="submit" value="質問で検索">
+				<input type="submit" name="submit" value="質問で検索" class="guestionsearch_button">
 			</div>
 			<script src="/Cpull/js/bbs_category.js"></script>
 			</form></p>
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
+				<input hidden name="bbs_id" value="${e.bbs_id}">
 				<input type="submit" name="bbs_title" value="${e.bbs_title}">
 				<hr>
 				</form>
 			</c:forEach>
+			</div>
 		</main>
 	</div>
 </body>

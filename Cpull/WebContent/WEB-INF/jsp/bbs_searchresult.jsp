@@ -53,6 +53,7 @@
 			<p>${bbsList.size()}件ヒットしました！</p>
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
+				<input hidden name="bbs_id" value="${e.bbs_id}">
 				<input type="submit" name="bbs_title" value="${e.bbs_title}">
 				<hr>
 				</form>
