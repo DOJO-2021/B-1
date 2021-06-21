@@ -29,27 +29,27 @@
 			<tr>
 				<td>
 				<select name="bbs_category">
-					<option value="0">パーソナルスキルコース</option>
-					<option value="1">IT基礎コース</option>
-					<option value="2">Java基礎コース</option>
-					<option value="3">開発演習</option>
-					<option value="4">その他</option>
+					<option value="00">パーソナルスキルコース</option>
+					<option value="01">IT基礎コース</option>
+					<option value="02">Java基礎コース</option>
+					<option value="03">開発演習</option>
+					<option value="04">その他</option>
 				</select>
 				</td>
 				<!-- <td>
 				<select name="bbs_category">
-					<option value="0">パーソナルスキルコース</option>
-					<option value="1">IT基礎コース</option>
-					<option value="2">Java基礎コース</option>
-					<option value="3">開発演習</option>
-					<option value="4">その他</option>
+					<option value="10">パーソナルスキルコース</option>
+					<option value="11">IT基礎コース</option>
+					<option value="12">Java基礎コース</option>
+					<option value="13">開発演習</option>
+					<option value="14">その他</option>
 				</select>
 				</td>-->
 			</tr>
 			</table>
 	<div>
 		<label for="bbs_range">公開範囲</label>
-			<select id="kind" name="kind">
+			<select id="kind" name="bbs_range">
 				<option value="0">すべての人</option>
 				<option value="1">受講者のみ</option>
 			</select>

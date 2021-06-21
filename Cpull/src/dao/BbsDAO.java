@@ -237,7 +237,7 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "update bbs set user_id=?,bbs_title=?,bbs_details=?,bbs_pw=?,bbs_range=?,bbs_category where bbs_id=?";
+			String sql = "update bbs set user_id=?,bbs_title=?,bbs_details=?,bbs_pw=?,bbs_range=?,bbs_category=? where bbs_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -277,7 +277,7 @@ public class BbsDAO {
 			else {
 				pStmt.setInt(6, 0);
 			}
-			pStmt.setInt(13, card.getBbs_id());
+			pStmt.setInt(7, card.getBbs_id());
 
 			// SQL文を実行する
 			if (pStmt.executeUpdate() == 1) {
