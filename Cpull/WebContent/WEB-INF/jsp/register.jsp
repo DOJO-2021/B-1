@@ -26,7 +26,8 @@
       新しいID<input class="" type="email" name="USER_ID" placeholder="例:seplus@seplus2021.onmicrosoft.com" required><br>
       <p>8文字以上16文字未満で登録してください
       <p>アルファベットと数字どちらも含むパスワードを設定してください<br>
-      新しいPW<input type="text" name="USER_PW" required><br>
+      新しいPW<input type="password" name="USER_PW" required><br>
+      新しいPW(再確認)<input type="password" name="CONFIRM" oninput="event(this)" required><br>
       <p>氏名・よみかた・会社名を入力してください<br>
       <table>
         <tr>

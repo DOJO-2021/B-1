@@ -1,6 +1,6 @@
 'use strict';
 
-//テスト window.alert('こんにちは');
+// テスト window.alert('こんにちは');
 
 /* もしも、IDかPWが未入力なら、デフォルトの動作を行わず、警告ダイアログに「IDとPWを入力してください」と表示する*/
 document.getElementById('form').onsubmit = function(event) {

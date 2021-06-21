@@ -70,7 +70,7 @@ public class MypageServlet extends HttpServlet {
 
 
 		// リクエストパラメータを取得する
-		// request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		// String user_id = (String)session.getAttribute("id");
 		String user_id = request.getParameter("USER_ID");
 		String user_name = request.getParameter("USER_NAME");

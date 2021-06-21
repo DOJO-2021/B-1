@@ -10,11 +10,16 @@ document.getElementById('form').onsubmit = function(event) {
   const ID = document.getElementById('form').USER_ID.value;
   const PW = document.getElementById('form').USER_PW.value;
   const check = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{8,15}$/;
+  // 入力値取得
+  var input1 = USER_PW.value;
+  var input2 = CONFIRM.value;
   if(ID === null || PW === null) {
     event.preventDefault();
     document.getElementById('output').textContent = `IDまたはPWが未入力です`;
   } else if (check.PW === false) {
     event.preventDefault();
     document.getElementById('output').textContent = `PWは8文字以上16文字未満かつアルファベットと数字をどちらも含むものでなくてはなりません。`;
+  } else if (input1 != input2) {
+    event.setCustomValidity("入力値が一致しません。");
   }
 };
