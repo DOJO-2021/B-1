@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.BBS;
 import model.Draft;
 
 public class BbsDraftDAO{
@@ -25,7 +24,7 @@ public class BbsDraftDAO{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 		// SQL文を準備する
-		String sql = "insert into draft values (null, ?, ?, ?, ?)";
+		String sql = "insert into draft values (?, null, ?, ?, ?, ?, ?)";
 		PreparedStatement pStmt = conn.prepareStatement(sql);
 		// SQL文を完成させる
 					if (draftcard.getUser_id() != null) {
@@ -92,9 +91,9 @@ public class BbsDraftDAO{
 				return result;
 			}
 	// 引数paramで検索項目を指定し、検索結果のリストを返す
-	public List<BBS> draftselect(BBS param) {
+	public List<Draft> draftselect(Draft param) {
 		Connection conn = null;
-		List<BBS> bbsList = new ArrayList<BBS>();
+		List<Draft> draftList = new ArrayList<Draft>();
 
 		try {
 			// JDBCドライバを読み込む
@@ -104,40 +103,42 @@ public class BbsDraftDAO{
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from BBS where bbs_id= 1";
+			String sql = "select * from Draft where user_id = ?  ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-				/*		if (param.getBbs_category() != 1) {
-							pStmt.setInt(1, param.getBbs_category() );
+						if (param.getUser_id() != null) {
+							pStmt.setString(1, param.getUser_id() );
 						}
 						else {
-							pStmt.setInt(1, 1);
-						}*/
-			// SQL文を実行し、結果表を取得する
+							pStmt.setString(1,"%");
+						}
+
+
+						// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表をコレクションにコピーする
 			while (rs.next()) {
-				BBS card = new BBS(
+				Draft card = new Draft(
 				rs.getString("user_id"),
 				rs.getInt("bbs_id"),
-				rs.getString("bbs_title"),
-				rs.getString("bbs_details"),
-				rs.getString("bbs_pw"),
-				rs.getInt("bbs_range"),
-				rs.getInt("bbs_category")
+				rs.getString("draft_title"),
+				rs.getString("draft_details"),
+				rs.getString("draft_pw"),
+				rs.getInt("draft_range"),
+				rs.getInt("draft_category")
 				);
-				bbsList.add(card);
+				draftList.add(card);
 			}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
-			bbsList = null;
+			draftList = null;
 		}
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
-			bbsList = null;
+			draftList = null;
 		}
 		finally {
 			// データベースを切断
@@ -147,13 +148,59 @@ public class BbsDraftDAO{
 				}
 				catch (SQLException e) {
 					e.printStackTrace();
-					bbsList = null;
+					draftList = null;
 				}
 			}
 		}
 
 		// 結果を返す
-		return bbsList;
+		return draftList;
 	}
+	// 引数numberで指定されたレコードを削除し、成功したらtrueを返す
+	public boolean delete(int bbs_id) {
+		Connection conn = null;
+		boolean result = false;
+
+		try {
+			// JDBCドライバを読み込む
+			Class.forName("org.h2.Driver");
+
+			// データベースに接続する
+			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
+
+			// SQL文を準備する
+			String sql = "delete from Draft where bbs_id=?";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+
+			// SQL文を完成させる
+			pStmt.setInt(1, bbs_id);
+
+			// SQL文を実行する
+			if (pStmt.executeUpdate() == 1) {
+				result = true;
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			// データベースを切断
+			if (conn != null) {
+				try {
+					conn.close();
+				}
+				catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		// 結果を返す
+		return result;
+	}
+
 
 }
