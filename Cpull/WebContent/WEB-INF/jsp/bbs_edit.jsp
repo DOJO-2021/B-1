@@ -31,7 +31,7 @@
 			</tr>
 						<tr>
 				<td>
-				<select name="bbs_category" value="${e.bbs_category}">
+				<select name="bbs_category" >
 					<option value="00">パーソナルスキルコース</option>
 					<option value="01">IT基礎コース</option>
 					<option value="02">Java基礎コース</option>
@@ -53,7 +53,7 @@
 
 		<div>
 			<label for="bbs_range">公開範囲</label>
-			<select id="kind" name="bbs_range"value="${e.bbs_range}">
+			<select id="kind" name="bbs_range">
 				<option value="0">すべての人</option>
 				<option value="1">受講者のみ</option>
 			</select>

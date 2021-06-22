@@ -33,7 +33,10 @@ public class BbsEditServlet extends HttpServlet {
 //				if (session.getAttribute("user_id") == null) {
 //					response.sendRedirect("/B-1/LoginServlet");
 //					return;
-//				}
+//				} else if(session.getAttribute("user_id") == ){
+		//          response.sendRedirect("/B-1/LogiServlet");
+//					return;
+		//
 		//セッションスコープの取得
 	//	HttpSession session = request.getSession();
 		//セッションスコープからインスタンスを取得
@@ -107,6 +110,7 @@ public class BbsEditServlet extends HttpServlet {
 				}
 				else if(request.getParameter("submit").equals("削除")) {
 					bDao.delete(bbs_id) ;	// 削除成功
+
 				}
 				else if(request.getParameter("submit").equals("下書き保存")){
 					brDao.insert(new Draft(user_id,0,bbs_title,bbs_details,bbs_pw,bbs_range,bbs_category));
