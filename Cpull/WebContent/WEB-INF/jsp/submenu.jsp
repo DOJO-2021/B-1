@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/bbs_common.css">
 </head>
 <body>
- <div class="wrapper">
+<div class="wrapper">
 <!-- サブメニュー　6-17行目を掲示板の各ページのヘッダー下にコピーする -->
 <header>
 <nav class="submenu">
@@ -18,13 +18,12 @@
 		<li>
 			<form method="POST" action="/Cpull/BbsServlet">
 				<input type="text" name="bbs_search" placeholder="検索したいワードを入力">
-				<input type="submit" name="submit" value="検索">
+				<input type="submit" name="submit" value="検索" class="submenu_button">
 			</form>
 		</li>
 	</ul>
 </nav>
-
   </header>
-    </div>
+  </div>
   </body>
 </html>

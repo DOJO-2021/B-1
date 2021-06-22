@@ -46,33 +46,64 @@ table {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: -10px;
+	color: #333a56;
 }
 
 td {
 	padding-left: 60px;
 }
 
-.button1, .button2 {
-  display       : inline-block;
-  font-size     : 16pt;        /* 文字サイズ */
-  text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
-  background    : #ffa954;     /* 背景色     */
-  color         : #ffffff;     /* 文字色     */
-  line-height   : 1em;         /* 1行の高さ  */
-  text-decoration: none;
-  font-weight: bold;
-  width: 100px;
-  height: 30px;
-  margin-right: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  outline: none;
-  margin-top: 20px;
+/*.button1, .button2 {*/
+ /* display       : inline-block;*/
+ /* font-size     : 16pt;        /* 文字サイズ */
+ /* text-align    : center;      /* 文字位置   */
+ /* cursor        : pointer;     /* カーソル   */
+ /* background    : #ffa954;     /* 背景色     */
+ /* color         : #ffffff;     /* 文字色     */
+ /* line-height   : 1em;         /* 1行の高さ  */
+/*  text-decoration: none;*/
+ /* font-weight: bold;*/
+/*  width: 100px;*/
+/*  height: 30px;*/
+ /* margin-right: 40px;*/
+/*  display: flex;*/
+ /* justify-content: center;*/
+ /* align-items: center;*/
+/*  outline: none;*/
+ /* margin-top: 20px;*/
   /*margin-left: 150px;*/
 
+/*}*/
+
+/*button1クラス*/
+.button1 {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
 }
+.button1:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*button1クラスここまで*/
+
+/*button2クラス*/
+.button2 {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.button2:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*button2クラスここまで*/
+
+
 
 .msg {
 	margin-top: 40px;

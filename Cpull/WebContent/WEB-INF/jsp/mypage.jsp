@@ -20,7 +20,7 @@
     <main>
       <h1>マイページ</h1>
       <c:forEach var="e" items="${cardList}">
-      <form method="POST" action="/Cpull/MypageServlet">
+      <form method="POST" action="/Cpull/MypageServlet" enctype="multipart/form-data">
         <table>
           <tr>
             <td>ID</td>
@@ -32,7 +32,7 @@
           </tr>
           <tr>
             <td>画像</td>
-            <td><input type="text" name="USER_IMAGE" value="${e.user_image}"></td>
+            <td><input type="file" name="USER_IMAGE" value="${e.user_image}"></td>
           </tr>
           <tr>
             <td>※氏名</td>

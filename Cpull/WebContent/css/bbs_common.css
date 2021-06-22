@@ -1,22 +1,53 @@
 @charset "UTF-8";
 /*掲示板機能内での共通*/
 
+
+
+
 .submenu {
-display: table;
-margin: 0 auto;
-padding: 0;
-width: 90%;
 text-align: center;
 }
-.submenu li{
-display: table-cell;
-min-width: 50px;
+.submenu ul{
+margin: 0 ;
+padding: 0 ;
 }
-.submenu li a{
-display: block;
-width: 100%;
-padding: 1px 1px;
+
+.submenu a{
+border-bottom:3px solid #52658f
+}
+
+.submenu ul li{
+list-style: none;
+display: inline-block;
+width: 30%;
+min-width: 90px;
+}
+.submenu ul li a{
 text-decoration: none;
-color: #333a56;
-font-weight: bold;
+color: #52658f;
 }
+
+.submenu ul li a:hover{
+color: #ccc100;;
+border-bottom:3px solid #ccc100;;
+}
+
+
+
+
+
+
+
+/*submenu_buttonクラス*/
+.submenu_button {
+color: #ffffff;
+background-color: #52658f;
+border-bottom: 5px solid #ccc100;
+}
+.submenu_button:hover {
+margin-top: 3px;
+color: #ffffc0;
+background: #52658f;
+border-bottom: 2px solid #ccc100;
+}
+/*submenu_buttonクラスここまで*/

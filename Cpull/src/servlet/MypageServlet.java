@@ -1,5 +1,6 @@
 package servlet;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import dao.UserDAO;
 import model.LoginUser;
@@ -77,7 +79,7 @@ public class MypageServlet extends HttpServlet {
 		String user_pw = request.getParameter("USER_PW");
 		String user_k_name = request.getParameter("USER_K_NAME");
 		String user_company = request.getParameter("USER_COMPANY");
-		int user_class = Integer.parseInt(request.getParameter("USER_CLASS")); // 区分はどのように数値取ってくる？
+		int user_class = Integer.parseInt(request.getParameter("USER_CLASS"));
 		String user_prefecture = request.getParameter("USER_PREFECTURE");
 		String user_hobby = request.getParameter("USER_HOBBY");
 		String user_skill = request.getParameter("USER_SKILL");
@@ -85,14 +87,22 @@ public class MypageServlet extends HttpServlet {
 		// SimpleDateFormat fmt = new SimpleDateFormat("yyyy/MM/dd");
 		// fmt.parse(user_birth);
 		String user_remarks = request.getParameter("USER_REMARKS");
-		int user_range = Integer.parseInt(request.getParameter("USER_RANGE")); //区分はどのように数値取ってくる？
-		String user_image = request.getParameter("USER_IMAGE");
+		int user_range = Integer.parseInt(request.getParameter("USER_RANGE"));
+		// 画像ファイルをPart型として取得
+		Part user_image = request.getPart("USER_IMAGE");
+		//ファイル名を取得
+		String filename = user_image.getSubmittedFileName();
+		//アップロードするフォルダ
+		String path = getServletContext().getRealPath("/upload");
+		String filepath = "/image_save/upload/" + filename;
+		//書き込み
+		user_image.write(path + File.separator + filename);
 
 
 		// 更新を行う
 		UserDAO uDao = new UserDAO();
 		if (request.getParameter("SUBMIT").equals("更新")) {
-			if (uDao.update(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image))) {
+			if (uDao.update(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, path))) {
 				// 更新成功
 				request.setAttribute("result",
 				new Result("更新に成功しました。", "/Cpull/MenuServlet", "メニューへ"));
