@@ -21,14 +21,15 @@
 		<h1 class="top_name">自己紹介一覧</h1>
 		<br>
 		<div class="msg">${cardList.size()}件ヒットしました！</div>
+
 		並び替える： <select name="profilesort">
-			<option value="0">五十音順</option>
-			<option value="1">誕生日順</option>
-			<option value="2">登録順</option>
-		</select> <input type="submit" name="profsort" value="実行">
+			<option value="0" id="prof_r">登録順</option>
+			<option value="1" id="prof_n">五十音順</option>
+			<option value="2" id="prof_b">誕生日順</option>
+		</select>
 		<hr>
 
-		<div class="list_box">
+		<div class="list_box" id="profile_regist">
 			<c:forEach var="e" items="${cardList}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
 
@@ -73,7 +74,7 @@
 			</c:forEach>
 		</div>
 
-		<div class="list_box">
+		<div class="list_box" id="profile_name">
 			<c:forEach var="e" items="${cardList_name}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
 
@@ -118,7 +119,7 @@
 			</c:forEach>
 		</div>
 
-		<div class="list_box">
+		<div class="list_box" id="profile_birthday">
 			<c:forEach var="e" items="${cardList_birthday}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
 
@@ -163,5 +164,6 @@
 			</c:forEach>
 		</div>
 	</div>
+	<script src="/Cpull/js/profile_search.js"></script>
 </body>
 </html>
