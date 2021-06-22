@@ -8,6 +8,7 @@
 <title>新規アカウント登録</title>
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/register.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,11 +35,10 @@
       <table>
         <tr>
           <td>新しいPW</td>
-          <td><input type="password" name="USER_PW" pattern="[a-zA-Z0-9_-]{8,15}" required title="8文字以上16文字未満、半角英数字は必須です"></td>
-        </tr>
-        <tr>
-          <td>新しいPW(再確認)</td>
-          <td><input type="password" name="CONFIRM" oninput="event(this)" required></td>
+          <td>
+            <input type="password" id="textPassword" name="USER_PW" pattern="[a-zA-Z0-9_-]{8,15}" required title="8文字以上16文字未満、半角英数字は必須です">
+            <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+          </td>
         </tr>
       </table>
       <p>氏名・よみかた・会社名を入力してください<br>
