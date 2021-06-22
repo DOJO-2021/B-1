@@ -1,29 +1,22 @@
 @charset "UTF-8";
 /*掲示板機能内での共通*/
 
-
-nav ul{
+.submenu {
 display: table;
 margin: 0 auto;
-padding: 0 ;
-width: 80%;
+padding: 0;
+width: 90%;
 text-align: center;
 }
-nav li{
+.submenu li{
 display: table-cell;
 min-width: 50px;
 }
-nav a{
+.submenu li a{
 display: block;
 width: 100%;
+padding: 1px 1px;
 text-decoration: none;
-color: #555;
-padding-bottom: 5px;
-}
-nav li.current{
-border-bottom: 3px solid #92D050;
-}
-nav li:hover{
-color: #E7DA66;
-border-bottom: 3px solid #e3bf00;
+color: #333a56;
+font-weight: bold;
 }
