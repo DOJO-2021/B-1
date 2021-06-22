@@ -33,8 +33,8 @@ public class BbsEditServlet extends HttpServlet {
 //				if (session.getAttribute("user_id") == null) {
 //					response.sendRedirect("/B-1/LoginServlet");
 //					return;
-//				} else if(session.getAttribute("user_id") == ){
-		//          response.sendRedirect("/B-1/LogiServlet");
+//				} else if(session.getAttribute("user_id") != ){
+		//          response.sendRedirect("/B-1/LoginServlet");
 //					return;
 		//
 		//セッションスコープの取得
@@ -48,7 +48,7 @@ public class BbsEditServlet extends HttpServlet {
 		//今回はダミーで掲示板idは”1”で実行
 		//String bbs_id ="1";
 		int bbs_id = 1;
-//				Integer.parseInt(request.getParameter("bbs_id"));
+///			Integer.parseInt(request.getParameter("bbs_id"));
 		//System.out.println(int_id);
 		//詳細データを抽出（掲示板idをキーに）
 		BbsDAO bDao = new BbsDAO();
