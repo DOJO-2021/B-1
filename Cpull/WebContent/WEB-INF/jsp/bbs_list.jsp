@@ -54,9 +54,13 @@
 			<c:forEach var="e" items="${bbsList}">
 				<form method="POST" action="/Cpull/BbsDetailServlet">
 				<input hidden name="bbs_id" value="${e.bbs_id}">
-				<input type="submit" name="bbs_title" value="${e.bbs_title}">
-				<hr>
+				${e.bbs_title}<br>
+				<input type="submit" name="detail" value="詳細ページへ">
 				</form>
+				<form method="GET" action="/Cpull/BbsEditServlet">
+				<input type="submit" name="edit" value="編集ページへ">
+				</form>
+				<hr>
 			</c:forEach>
 			</div>
 		</main>
