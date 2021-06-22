@@ -9,9 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.BbsDAO;
 import model.BBS;
+import model.BBSt;
 
 /**
  * Servlet implementation class BbsServlet
@@ -43,6 +45,12 @@ public class BbsServlet extends HttpServlet {
 
 		// 検索結果をリクエストスコープに格納する
 		request.setAttribute("bbsList", bbsList);
+
+		//検索ワードをセッションスコープに格納する
+		BBSt t = new BBSt();
+		t.setBbs_title(bbs_title);
+		HttpSession session = request.getSession();
+		session.setAttribute("t",t);
 
 		// 結果ページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_searchresult.jsp");
