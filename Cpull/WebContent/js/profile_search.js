@@ -4,16 +4,19 @@
 
 function sort(num) {
 	if (num == 0){
+		document.getElementById("prof_regist").style.display = "block";
 		document.getElementById("prof_name").style.display = "none";
 		document.getElementById("prof_birthday").style.display = "none";
 	}
 	else if (num ==1){
 		document.getElementById("prof_regist").style.display = "none";
+		document.getElementById("prof_name").style.display = "block";
 		document.getElementById("prof_birthday").style.display = "none";
 	}
 	else {
 		document.getElementById("prof_regist").style.display = "none";
 		document.getElementById("prof_name").style.display = "none";
+		document.getElementById("prof_birthday").style.display = "block";
 
 	}
 
