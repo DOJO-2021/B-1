@@ -62,6 +62,8 @@ public class UserDAO {
 		// 結果を返す
 		return loginResult;
 	}
+
+
 	// 引数cardで指定されたレコードを登録し、成功したらtrueを返す
 	public boolean insert(User card) { // cardリスト？確認
 		Connection conn = null;

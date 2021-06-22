@@ -53,25 +53,22 @@ public class RegisterServlet extends HttpServlet {
 		String user_image = request.getParameter("USER_IMAGE");
 		*/
 
-		// PWチェック入れる(java p.568参照)
-
-		// 登録処理を行う
-		UserDAO uDao = new UserDAO();
-		if (request.getParameter("REGIST").equals("登録")) {
-			if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, null, null, null, null, null, 0, null))) {
-			// 登録成功
-			request.setAttribute("result",
-			new Result("登録に成功しました。",  "/Cpull/LoginServlet", "ログインページへ"));
+			// 登録処理を行う
+			UserDAO uDao = new UserDAO();
+			if (request.getParameter("REGIST").equals("登録")) {
+				if (uDao.insert(new User(user_id, user_name, user_pw, user_k_name, user_company, user_class, null, null, null, null, null, 0, null))) {
+				// 登録成功
+				request.setAttribute("result",
+				new Result("登録に成功しました。",  "/Cpull/LoginServlet", "ログインページへ"));
+				}
+				else {
+				// 登録失敗
+				request.setAttribute("result",
+				new Result("登録に失敗しました！", "/Cpull/LoginServlet", "ログインページへ"));
+				}
 			}
-			else {
-			// 登録失敗
-			request.setAttribute("result",
-			new Result("登録に失敗しました！", "/Cpull/LoginServlet", "ログインページへ"));
-			}
-		}
-		// 結果ページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/r_result.jsp");
-		dispatcher.forward(request, response);
+			// 結果ページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/r_result.jsp");
+			dispatcher.forward(request, response);
 	}
-
 }
