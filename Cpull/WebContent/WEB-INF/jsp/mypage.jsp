@@ -18,13 +18,10 @@
       <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
     </header>
     <main>
-      <h1 class="top_name">マイページ</h1>
+      <h1>マイページ</h1>
       <c:forEach var="e" items="${cardList}">
-      <form method="POST" action="/Cpull/MypageServlet">
-
-      <div class="box">
+      <form method="POST" action="/Cpull/MypageServlet" enctype="multipart/form-data">
         <table>
-
           <tr>
             <td>ID</td>
             <td><input type="text" name="USER_ID" value="${e.user_id}" readonly></td>
@@ -35,7 +32,7 @@
           </tr>
           <tr>
             <td>画像</td>
-            <td><input type="text" name="USER_IMAGE" value="${e.user_image}"></td>
+            <td><input type="file" name="USER_IMAGE" value="${e.user_image}"></td>
           </tr>
           <tr>
             <td>※氏名</td>
@@ -78,12 +75,10 @@
               </select>
             </td>
           </tr>
-
         </table>
         <input type="hidden" name="USER_CLASS" value="${e.user_class}" readonly>
         <p>※は必須項目</p>
-        <input type="submit" name="SUBMIT" value="更新" class="button">
-        </div>
+        <input type="submit" name="SUBMIT" value="更新">
       </form>
       </c:forEach>
     </main>
