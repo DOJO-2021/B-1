@@ -1,6 +1,47 @@
 @charset "UTF-8";
-
 /*ヘッダー用*/
+
+
+/*ナビゲーションここから*/
+#nav {
+  list-style: none;
+  display: flex;
+}
+
+#nav li {
+  width: 140px;
+  text-align: center;
+  background-color: #ffa954;
+ /* height: 50px;*/
+  /*line-height: 50px;*/
+ margin-right: 5px;
+  font-size: 11px;
+}
+
+#nav li a {
+  text-decoration: none;
+  color: #fff;
+font-weight: bold;
+ /* padding: 5px;*/
+}
+
+#nav li a:hover {
+  color: #333a56; /*カーソル乗せた時の色*/
+  text-decoration: none;
+}
+#nav li a:active {
+  color: #000000;/*押したときの色*/
+  text-decoration: none;
+}
+
+
+/*nav_boxクラス*/
+.nav_box {
+	margin-right: 32px;/*ナビゲーションリスト左寄せ*/
+}
+
+/*ナビゲーションここまで*/
+
 
 /*logoクラス*/
 .logo {
@@ -15,37 +56,41 @@
  width: 900px;			/* 幅を固定 */
 }
 
-#nav {
 
-  list-style: none;
-  overflow: hidden;
+
+/*自己紹介アイコン*/
+.icon-profile {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/profile.png) no-repeat;
 }
-
-#nav li {
-  width: 140px;
-  text-align: center;
-  background-color: #ffa954;
-  float: left;
-  height: 40px;
-  line-height: 40px;
-  margin-right: 2px;
+/*トークルームアイコン*/
+.icon-talk {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/talk.png) no-repeat;
 }
-
-#nav li a {
-
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 20px;
+/*掲示板アイコン*/
+.icon-bbs {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/bbs.png) no-repeat;
 }
-
-#nav li a:hover {
-  color: #52658f;
-  text-decoration: none;
+/*マイページアイコン*/
+.icon-mypage {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/mypage.png) no-repeat;
 }
-
-#nav li a:active {
-  color: ffffc0;
-  text-decoration: none;
+/*お問い合わせアイコン*/
+.icon-inquiry {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/inquiry.png) no-repeat;
 }
-
+/*ログアウトアイコン*/
+.icon-logout {
+	padding-left: 40px;
+    line-height: 40px;
+    background: url(../images/logout.png) no-repeat;
+}
