@@ -15,7 +15,7 @@
 		<main>
 			<h1>検索結果</h1>
 			<h3>カテゴリー検索</h3>
-			<p><form method="POST" action="/Cpull/BbsCategoryServlet">
+			<p><form method="POST" action="/Cpull/BbsWCServlet">
 			選択されたカテゴリーのスレッドを表示します<br>
 			カテゴリーの種類を選んでください：
 			<label for="worry">
