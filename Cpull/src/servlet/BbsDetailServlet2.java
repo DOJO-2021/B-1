@@ -41,6 +41,8 @@ public class BbsDetailServlet2 extends HttpServlet {
 		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
 		String user_id = user_id_id.getId();
 		//String user_id = request.getParameter("user_id");
+		//LoginUser user_name_name = (LoginUser) session.getAttribute("user_name");
+		//String user_name = user_name_name.getId();
 		String user_name = request.getParameter("user_name");
 		String reply_range_string = request.getParameter("reply_range");
 		int reply_range = Integer.parseInt(reply_range_string);
