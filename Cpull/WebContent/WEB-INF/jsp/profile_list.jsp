@@ -167,5 +167,9 @@
 		</div>
 	</div>
 	<script src="/Cpull/js/profile_search.js"></script>
+<footer>
+  <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br>
+</footer>
 </body>
 </html>
