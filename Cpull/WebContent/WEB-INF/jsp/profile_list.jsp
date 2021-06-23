@@ -23,11 +23,11 @@
 		<div class="msg">${cardList.size()}件ヒットしました！</div>
 
 		並び替える:
-		<input type="radio" id="profile_regist" name="PS" onclick="sort(0)" checked="checked"/>
+		<input type="radio" name="PS" onclick="sort(0)" checked="checked"/>
  		登録順
-		<input type="radio" id="profile_name" name="PS" onclick="sort(1)" />
+		<input type="radio" name="PS" onclick="sort(1)" />
 		五十音順
-		<input type="radio" id="profile_birthday" name="PS" onclick="sort(2)" />
+		<input type="radio" name="PS" onclick="sort(2)" />
 		生年月日順
 		<hr>
 
@@ -76,7 +76,7 @@
 			</c:forEach>
 		</div>
 
-		<div class="list_box" id="prof_name">
+		<div class="list_box" id="prof_name" style="display:none">
 			<c:forEach var="e" items="${cardList_name}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
 
@@ -121,7 +121,7 @@
 			</c:forEach>
 		</div>
 
-		<div class="list_box" id="prof_birthday">
+		<div class="list_box" id="prof_birthday" style="display:none">
 			<c:forEach var="e" items="${cardList_birthday}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
 
