@@ -37,8 +37,8 @@
 	<script src="/Cpull/js/inquiry.js"></script>
 </body>
 <footer>
-	<br> <br> <br> <br> <br> <br> <br> <br>
 	<br> <br> <br> <br> <br>
+	<br> <br> <br> <br>
 </footer>
 
 </html>
