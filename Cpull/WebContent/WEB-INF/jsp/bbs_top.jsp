@@ -67,6 +67,8 @@
 		</div>
 		</main>
 	</div>
-
+<footer>
+  <br>
+</footer>
 </body>
 </html>

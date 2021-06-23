@@ -19,5 +19,9 @@
     <a href="${result.backTo}"><c:out value="${result.message}"></c:out></a>
   </main>
 </div>
+<footer>
+  <br> <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br> <br>
+</footer>
 </body>
 </html>
