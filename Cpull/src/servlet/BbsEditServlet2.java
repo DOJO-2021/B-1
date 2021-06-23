@@ -34,6 +34,9 @@ public class BbsEditServlet2 extends HttpServlet {
 		//		}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
+		//				LoginUser user_name_name = (LoginUser) session.getAttribute("user_name");
+		//				String user_name = user_name_name.getId();
+
 		//				LoginUser user_id_id = (LoginUser) session.getAttribute("id");
 		//				String user_id = user_id_id.getId();
 		String user_id = request.getParameter("user_id");

@@ -18,9 +18,10 @@
       <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
     </header>
     <main>
-      <h1>マイページ</h1>
+      <h1 class="top_name">マイページ</h1>
       <c:forEach var="e" items="${cardList}">
       <form method="POST" action="/Cpull/MypageServlet" enctype="multipart/form-data">
+        <div class="box">
         <table>
           <tr>
             <td>ID</td>
@@ -78,7 +79,8 @@
         </table>
         <input type="hidden" name="USER_CLASS" value="${e.user_class}" readonly>
         <p>※は必須項目</p>
-        <input type="submit" name="SUBMIT" value="更新">
+        <input type="submit" name="SUBMIT" value="更新" class="button">
+      </div>
       </form>
       </c:forEach>
     </main>
