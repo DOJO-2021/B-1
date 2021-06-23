@@ -2,6 +2,7 @@ package model;
 import java.io.Serializable;
 
 public class Reply implements Serializable {
+	private int reply_id;
 	private int bbs_id;
 	private String user_id;
 	private String user_name;
@@ -9,8 +10,9 @@ public class Reply implements Serializable {
 	private String reply_contents;
 
 	//コンストラクタ引数あり
-public Reply(int bbs_id,String user_id, String user_name,int reply_range, String reply_contents) {
+public Reply(int reply_id,int bbs_id,String user_id, String user_name,int reply_range, String reply_contents) {
 	super();
+	this.reply_id = reply_id;
 	this.bbs_id = bbs_id;
 	this.user_id = user_id;
 	this.user_name = user_name;
@@ -20,6 +22,7 @@ public Reply(int bbs_id,String user_id, String user_name,int reply_range, String
 //コンストラクタ引数なし
 public Reply() {
 	super();
+	this.reply_id = 0;
 	this.bbs_id = 0;
 	this.user_id = "";
 	this.user_name = "";
@@ -28,6 +31,12 @@ public Reply() {
 }
 public Reply(int int1, String string, String string2, int int2, int int3) {
 	// TODO 自動生成されたコンストラクター・スタブ
+}
+public int getReply_id() {
+	return reply_id;
+}
+public void setReply_id(int reply_id) {
+	this.reply_id = reply_id;
 }
 public int getBbs_id() {
 	return bbs_id;

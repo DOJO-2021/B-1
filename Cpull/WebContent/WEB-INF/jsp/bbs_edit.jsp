@@ -18,7 +18,7 @@
 </header>
 <h1>スレッド編集</h1>
 <c:forEach var="e" items="${bbsList}" >
-<form  method="POST" action="/Cpull/BbsEditServlet">
+<form  method="POST" action="/Cpull/BbsEditServlet2">
 	<input type="hidden"name="bbs_id" value="${e.bbs_id}">
 	タイトル<br>
 		<input type="text" name="title" value="${e.bbs_title}"><br>
