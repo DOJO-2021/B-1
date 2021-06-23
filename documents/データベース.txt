@@ -9,7 +9,7 @@ user_range int,user_image varchar(50),primary key (user_id));
 Create table bbs(user_id varchar(50) not null,bbs_id int auto_increment not null,bbs_title varchar(50) not null,
 bbs_details varchar(1000) not null,bbs_pw char(4) not null,bbs_range int not null,bbs_category int not null,primary key (bbs_id));
 
-Create table reply(bbs_id int auto_increment not null,user_id varchar(50) not null,user_name varchar(20),reply_range int not null,
+Create table reply(reply_id int auto_increment not null,bbs_id int not null,user_id varchar(50) not null,user_name varchar(20),reply_range int not null,
 reply_contents varchar(1000) not null, primary key(bbs_id));
 
 Drop table reply;
@@ -31,7 +31,7 @@ insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'cssについて',
 'cssでの文章の配置や文字の大きさを思い通りに動かすことができません。
 　どうすればいいですか？アドバイスください！！','2021',0,11);
 
-insert into reply values(null,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+insert into reply values(null,1,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
 'HTML&CSSの基本の教科書のp145のCSSでのページのスタイルを調整するを見ればいけると思います！');
 
 insert into inquiry values('dojohanako@seplus2021.onmicrosoft.com',null,'明日のトークルームについて',

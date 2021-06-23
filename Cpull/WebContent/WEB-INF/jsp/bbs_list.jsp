@@ -57,7 +57,8 @@
 				${e.bbs_title}<br>
 				<input type="submit" name="detail" value="詳細ページへ">
 				</form>
-				<form method="GET" action="/Cpull/BbsEditServlet">
+				<form method="POST" action="/Cpull/BbsEditServlet">
+				<input hidden name="bbs_id" value="${e.bbs_id}">
 				<input type="submit" name="edit" value="編集ページへ">
 				</form>
 				<hr>
