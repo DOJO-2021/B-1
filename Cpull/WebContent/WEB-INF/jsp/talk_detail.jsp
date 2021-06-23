@@ -27,7 +27,9 @@
 			<a href="https://devforum.zoom.us/t/embed-code-on-htmlwebsite-page-for-zoom-streaming-directly-to/13350">入室</a> <!-- zoomのリンク先を貼る -->
 			<a href="/jsp/talk_top.jsp">一覧へ戻る</a>
 	</main>
-
+<footer>
+  <br> <br> <br>
+</footer>
 </body>
 </html>
 

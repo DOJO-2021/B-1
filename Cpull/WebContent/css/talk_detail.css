@@ -5,6 +5,10 @@
   outline: 1px solid #ff0000;
 }*/
 
+main {
+color: #333a56;/*文字の色*/
+}
+
 .wrapper {
  margin: 0 auto 0 auto;	/* nav中央揃え */
  width: 900px;			/* 幅を固定 */

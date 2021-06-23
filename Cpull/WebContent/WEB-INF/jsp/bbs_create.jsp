@@ -16,7 +16,7 @@
 	</header>
 	<main>
 		<!-- サブメニュー追加 -->
-		<h1>スレッド新規作成</h1>
+		<h1 class="top_name">スレッド新規作成</h1>
 		<form method="POST" action="/Cpull/BbsCreateServlet">
 			タイトル<br> <input type="text" name="bbs_title"
 				value="${draftList.get(0).draft_title}" placeholder="スレッドタイトルを入力"><br>

@@ -41,5 +41,9 @@
 		</div>
 	</main>
 	<script src="/Cpull/js/login.js"></script>
+<footer>
+  <br> <br> <br> <br> <br>
+  <br> <br> <br> <br> <br> <br>
+</footer>
 </body>
 </html>
