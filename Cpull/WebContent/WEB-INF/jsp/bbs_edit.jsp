@@ -21,9 +21,9 @@
 <form  method="POST" action="/Cpull/BbsEditServlet2">
 	<input type="hidden"name="bbs_id" value="${e.bbs_id}">
 	タイトル<br>
-		<input type="text" name="title" value="${e.bbs_title}"><br>
+		<input type="text" name="bbs_title" value="${e.bbs_title}"><br>
 	内容<br>
-		<input type="text" name="detail" value="${e.bbs_details}"><br>
+		<input type="text" name="bbs_details" value="${e.bbs_details}"><br>
 			<table>
 			<tr>
 				<th>悩み</th>
@@ -68,6 +68,6 @@
 		</div>
 </form>
 </c:forEach>
-	<a href="/Cpull/BbsDraftSerlvet"><input type="submit" name="submit" value="下書き保存"></a>
+
 </body>
 </html>

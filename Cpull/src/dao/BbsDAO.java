@@ -309,7 +309,8 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "update bbs set user_id=?,bbs_title=?,bbs_details=?,bbs_pw=?,bbs_range=?,bbs_category=? where bbs_id=?";
+			String sql = "update BBS set user_id=?, bbs_title=?, bbs_details=?, bbs_pw=?, bbs_range=?, bbs_category=?"
+			+ "where bbs_id=?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
@@ -317,38 +318,28 @@ public class BbsDAO {
 				pStmt.setString(1, card.getUser_id());
 			}
 			else {
-				pStmt.setString(1, "null");
+				pStmt.setString(1, null);
 			}
 			if (card.getBbs_title() != null) {
 				pStmt.setString(2, card.getBbs_title());
 			}
 			else {
-				pStmt.setString(2, "null");
+				pStmt.setString(2, null);
 			}
 			if (card.getBbs_details() != null) {
 				pStmt.setString(3, card.getBbs_details());
 			}
 			else {
-				pStmt.setString(3, "null");
+				pStmt.setString(3, null);
 			}
 			if (card.getBbs_pw() != null) {
 				pStmt.setString(4, card.getBbs_pw());
 			}
 			else {
-				pStmt.setString(4, "null");
+				pStmt.setString(4, null);
 			}
-			if (card.getBbs_range() != 0) {
-				pStmt.setInt(5, card.getBbs_range());
-			}
-			else {
-				pStmt.setInt(5, 0);
-			}
-			if (card.getBbs_category() != 0) {
-				pStmt.setInt(6, card.getBbs_category());
-			}
-			else {
-				pStmt.setInt(6, 0);
-			}
+			pStmt.setInt(5, card.getBbs_range());
+			pStmt.setInt(6, card.getBbs_category());
 			pStmt.setInt(7, card.getBbs_id());
 
 			// SQL文を実行する
@@ -436,16 +427,16 @@ public class BbsDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:\\pleiades\\workspace\\B-1\\Cpull\\cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from BBS where bbs_id= 1";
+			String sql = "select * from BBS where bbs_id= ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-				/*		if (param.getBbs_category() != 1) {
-							pStmt.setInt(1, param.getBbs_category() );
+					if (param.getBbs_id() != 1) {
+							pStmt.setInt(1, param.getBbs_id() );
 						}
 						else {
 							pStmt.setInt(1, 1);
-						}*/
+						}
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
 

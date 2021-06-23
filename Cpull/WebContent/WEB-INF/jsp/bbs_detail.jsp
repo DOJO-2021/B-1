@@ -20,14 +20,11 @@
 
 	<h1>スレッド詳細</h1>
 
-	タイトル
-	<br>
-	<p>${bbsList.get(0).bbs_title}</p>
-	<br> 内容
-	<br>
-	<p>${bbsList.get(0).bbs_details}</p>
-	<br> コメント欄
-	<br>
+	タイトル<br>
+	<p>${bbsList.get(0).bbs_title}</p><br>
+	 内容<br>
+	<p>${bbsList.get(0).bbs_details}</p><br>
+	コメント欄<br>
 	<c:forEach var="r" items="${replyList}">
 		<p>
 			<c:out value="${r.user_name}"></c:out>:<c:out value="${r.reply_contents}"></c:out>

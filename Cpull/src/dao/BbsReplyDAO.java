@@ -92,8 +92,15 @@ public class BbsReplyDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select * from reply where bbs_id= 1 ";
+			String sql = "select * from reply where bbs_id= ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
+			// SQL文を完成させる
+			if (param.getBbs_id() != 00) {
+					pStmt.setInt(1, param.getBbs_id() );
+				}
+				else {
+					pStmt.setInt(1,00);
+			}
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();
