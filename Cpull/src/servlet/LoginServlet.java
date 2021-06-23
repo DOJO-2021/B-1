@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.UserDAO;
 import model.LoginUser;
 import model.Result;
+import model.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -42,10 +44,21 @@ public class LoginServlet extends HttpServlet {
 		// ログイン処理を行う
 		UserDAO iDao = new UserDAO();
 		if (iDao.isLoginOK(id, pw)) {
-		// ログイン成功
-		// セッションスコープにIDを格納する
-		HttpSession session = request.getSession();
-		session.setAttribute("id", new LoginUser(id));
+			// ログイン成功
+			// セッションスコープにIDを格納する
+			HttpSession session = request.getSession();
+			session.setAttribute("id", new LoginUser(id));
+
+			// DAOから氏名、クラスを取り出す
+			request.setCharacterEncoding("UTF-8");
+			LoginUser Luser_id = (LoginUser) session.getAttribute("id");
+			// セッションIDを変数u_idに代入
+			String u_id = Luser_id.getId();
+			// セッションIDと一致するリストの検索
+			UserDAO sDao = new UserDAO();
+			List<User> IDList = sDao.select(new User(u_id));
+			// 検索結果をArrayListを使ってセッションスコープに格納する
+			session.setAttribute("IDList", IDList);
 
 
 //テスト成功

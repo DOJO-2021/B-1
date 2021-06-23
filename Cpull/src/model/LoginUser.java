@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 public class LoginUser implements Serializable {
 	private String id;	// ログイン時のID
-	// private int user_class; // ログイン時、受講者orそれ以外のチェック
+	private int user_class; // ログイン時、受講者orそれ以外のチェック
 
 	public LoginUser() {
 		this(null);
@@ -23,10 +23,6 @@ public class LoginUser implements Serializable {
 		this.id = id;
 	}
 
-	/*
-	 public LoginUser() {
-		this(null);
-	}
 
 	public LoginUser(int user_class) {
 		this.user_class = user_class;
@@ -36,8 +32,7 @@ public class LoginUser implements Serializable {
 		return user_class;
 	}
 
-	public void setUserId(String id) {
-		this.id = id;
+	public void setUser_class(int user_class) {
+		this.user_class = user_class;
 	}
-	 */
 }
