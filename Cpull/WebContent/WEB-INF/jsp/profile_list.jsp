@@ -21,8 +21,9 @@
 		<h1 class="top_name">自己紹介一覧</h1>
 		<br>
 		<div class="msg">${cardList.size()}件ヒットしました！</div>
-
+<div class="radio_box">
 		並び替える:
+
 		<input type="radio" name="PS" onclick="sort(0)" checked="checked" id="psr">
 		<label for="psr">登録順</label>
 		<input type="radio" name="PS" onclick="sort(1)" id="psn">
@@ -30,7 +31,7 @@
 		<input type="radio" name="PS" onclick="sort(2)" id="psb">
 		<label for="psb">生年月日順</label>
 		<hr>
-
+</div>
 		<div class="list_box" id="prof_regist">
 			<c:forEach var="e" items="${cardList}">
 				<form method="POST" action="/Cpull/ProfileServlet.java">
