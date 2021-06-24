@@ -10,7 +10,12 @@ div { text-align : left ;
       color: #333a56;
      }
 
-
+/*logoクラス*/
+.logo {
+ margin: 50px 0 20px 0; /*ロゴ中央揃え*/
+ line-height: 0;
+ text-align: center;
+}
 
 /*wrapperクラス*/
 .wrapper {

@@ -95,12 +95,8 @@ public class BbsReplyDAO {
 			String sql = "select * from reply where bbs_id= ? ";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			// SQL文を完成させる
-			if (param.getBbs_id() != 1) {
-					pStmt.setInt(1, param.getBbs_id() );
-				}
-				else {
-					pStmt.setInt(1,1);
-			}
+
+				pStmt.setInt(1, param.getBbs_id());
 
 			// SQL文を実行し、結果表を取得する
 			ResultSet rs = pStmt.executeQuery();

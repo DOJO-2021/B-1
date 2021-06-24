@@ -32,10 +32,6 @@
             <td><input type="password" name="USER_PW" value="${e.user_pw}" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
           </tr>
           <tr>
-            <td>画像</td>
-            <td><input type="text" name="USER_IMAGE" value="${e.user_image}"></td>
-          </tr>
-          <tr>
             <td>※氏名</td>
             <td><input type="text" name="USER_NAME" value="${e.user_name}"></td> <!-- どうやって名前取り出す？ -->
           </tr>

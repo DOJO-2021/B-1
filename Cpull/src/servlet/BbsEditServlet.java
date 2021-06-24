@@ -29,6 +29,7 @@ public class BbsEditServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
+		//ri
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
 		LoginUser user_id_id = (LoginUser) session.getAttribute("id");

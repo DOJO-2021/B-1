@@ -41,18 +41,18 @@ public class BbsDetailServlet2 extends HttpServlet {
 		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
 		String user_id = user_id_id.getId();
 		//String user_id = request.getParameter("user_id");
-		//LoginUser user_name_name = (LoginUser) session.getAttribute("user_name");
-		//String user_name = user_name_name.getId();
-		String user_name = request.getParameter("user_name");
+		LoginUser user_name_name = (LoginUser) session.getAttribute("user_name");
+		String user_name = user_name_name.getId();
+//		String user_name = request.getParameter("user_name");
 		String reply_range_string = request.getParameter("reply_range");
 		int reply_range = Integer.parseInt(reply_range_string);
 		String reply_contents = request.getParameter("reply_contents");
 
-		System.out.println(bbs_id);
+//		System.out.println(bbs_id);
 		System.out.println(user_id);
-		System.out.println(user_name);
-		System.out.println(reply_range);
-		System.out.println(reply_contents);
+//		System.out.println(user_name);
+//		System.out.println(reply_range);
+//		System.out.println(reply_contents);
 		// コメントを行う
 		BbsReplyDAO bDao = new BbsReplyDAO();
 		bDao.insert(new Reply(0,bbs_id, user_id, user_name, reply_range, reply_contents));
