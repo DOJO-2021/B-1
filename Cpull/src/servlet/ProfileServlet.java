@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -55,13 +56,9 @@ public class ProfileServlet extends HttpServlet {
 				String user_prefecture = request.getParameter("USER_PREFECTURE");
 				String user_hobby = request.getParameter("USER_HOBBY");
 				String user_skill = request.getParameter("USER_SKILL");
-
-				String month = request.getParameter("month");
-				String date = request.getParameter("date");
-				String user_birth = month + "/" + date;
-				/*カレンダー方式の場合　String user_birth = request.getParameter("USER_BIRTH");
+				String user_birth = request.getParameter("USER_BIRTH");
 				SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy/MM/dd");
-				try {
+				/*try {
 					Date date = sdFormat.parse(user_birth);
 				} catch (ParseException e) {
 					// TODO 自動生成された catch ブロック
