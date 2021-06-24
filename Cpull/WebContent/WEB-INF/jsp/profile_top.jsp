@@ -42,7 +42,7 @@
 							name="USER_SKILL">
 					</label></td>
 					<td><label>誕生日<br>
-					<select name="month">
+					<!-- プルダウンなし <select name="month">
 						<option value="01">1月</option>
 						<option value="02">2月</option>
 						<option value="03">3月</option>
@@ -88,8 +88,8 @@
 						<option value="29">29日</option>
 						<option value="30">30日</option>
 						<option value="31">31日</option>
-						</select>
-					<!--カレンダー方式 <input type="date" name="USER_BIRTH" min="0001-01-01" max="0001-12-31"> -->
+						</select> -->
+					<input type="date" name="USER_BIRTH" min="1940-01-01" max="2021-12-31">
 					</label></td>
 				</tr>
 				<tr>
@@ -110,7 +110,14 @@
 		</form>
 		<!-- メイン（ここまで） -->
 		<!-- フッター（ここから） -->
-
+		<footer>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		</footer>
 		<!-- フッター（ここまで） -->
 	</div>
 </body>

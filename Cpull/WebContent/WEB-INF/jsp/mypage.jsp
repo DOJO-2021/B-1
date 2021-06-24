@@ -20,7 +20,7 @@
     <main>
       <h1 class="top_name">マイページ</h1>
       <c:forEach var="e" items="${cardList}">
-      <form method="POST" action="/Cpull/MypageServlet" enctype="multipart/form-data">
+      <form method="POST" action="/Cpull/MypageServlet">
         <div class="box">
         <table>
           <tr>
@@ -30,10 +30,6 @@
           <tr>
             <td>PW</td>
             <td><input type="password" name="USER_PW" value="${e.user_pw}" readonly></td> <!-- パスワード非表示/パスワード変更可？ -->
-          </tr>
-          <tr>
-            <td>画像</td>
-            <td><input type="file" name="USER_IMAGE" value="${e.user_image}"></td>
           </tr>
           <tr>
             <td>※氏名</td>
@@ -84,6 +80,10 @@
       </form>
       </c:forEach>
     </main>
+    <footer>
+      <br>
+      <br>
+    </footer>
   </div>
 </body>
 </html>

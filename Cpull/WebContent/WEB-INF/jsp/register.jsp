@@ -12,10 +12,14 @@
 </head>
 
 <body>
-  <header>
-    <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
-  </header>
-
+	<div class="wrapper">
+		<header>
+			<h1 class="logo">
+			<img src="images/Cpull_logo.png" alt="CpullLOGO" width="240"
+				height="130">
+			</h1>
+		</header>
+	</div>
   <main>
   <div class="wrapper">
     <h1 class="top_name">新規アカウント登録ページ</h1>
@@ -37,7 +41,7 @@
           <td>新しいPW</td>
           <td>
             <input type="password" id="textPassword" name="USER_PW" pattern="[a-zA-Z0-9_-]{8,15}" required title="8文字以上16文字未満、半角英数字は必須です">
-            <span id="buttonEye" class="fa fa-eye" onclick="pushHideButton()"></span>
+            <span id="buttonEye" class="fa fa-eye-slash" onclick="pushHideButton()"></span>
           </td>
         </tr>
       </table>
@@ -56,11 +60,16 @@
           <td><input type="text" name="USER_COMPANY"required title="会社名は必須項目です"></td>
         </tr>
       </table>
-      受講者<input type="radio" name="USER_CLASS" value="0" checked>
-      講師<input type="radio" name="USER_CLASS" value="1">
-      事務局<input type="radio" name="USER_CLASS" value="2">
-     その他<input type="radio" name="USER_CLASS" value="3"><br>
+      <input type="radio" name="USER_CLASS" value="0" checked id="student">
+      <label for="student">受講者</label>
+      <input type="radio" name="USER_CLASS" value="1" id="teacher">
+      <label for="teacher">講師</label>
+      <input type="radio" name="USER_CLASS" value="2" id="office">
+      <label for="office">事務局</label>
+      <input type="radio" name="USER_CLASS" value="3" id="other">
+      <label for="other">その他</label><br>
       <input type="submit" name="REGIST" value="登録" class="button"><br>
+      <a href= "/Cpull/LoginServlet">ログイン画面へ戻る</a><br>
    </div>
     </form>
     <p id="output"></p>
