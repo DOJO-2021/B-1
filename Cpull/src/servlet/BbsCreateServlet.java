@@ -31,7 +31,9 @@ public class BbsCreateServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		LoginUser user = (LoginUser) session.getAttribute("user");
+
+		if (user.getId() == null) {
 			response.sendRedirect("/B-1/LoginServlet");
 			return;
 
@@ -50,7 +52,8 @@ public class BbsCreateServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		LoginUser user = (LoginUser) session.getAttribute("user");
+		if (user.getId() == null) {
 			response.sendRedirect("/B-1/LoginUserServlet");
 			return;
 		}

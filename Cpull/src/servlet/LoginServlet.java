@@ -49,7 +49,6 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			LoginUser user = iDao.userselect(new LoginUser(id,0,""));
 			user.setId(id);
-			System.out.println("new1");
 			session.setAttribute("user",user);
 
 
