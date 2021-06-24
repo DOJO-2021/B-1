@@ -18,6 +18,7 @@
 		<!-- サブメニュー追加 -->
 		<h1 class="top_name">スレッド新規作成</h1>
 		<form method="POST" action="/Cpull/BbsCreateServlet">
+		<div class="box">
 			タイトル<br> <input type="text" name="bbs_title"
 				value="${draftList.get(0).draft_title}" placeholder="スレッドタイトルを入力"><br>
 			詳細<br> <input type="text" name="bbs_details"
@@ -59,12 +60,15 @@
 					value="${draftList.get(0).draft_pw}">
 			</div>
 			<div>
-				<input type="submit" name="submit" value="draft_save"> <input
-					type="submit" name="submit" value="draft_load"> <input
-					type="submit" name="submit" value="bbs_create">
+				<input type="submit" name="submit" value="draft_save" class="button"> <input
+					type="submit" name="submit" value="draft_load" class="button"> <input
+					type="submit" name="submit" value="bbs_create" class="button">
 			</div>
-
+       </div>
 		</form>
 	</main>
+<footer>
+  <br> <br> <br> <br> <br>
+</footer>
 </body>
 </html>
