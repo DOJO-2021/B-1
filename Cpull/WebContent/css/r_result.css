@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /*新規登録完了画面用*/
 
+/*logoクラス*/
+.logo {
+ margin: 50px 0 20px 0; /*ロゴ中央揃え*/
+ line-height: 0;
+ text-align: center;
+}
+
 /* wrapperクラス */
 .wrapper {
  margin: 0 auto 0 auto;
@@ -12,6 +19,9 @@
   color: #52658f;
 }
 
+.message {
+  text-align: center;
+}
 a {
 text-decoration:none;
 }

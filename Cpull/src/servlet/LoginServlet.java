@@ -41,16 +41,15 @@ public class LoginServlet extends HttpServlet {
 
 		// ログイン処理を行う
 		UserDAO iDao = new UserDAO();
+//		System.out.println(iDao.isLoginOK(id, pw));
 		if (iDao.isLoginOK(id, pw)) {
+
 			// ログイン成功
 			// セッションスコープにIDを格納する
 			HttpSession session = request.getSession();
-			LoginUser user = new LoginUser();
-			user.setUserId(id);
-			//sql文でuser_classとuser_nameを持ってくる
-			/*user.setUser_class(user_class);
-			 *user.setUser_name(user_name);
-			 */
+			LoginUser user = iDao.userselect(new LoginUser(id,0,""));
+			user.setId(id);
+			session.setAttribute("user",user);
 
 
 			/*// DAOから氏名、クラスを取り出す
