@@ -122,7 +122,7 @@ public class ProfileDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select user_id, user_name, user_pw,user_k_name, user_company,user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image from m_user where user_name like ? and user_company like ? and user_prefecture like ? and user_hobby like ? and user_skill like ? and user_birth like ? and user_remarks like ? order by user_name ASC";
+			String sql = "select user_id, user_name, user_pw,user_k_name, user_company,user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image from m_user where user_name like ? and user_company like ? and user_prefecture like ? and user_hobby like ? and user_skill like ? and user_birth like ? and user_remarks like ? and user_range=0 order by user_name ASC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);//決まり文句
 
 			// SQL文を完成させる
@@ -219,7 +219,7 @@ public class ProfileDAO {
 			conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 			// SQL文を準備する
-			String sql = "select user_id, user_name, user_pw,user_k_name, user_company,user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image from m_user where user_name like ? and user_company like ? and user_prefecture like ? and user_hobby like ? and user_skill like ? and user_birth like ? and user_remarks like ? order by user_birth ASC";
+			String sql = "select user_id, user_name, user_pw,user_k_name, user_company,user_class, user_prefecture, user_hobby, user_skill, user_birth, user_remarks, user_range, user_image from m_user where user_name like ? and user_company like ? and user_prefecture like ? and user_hobby like ? and user_skill like ? and user_birth like ? and user_remarks like ? and user_range=0 order by user_birth ASC";
 			PreparedStatement pStmt = conn.prepareStatement(sql);//決まり文句
 
 			// SQL文を完成させる
