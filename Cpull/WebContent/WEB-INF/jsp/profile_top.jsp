@@ -20,6 +20,7 @@
 		<form method="POST" action="/Cpull/ProfileServlet">
 
 			<table>
+
 				<tr>
 					<td><label>氏名<br> <input type="text"
 							name="USER_NAME">
@@ -102,11 +103,13 @@
 
 				<div class="msg">登録者すべてのプロフィールを閲覧できます</div>
 					 <a href="/Cpull/ProfileListServlet">
-					 <input type="button" id="search" name="list" value="一覧" class="button2">
+				<input type="button" id="search" name="list" value="一覧" class="button2">
 					 </a>
 					</td>
 				</tr>
+
 			</table>
+
 		</form>
 		<!-- メイン（ここまで） -->
 		<!-- フッター（ここから） -->

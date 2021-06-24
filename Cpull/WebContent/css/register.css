@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /*アカウント新規登録画面用*/
 
+a {
+text-decoration:none;
+}
 
 table {
 text-align : left ;

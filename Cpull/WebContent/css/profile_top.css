@@ -49,6 +49,7 @@ table {
 	color: #333a56;
 }
 
+
 td {
 	padding-left: 60px;
 }
@@ -94,16 +95,24 @@ border-bottom: 2px solid #ccc100;
 color: #ffffff;
 background-color: #ffa954;
 border-bottom: 5px solid #ccc100;
+padding : 5px 30px
 }
+
+.button2 {
+
+	text-align: center;
+}
+
 .button2:hover {
-margin-top: 3px;
+margin-top: 10px;
 color: #000;
 background: #ffa954;
 border-bottom: 2px solid #ccc100;
 }
+
 /*button2クラスここまで*/
 
-
+.button2 { text-align : center ; }
 
 .msg {
 	margin-top: 40px;
