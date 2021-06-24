@@ -31,6 +31,9 @@ public class BbsEditServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
+		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+		String user_id = user_id_id.getId();
+
 		//詳細データを抽出（掲示板idをキーに）
 		BbsDAO bDao = new BbsDAO();
 		List<BBS> bbsList = bDao.detailselect(new BBS("", bbs_id, "", "", "", 0, 0));
@@ -68,8 +71,8 @@ public class BbsEditServlet extends HttpServlet {
 		///			Integer.parseInt(request.getParameter("bbs_id"));
 		//System.out.println(int_id);
 		//リクエストスコープ
-		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-		String user_id = user_id_id.getId();
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+//		String user_id = user_id_id.getId();
 		//		String bbs_id_string = request.getParameter("bbs_id");
 		//		int bbs_id = Integer.parseInt(bbs_id_string);
 
