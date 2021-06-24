@@ -29,10 +29,10 @@
 		<p>
 			<c:out value="${r.user_name}"></c:out>:<c:out value="${r.reply_contents}"></c:out>
 		</p>
-		<form action="/Cpull/BbsDetailServlet2" method="POST">
+
+	</c:forEach>
+	<form action="/Cpull/BbsDetailServlet2" method="POST">
 			<input type="hidden" name="bbs_id" value="${r.bbs_id}">
-			<input type="hidden" name="user_id" value="${r.user_id}">
-			<input type="hidden" name="user_name" value="${r.user_name}">
 			 コメント<br>
 			<textarea name="reply_contents"></textarea><br>
 			氏名の公開範囲<br>
@@ -42,6 +42,5 @@
 				<input type="submit" name="submit" value="回答"><br>
 			</div>
 		</form>
-	</c:forEach>
 </body>
 </html>

@@ -55,5 +55,37 @@ insert into category values('12','Java基礎');
 insert into category values('13',' 開発');
 insert into category values('14',' その他');
 
+insert into
+insert into reply values(null,2,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+'テスト2');
+insert into reply values(null,3,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+'テスト3');
+insert into reply values(null,4,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+'テスト4');
+insert into reply values(null,5,'dojohanako@seplus2021.onmicrosoft.com','道場花子',0,
+'テスト5');
+insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'テスト2',
+'テスト2','2021',0,11);
+insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'テスト3',
+'テスト3','2021',0,11);
+insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'テスト4',
+'テスト4','2021',0,11);
+insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'テスト5',
+'テスト5','2021',0,11);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
