@@ -25,7 +25,7 @@ public class LoginUser implements Serializable {
 		return id;
 	}
 
-	public void setUserId(String id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 

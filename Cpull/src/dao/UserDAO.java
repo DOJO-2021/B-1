@@ -381,7 +381,7 @@ public class UserDAO {
 			return cardList;
 		}
 		// 引数paramで検索項目を指定し、検索結果のリストを返す
-		public LoginUser userselect(User param) {
+		public LoginUser userselect(LoginUser param) {
 			Connection conn = null;
 //			List<User> cardList = new ArrayList<User>();
 			LoginUser user = new LoginUser();
@@ -394,12 +394,13 @@ public class UserDAO {
 				conn = DriverManager.getConnection("jdbc:h2:file:C:/pleiades/workspace/B-1/Cpull/cpull", "sa", "sa");
 
 				// SQL文を準備する
-				String sql = "SELECT user_class,user_name M_USER WHERE user_id LIKE ? ";
+				String sql = "SELECT user_class,user_name from M_USER WHERE user_id LIKE ? ";
 				PreparedStatement pStmt = conn.prepareStatement(sql);
 
 				// SQL文を完成させる
-				if (param.getUser_id() != null) {
-					pStmt.setString(1, param.getUser_id());
+				if (param.getId() != null) {
+					pStmt.setString(1, param.getId());
+//					System.out.println(param.getId());
 				}
 				else {
 					pStmt.setString(1, "%");
@@ -409,10 +410,9 @@ public class UserDAO {
 				ResultSet rs = pStmt.executeQuery();
 
 				// 結果表をコレクションにコピーする
-//				while (rs.next()) {
+				rs.next();
 					user.setUser_class(rs.getInt("user_class")) ;
 					user.setUser_name(rs.getString("user_name")) ;
-
 
 //					rs.getString("user_id"),
 //					rs.getString("user_name"),

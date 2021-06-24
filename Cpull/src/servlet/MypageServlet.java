@@ -29,7 +29,9 @@ public class MypageServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		LoginUser user = (LoginUser) session.getAttribute("user");
+
+		if (user.getId() == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
@@ -38,7 +40,7 @@ public class MypageServlet extends HttpServlet {
 		//セッションidを変数u_idに代入
 		// String u_id = session.getAttribute("id").toString();
 		request.setCharacterEncoding("UTF-8");
-		LoginUser Luser_id = (LoginUser) session.getAttribute("id");
+		LoginUser Luser_id = (LoginUser) session.getAttribute("user");
 		String u_id = Luser_id.getId();
 		//userモデルを作成（u_id,"",,,,)
 		// User user = new User(user_id);
@@ -62,8 +64,9 @@ public class MypageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		 HttpSession session = request.getSession();
+		 LoginUser user = (LoginUser) session.getAttribute("user");
 
-		if (session.getAttribute("id") == null) {
+		if (user.getId() == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
