@@ -37,6 +37,22 @@ margin-left: 20px;
 color: #333a56;
 }
 
+
+/*buttonクラス*/
+.button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+}
+.button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*buttonクラスここまで*/
+
+
 /*troublesearch_buttonクラス*/
 .troublesearch_button {
 color: #ffffff;
@@ -71,6 +87,11 @@ border-bottom: 2px solid #ccc100;
 
 /*boxクラス*/
 .box {
+	 margin-left: 250px;/*文字を左寄せ中央*/
+	 }
+
+/*box2クラス*/
+.box2 {
 	 margin-left: 250px;/*文字を左寄せ中央*/
 	 }
 
