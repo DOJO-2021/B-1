@@ -21,7 +21,7 @@
 				<div class="box">
 					<div>
 						お問い合わせの件名<br> <input type="text" name="SUBJECT"
-							placeholder="お問い合わせ">
+							placeholder="お問い合わせ" class="subject">
 					</div>
 					<div>
 						お問い合わせの内容<br>

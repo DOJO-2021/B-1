@@ -9,9 +9,20 @@ div { text-align : left ;/*左揃え*/
 
 /*boxクラス*/
 .box {
-	 margin-left: 360px;/*中央寄せ*/
+	 margin-left: 280px;/*中央寄せ*/
 	 }
+/*テキストエリア*/
+textarea {
+width: 25em;
+height: 8em;
+margin: 5px 0;
+}
 
+/*subjectクラス*/
+.subject {
+width: 25em;
+margin: 5px 0;
+}
 /*wrapperクラス*/
 .wrapper {
  margin: 0 auto 0 auto;	/* nav中央揃え */
@@ -49,6 +60,8 @@ margin-left: 20px;
 color: #ffffff;
 background-color: #ffa954;
 border-bottom: 5px solid #ccc100;
+margin: 0 130px;
+padding: 5px 30px;
 }
 .button:hover {
 margin-top: 3px;
