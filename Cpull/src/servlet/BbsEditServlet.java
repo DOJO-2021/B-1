@@ -29,7 +29,7 @@ public class BbsEditServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		//ri
+		//リクエストスコープ
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
 		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
@@ -44,11 +44,11 @@ public class BbsEditServlet extends HttpServlet {
 		if (session.getAttribute("id") == null) {
 			response.sendRedirect("/B-1/LoginServlet");
 			return;
-		} else if (session.getAttribute("user_id") != request.getAttribute("user_id")) {
+		} else if (session.getAttribute("user_id") != (BBS)request.getAttribute("user_id")) {
 //			response.sendRedirect("/WEB-INF/jsp/bbs_list.jsp");
-			request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
+			request.getRequestDispatcher("/WEB-INF/jsp/bbs_list.jsp");
 			return;
-		} else if  (session.getAttribute("user_id") == request.getAttribute("user_id")) {
+		} else if  (session.getAttribute("user_id") == (BBS)request.getAttribute("user_id")) {
 			request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
 			return;
 
