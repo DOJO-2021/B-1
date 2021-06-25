@@ -28,18 +28,25 @@ public class BbsDetailServlet2 extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
-			response.sendRedirect("/B-1/LoginServlet");
+		LoginUser user = (LoginUser) session.getAttribute("user");
+
+		if (user.getId() == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}
+
+//		if (session.getAttribute("id") == null) {
+//			response.sendRedirect("/B-1/LoginServlet");
+//			return;
+//		}
 
 		//リクエストスコープ
 		request.setCharacterEncoding("UTF-8");
 
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
-		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-		String user_id = user_id_id.getId();
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+		String user_id = user.getId();
 		//String user_id = request.getParameter("user_id");
 		LoginUser user_name_name = (LoginUser) session.getAttribute("user_name");
 		String user_name = user_name_name.getId();

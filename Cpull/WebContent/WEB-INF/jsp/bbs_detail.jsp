@@ -35,9 +35,9 @@
 			<input type="hidden" name="bbs_id" value="${r.bbs_id}">
 			 コメント<br>
 			<textarea name="reply_contents"></textarea><br>
-			氏名の公開範囲<br>
-			匿名する<input type="radio" name="reply_range" value="0">
-			公開する<input type="radio" name="reply_range" value="1">
+		<!-- 	氏名の公開範囲<br>-->
+			<input type="hidden" name="reply_range" value="0">
+			<!-- 公開する<input type="radio" name="reply_range" value="1">-->
 			<div>
 				<input type="submit" name="submit" value="回答"><br>
 			</div>

@@ -28,14 +28,21 @@ public class BbsEditServlet2 extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 				HttpSession session = request.getSession();
-					if (session.getAttribute("id") == null) {
-						response.sendRedirect("/B-1/LoginUserServlet");
-				return;
+				LoginUser user = (LoginUser) session.getAttribute("user");
+
+				if (user.getId() == null) {
+					response.sendRedirect("/Cpull/LoginServlet");
+					return;
 				}
+
+//					if (session.getAttribute("id") == null) {
+//						response.sendRedirect("/B-1/LoginUserServlet");
+//				return;
+//				}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-		String user_id = user_id_id.getId();
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+		String user_id = user.getId();
 		//String user_id = request.getParameter("user_id");
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);

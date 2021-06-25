@@ -31,10 +31,17 @@ public class BbsDetailServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 			HttpSession session = request.getSession();
-			if (session.getAttribute("id") == null) {
-				response.sendRedirect("/B-1/LoginServlet");
+			LoginUser user = (LoginUser) session.getAttribute("user");
+
+			if (user.getId() == null) {
+				response.sendRedirect("/Cpull/LoginServlet");
 				return;
 			}
+
+//			if (session.getAttribute("id") == null) {
+//				response.sendRedirect("/B-1/LoginServlet");
+//				return;
+//			}
 		//セッションスコープの取得
 		//	HttpSession session = request.getSession();
 		//セッションスコープからインスタンスを取得
@@ -48,8 +55,8 @@ public class BbsDetailServlet extends HttpServlet {
 		//	Integer.parseInt(request.getParameter("bbs_id"));
 		//System.out.println(int_id);
 		//リクエストスコープ
-		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-		String user_id = user_id_id.getId();
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+		String user_id = user.getId();
 		String bbs_id_string = request.getParameter("bbs_id");
 		int bbs_id = Integer.parseInt(bbs_id_string);
 
