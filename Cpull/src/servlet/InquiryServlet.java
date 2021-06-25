@@ -29,7 +29,8 @@ public class InquiryServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		//ログインの部分は後でコメントアウトを外す
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
+				LoginUser user = (LoginUser) session.getAttribute("user");
+				if (user.getId() == null) {
 					response.sendRedirect("/Cpull/LoginServlet");
 					return;
 				}
@@ -48,7 +49,8 @@ public class InquiryServlet extends HttpServlet {
 				//ログインの部分は後でコメントアウトを外す
 
 				HttpSession session = request.getSession();
-				if (session.getAttribute("id") == null) {
+				LoginUser user = (LoginUser) session.getAttribute("user");
+				if (user.getId() == null) {
 					response.sendRedirect("/Cpull/LoginServlet");
 					return;
 				}

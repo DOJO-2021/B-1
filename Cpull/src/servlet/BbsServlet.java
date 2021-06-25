@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.BbsDAO;
 import model.BBS;
 import model.BBSt;
+import model.LoginUser;
 
 /**
  * Servlet implementation class BbsServlet
@@ -26,6 +27,14 @@ public class BbsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("user");
+		if (user.getId() == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+		return;
+		}
+
 		//掲示板トップページにフォワードする
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
 		dispatcher.forward(request, response);
@@ -35,6 +44,14 @@ public class BbsServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("user");
+		if (user.getId() == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+		return;
+		}
+
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		String bbs_title = request.getParameter("bbs_search");
@@ -49,7 +66,6 @@ public class BbsServlet extends HttpServlet {
 		//検索ワードをセッションスコープに格納する
 		BBSt t = new BBSt();
 		t.setBbs_title(bbs_title);
-		HttpSession session = request.getSession();
 		session.setAttribute("t",t);
 
 		// 結果ページにフォワードする

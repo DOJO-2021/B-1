@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.ProfileDAO;
+import model.LoginUser;
 import model.User;
 
 /**
@@ -27,7 +28,8 @@ public class ProfileListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
-		if (session.getAttribute("id") == null) {
+		LoginUser user = (LoginUser) session.getAttribute("user");
+		if (user.getId() == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
 			return;
 		}

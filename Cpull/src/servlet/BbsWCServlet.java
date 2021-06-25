@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import dao.BbsDAO;
 import model.BBS;
 import model.BBSt;
+import model.LoginUser;
 
 /**
  * Servlet implementation class BbsWCServlet
@@ -26,12 +27,19 @@ public class BbsWCServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// もしもログインしていなかったらログインサーブレットにリダイレクトする
+		HttpSession session = request.getSession();
+		LoginUser user = (LoginUser) session.getAttribute("user");
+		if (user.getId() == null) {
+			response.sendRedirect("/Cpull/LoginServlet");
+		return;
+		}
+
 		//パラメータを取得する
 		request.setCharacterEncoding("UTF-8");
 		int bbs_category1 = Integer.parseInt(request.getParameter("kind1"));
 		int bbs_category2 = Integer.parseInt(request.getParameter("kind2"));
 
-		HttpSession session = request.getSession();
 		BBSt t = (BBSt) session.getAttribute("t");
 		String bbs_title = t.getBbs_title();
 
