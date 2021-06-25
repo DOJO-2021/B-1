@@ -24,7 +24,7 @@
 		<input type="text" name="bbs_title" value="${e.bbs_title}"><br>
 	内容<br>
 		<input type="text" name="bbs_details" value="${e.bbs_details}"><br>
-			<table>
+		<!-- 	<table>
 			<tr>
 				<th>悩み</th>
 				<th>質問</th>
@@ -39,7 +39,7 @@
 					<option value="04">その他</option>
 				</select>
 				</td>
-				<!-- <td>
+				<td>
 				<select name="bbs_category">
 					<option value="10">パーソナルスキルコース</option>
 					<option value="11">IT基礎コース</option>
@@ -47,9 +47,33 @@
 					<option value="13">開発演習</option>
 					<option value="14">その他</option>
 				</select>
-				</td>-->
+				</td>
 			</tr>
-			</table>
+			</table>-->
+				<div>
+
+					カテゴリーの種類を選んでください：
+					<label for="worry"><input type="radio" id="worry" name="Pass" onclick="ShowHideDiv()" />悩み</label>
+					<label for="question"> <input type="radio" id="question" name="Pass" onclick="ShowHideDiv()" /> 質問</label>
+					<br>
+					<div id="worryPass" style="display: none">
+						カテゴリを選択してください： <select name="kind1">
+							<option value="1">パーソナルスキルコース</option>
+							<option value="2">IT基礎コース</option>
+							<option value="3">Java基礎コース</option>
+							<option value="4">開発演習</option>
+							<option value="5">その他</option>
+						</select><br>
+					</div>
+					<div id="questionPass" style="display: none">
+						カテゴリを選択してください： <select name="kind2">
+							<option value="10">パーソナルスキルコース</option>
+							<option value="11">IT基礎コース</option>
+							<option value="12">Java基礎コース</option>
+							<option value="13">開発演習</option>
+							<option value="14">その他</option>
+						</select><br>
+					</div>
 
 		<div>
 			<label for="bbs_range">公開範囲</label>
@@ -68,6 +92,7 @@
 		</div>
 </form>
 </c:forEach>
+	<script src="/Cpull/js/bbs_create.js"></script>
 
 </body>
 </html>
