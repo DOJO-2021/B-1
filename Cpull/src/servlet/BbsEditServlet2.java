@@ -52,8 +52,10 @@ public class BbsEditServlet2 extends HttpServlet {
 		String bbs_range_string = request.getParameter("bbs_range");
 		int bbs_range = Integer.parseInt(bbs_range_string);
 		//int bbs_range= Integer.parseInt(request.getParameter("bbs_range"));
-		String bbs_category_string = request.getParameter("bbs_category");
-		int bbs_category = Integer.parseInt(bbs_category_string);
+//		String bbs_category_string = request.getParameter("bbs_category");
+//		int bbs_category = Integer.parseInt(bbs_category_string);
+		int bbs_category1 = Integer.parseInt(request.getParameter("kind1"));
+		int bbs_category2 = Integer.parseInt(request.getParameter("kind2"));
 
 		//int bbs_category = Integer.parseInt(request.getParameter("bbs_category"));
 		System.out.println(user_id);
@@ -62,28 +64,40 @@ public class BbsEditServlet2 extends HttpServlet {
 		System.out.println(bbs_details);
 		System.out.println(bbs_pw);
 		System.out.println(bbs_range);
-		System.out.println(bbs_category);
+//		System.out.println(bbs_category);
 
 		// 更新または削除を行う
 		BbsDAO bDao = new BbsDAO();
 		if (request.getParameter("submit").equals("更新")) {
+			if(bbs_category1 ==0) {
+				bDao.insert(new BBS(user_id, 0, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category1));
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+				dispatcher.forward(request, response);
+		} else  {
+				bDao.insert(new BBS(user_id, 0, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category2));
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+				dispatcher.forward(request, response);
+		}
 
-			bDao.update(new BBS(user_id, bbs_id, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category));// 更新成功
-			System.out.println(user_id);
-			System.out.println(bbs_id);
-			System.out.println(bbs_title);
-			System.out.println(bbs_details);
-			System.out.println(bbs_pw);
-			System.out.println(bbs_range);
-			System.out.println(bbs_category);
+//			bDao.update(new BBS(user_id, bbs_id, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category));// 更新成功
+//			System.out.println(user_id);
+//			System.out.println(bbs_id);
+//			System.out.println(bbs_title);
+//			System.out.println(bbs_details);
+//			System.out.println(bbs_pw);
+//			System.out.println(bbs_range);
+//			System.out.println(bbs_category);
 
 
 		} else if (request.getParameter("submit").equals("削除")) {
 			bDao.delete(bbs_id); // 削除成功
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+			dispatcher.forward(request, response);
+
 		}
 		// 掲示板トップページにフォワードする
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
-		dispatcher.forward(request, response);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+//		dispatcher.forward(request, response);
 	}
 
 }

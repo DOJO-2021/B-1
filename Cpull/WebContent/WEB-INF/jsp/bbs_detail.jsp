@@ -32,7 +32,7 @@
 
 	</c:forEach>
 	<form action="/Cpull/BbsDetailServlet2" method="POST">
-			<input type="hidden" name="bbs_id" value="${r.bbs_id}">
+			<input type="hidden" name="bbs_id" value="${bbsList.get(0).bbs_id}">
 			 コメント<br>
 			<textarea name="reply_contents"></textarea><br>
 		<!-- 	氏名の公開範囲<br>-->

@@ -28,8 +28,8 @@ public class BbsReplyDAO {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			// SQL文を完成させる
-			if (replycard.getReply_id() != 0) {
-				pStmt.setInt(1, replycard.getReply_id());
+			if (replycard.getBbs_id() != 0) {
+				pStmt.setInt(1, replycard.getBbs_id());
 			} else {
 				pStmt.setInt(1, 0);
 			}
