@@ -57,6 +57,7 @@
 				${e.bbs_title}<br>
 				<input type="submit" name="detail" value="詳細ページへ">
 				</form>
+				<p>※スレッド作成者のみが編集可能です。作成者以外は掲示板トップに戻ります </p>
 				<form method="POST" action="/Cpull/BbsEditServlet">
 				<input hidden name="bbs_id" value="${e.bbs_id}">
 				<input hidden name="user_id" value="${e.user_id}">
