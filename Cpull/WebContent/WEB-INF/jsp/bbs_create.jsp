@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 </head>
 <body>
+<div class="wrapper">
 	<header>
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
@@ -82,7 +83,7 @@
 					<div>
 						パスワード<br> <input type="text" name="bbs_pw"
 							value="${draftList.get(0).draft_pw}">
-					</div>
+					</div><br>
 					<div>
 						<input id="save" type="submit" name="submit" value="下書き保存"
 							class="button"> <input type="submit" name="submit"
@@ -97,5 +98,6 @@
 		<br> <br> <br> <br> <br>
 	</footer>
 	<script src="/Cpull/js/bbs_create.js"></script>
+	</div>
 </body>
 </html>
