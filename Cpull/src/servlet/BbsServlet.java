@@ -56,12 +56,22 @@ public class BbsServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String bbs_title = request.getParameter("bbs_search");
 
+		int user_class = user.getUser_class();
+
 		// 検索処理を行う
 		BbsDAO bDao = new BbsDAO();
-		List<BBS> bbsList = bDao.wordselect(new BBS("",0,bbs_title,"","",0,0));
+		if(user_class == 0) {
+			List<BBS> bbsList = bDao.wordselect1(new BBS("",0,bbs_title,"","",0,0));
 
-		// 検索結果をリクエストスコープに格納する
-		request.setAttribute("bbsList", bbsList);
+			// 検索結果をリクエストスコープに格納する
+			request.setAttribute("bbsList", bbsList);
+
+		} else {
+			List<BBS> bbsList = bDao.wordselect2(new BBS("",0,bbs_title,"","",0,0));
+
+			//検索結果をリクエストスコープに格納する
+			request.setAttribute("bbsList",bbsList);
+		}
 
 		//検索ワードをセッションスコープに格納する
 		BBSt t = new BBSt();
