@@ -59,6 +59,8 @@
 				</form>
 				<form method="POST" action="/Cpull/BbsEditServlet">
 				<input hidden name="bbs_id" value="${e.bbs_id}">
+				<input hidden name="user_id" value="${e.user_id}">
+
 				<input type="submit" name="edit" value="編集ページへ">
 				</form>
 				<hr>

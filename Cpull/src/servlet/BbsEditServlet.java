@@ -31,6 +31,12 @@ public class BbsEditServlet extends HttpServlet {
 		// もしもログインしていなかったらログインサーブレットにリダイレクトする
 		HttpSession session = request.getSession();
 		LoginUser user = (LoginUser) session.getAttribute("user");
+		// リクエストパラメータを取得する
+		request.setCharacterEncoding("UTF-8");
+		String user_id_id = request.getParameter("user_id");
+//		System.out.println(bbs_id);
+		System.out.println(user_id_id);
+
 
 		if (user.getId() == null) {
 			response.sendRedirect("/Cpull/LoginServlet");
@@ -52,11 +58,12 @@ public class BbsEditServlet extends HttpServlet {
 //		if (session.getAttribute("id") == null) {
 //			response.sendRedirect("/B-1/LoginServlet");
 //			return;
-//		} else if (session.getAttribute("user_id") != (BBS)request.getAttribute("user_id")) {
-//			response.sendRedirect("/WEB-INF/jsp/bbs_list.jsp");
+		else if (user.getId() != request.getParameter("user_id")) {
+			response.sendRedirect("/WEB-INF/jsp/bbs_list.jsp");
 //			request.getRequestDispatcher("/WEB-INF/jsp/bbs_list.jsp");
-//			return;
-//		} else if  (session.getAttribute("user_id") == (BBS)request.getAttribute("user_id")) {
+			return;
+		}
+//		else if  (session.getAttribute("user_id") == (BBS)request.getAttribute("user_id")) {
 //			request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
 //			return;
 
@@ -80,8 +87,8 @@ public class BbsEditServlet extends HttpServlet {
 				String user_id = user.getId();
 				String bbs_id_string = request.getParameter("bbs_id");
 				int bbs_id = Integer.parseInt(bbs_id_string);
-				System.out.println(bbs_id);
-				System.out.println(user_id);
+//				System.out.println(bbs_id);
+//				System.out.println(user_id);
 
 
 		//		//詳細データを抽出（掲示板idをキーに）
