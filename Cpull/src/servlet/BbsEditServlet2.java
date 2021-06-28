@@ -41,7 +41,7 @@ public class BbsEditServlet2 extends HttpServlet {
 //				}
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("user");
 		String user_id = user.getId();
 		//String user_id = request.getParameter("user_id");
 		String bbs_id_string = request.getParameter("bbs_id");
@@ -70,22 +70,22 @@ public class BbsEditServlet2 extends HttpServlet {
 		BbsDAO bDao = new BbsDAO();
 		if (request.getParameter("submit").equals("更新")) {
 			if(bbs_category1 ==0) {
-				bDao.insert(new BBS(user_id, 0, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category1));
+				bDao.update(new BBS(user_id, bbs_id, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category1));
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
 				dispatcher.forward(request, response);
-		} else  {
-				bDao.insert(new BBS(user_id, 0, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category2));
+			} else  {
+				bDao.update(new BBS(user_id, bbs_id, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category2));
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
 				dispatcher.forward(request, response);
-		}
+			}
 
 //			bDao.update(new BBS(user_id, bbs_id, bbs_title, bbs_details, bbs_pw, bbs_range, bbs_category));// 更新成功
-//			System.out.println(user_id);
-//			System.out.println(bbs_id);
-//			System.out.println(bbs_title);
-//			System.out.println(bbs_details);
-//			System.out.println(bbs_pw);
-//			System.out.println(bbs_range);
+			System.out.println(user_id);
+			System.out.println(bbs_id);
+			System.out.println(bbs_title);
+			System.out.println(bbs_details);
+			System.out.println(bbs_pw);
+			System.out.println(bbs_range);
 //			System.out.println(bbs_category);
 
 

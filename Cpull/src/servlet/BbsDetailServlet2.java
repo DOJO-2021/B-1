@@ -55,10 +55,10 @@ public class BbsDetailServlet2 extends HttpServlet {
 		int reply_range = Integer.parseInt(reply_range_string);
 		String reply_contents = request.getParameter("reply_contents");
 
-		System.out.println(bbs_id);
-		System.out.println(user_id);
+//		System.out.println(bbs_id);
+//		System.out.println(user_id);
 //		System.out.println(user_name);
-		System.out.println(reply_range);
+//		System.out.println(reply_range);
 //		System.out.println(reply_contents);
 		// コメントを行う
 		BbsReplyDAO bDao = new BbsReplyDAO();

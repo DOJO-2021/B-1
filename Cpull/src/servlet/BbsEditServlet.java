@@ -77,7 +77,7 @@ public class BbsEditServlet extends HttpServlet {
 		//リクエストスコープ
 		request.setCharacterEncoding("UTF-8");
 //		LoginUser user = (LoginUser) session.getAttribute("user");
-		String user_id = user.getId();
+				String user_id = user.getId();
 				String bbs_id_string = request.getParameter("bbs_id");
 				int bbs_id = Integer.parseInt(bbs_id_string);
 				System.out.println(bbs_id);
