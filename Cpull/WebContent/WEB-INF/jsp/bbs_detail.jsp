@@ -18,13 +18,13 @@
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
 
-	<h1>スレッド詳細</h1>
-
-	タイトル<br>
+	<h1 class="top_name">スレッド詳細</h1>
+<div class="box">
+	<h2 class="top_name2">タイトル</h2>
 	<p>${bbsList.get(0).bbs_title}</p><br>
-	 内容<br>
-	<p>${bbsList.get(0).bbs_details}</p><br>
-	コメント欄<br>
+	 <h2 class="top_name2">内容</h2>
+	<p>${bbsList.get(0).bbs_details}</p>
+	<h2 class="top_name2">コメント欄</h2>
 	<c:forEach var="r" items="${replyList}">
 		<p>
 			<c:out value="${r.user_name}"></c:out>:<c:out value="${r.reply_contents}"></c:out>
@@ -39,8 +39,12 @@
 			<input type="hidden" name="reply_range" value="0">
 			<!-- 公開する<input type="radio" name="reply_range" value="1">-->
 			<div>
-				<input type="submit" name="submit" value="回答"><br>
+				<input type="submit" name="submit" value="回答" class="button"><br>
 			</div>
 		</form>
+		</div>
 </body>
+<footer>
+	<br> <br>
+</footer>
 </html>
