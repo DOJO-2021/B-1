@@ -12,17 +12,20 @@
 <link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 </head>
 <body>
+<div class="wrapper">
 <!-- ヘッダー追加 -->
 <header>
     <jsp:include page = "/WEB-INF/jsp/header.jsp"/>
 </header>
-<h1>スレッド編集</h1>
+<h1 class="top_name">スレッド編集</h1>
 <c:forEach var="e" items="${bbsList}" >
+
 <form  method="POST" action="/Cpull/BbsEditServlet2">
 	<input type="hidden"name="bbs_id" value="${e.bbs_id}">
-	タイトル<br>
+<div class="box">
+	<h2 class="top_name2">タイトル</h2>
 		<input type="text" name="bbs_title" value="${e.bbs_title}"><br>
-	内容<br>
+	<h2 class="top_name2">内容</h2>
 		<input type="text" name="bbs_details" value="${e.bbs_details}"><br>
 		<!-- 	<table>
 			<tr>
@@ -83,16 +86,23 @@
 			</select>
 		</div>
 		<div>
-		パスワード<br>
+		<h2 class="top_name2">パスワード</h2>
 			<input type="text" name="bbs_pw" value="${e.bbs_pw}">
-		</div>
+		</div><br>
+
 		<div>
-			<input type="submit" name="submit" value="更新">
-			<input type="submit" name="submit" value="削除">
+			<input type="submit" name="submit" value="更新" class="button">
+			<input type="submit" name="submit" value="削除" class="button">
 		</div>
+		</div>
+</div>
 </form>
+
 </c:forEach>
 	<script src="/Cpull/js/bbs_create.js"></script>
-
+</div>
 </body>
+<footer>
+	<br> <br> <br> <br> <br>
+</footer>
 </html>

@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/Cpull/css/bbs_common.css">
 </head>
 <body>
+<div class="wrapper">
 	<header>
 		<jsp:include page="/WEB-INF/jsp/header.jsp" />
 	</header>
@@ -42,6 +43,7 @@
 				<input type="submit" name="submit" value="回答" class="button"><br>
 			</div>
 		</form>
+		</div>
 		</div>
 </body>
 <footer>
