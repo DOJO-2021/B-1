@@ -1,2 +1,64 @@
 @charset "UTF-8";
 /*スレッドの詳細画面用*/
+
+/*wrapperクラス*/
+.wrapper {
+ margin: 0 auto 0 auto;	/* nav中央揃え */
+ width: 900px;			/* 幅を固定 */
+}
+
+/*top_nameクラス(見出し)*/
+.top_name {
+text-align: center;
+ color: #52658f;
+  display: flex;
+justify-content: center;
+align-items: center;
+font-size: 26px;
+text-align: center;
+}
+.top_name::before,
+.top_name::after {
+content: '';
+width: 70px;
+height: 3px;
+background-color: #e3bf00;
+}
+.top_name::before {
+margin-right: 20px;
+}
+.top_name::after {
+margin-left: 20px;
+}
+/*top_nameクラス(見出し1)ここまで*/
+
+/*buttonクラス*/
+.button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+margin: 0 0px;
+padding: 5px 30px;
+}
+.button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*buttonクラスここまで*/
+
+
+/*boxクラス*/
+.box {
+	 margin-left: 250px;/*中央寄せ*/
+	 }
+
+/*top_name2クラス(見出し2)*/
+.top_name2 {
+color: #333a56;
+}
+
+body {
+color: #333a56;/*文章の文字*/
+}
