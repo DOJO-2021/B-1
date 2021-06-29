@@ -34,7 +34,7 @@ margin-left: 20px;
 
 /*top_name3クラス(見出し3)*/
 .top_name3 {
-color: #333a56;
+color: #e3bf00;
 }
 
 
@@ -87,14 +87,30 @@ border-bottom: 2px solid #ccc100;
 
 /*boxクラス*/
 .box {
-	 margin-left: 250px;/*文字を左寄せ中央*/
+	 margin-left: 170px;/*文字を左寄せ中央*/
 	 }
 
 /*box2クラス*/
 .box2 {
-	 margin-left: 250px;/*文字を左寄せ中央*/
+	 margin-left: 170px;/*文字を左寄せ中央*/
 	 }
 
 main {
 color: #333a56;/*文章の文字*/
 }
+
+/*buttonクラス*/
+.button {
+color: #ffffff;
+background-color: #ffa954;
+border-bottom: 5px solid #ccc100;
+margin: 0 0px;
+padding: 5px 30px;
+}
+.button:hover {
+margin-top: 3px;
+color: #000;
+background: #ffa954;
+border-bottom: 2px solid #ccc100;
+}
+/*buttonクラスここまで*/

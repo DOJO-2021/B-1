@@ -55,13 +55,13 @@
 				<form method="POST" action="/Cpull/BbsDetailServlet">
 				<input hidden name="bbs_id" value="${e.bbs_id}">
 				${e.bbs_title}<br>
-				<input type="submit" name="detail" value="詳細ページへ">
+				<input type="submit" name="detail" value="詳細ページへ" class="button">
 				</form>
 				<form method="POST" action="/Cpull/BbsEditServlet">
 				<input hidden name="bbs_id" value="${e.bbs_id}">
 				<input hidden name="user_id" value="${e.user_id}">
 
-				<input type="submit" name="edit" value="編集ページへ">
+				<input type="submit" name="edit" value="編集ページへ" class="button">
 				</form>
 				<hr>
 			</c:forEach>

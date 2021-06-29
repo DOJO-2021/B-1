@@ -55,9 +55,17 @@ border-bottom: 2px solid #ccc100;
 	 }
 
 /*top_name2クラス(見出し2)*/
+/*.top_name2 {*/
+/*color: #333a56;*/
+/*}*/
+
 .top_name2 {
-color: #333a56;
+  padding: 0.5em;/*文字周りの余白*/
+  color: #333a56;/*文字色*/
+  background: #fffaf4;/*背景色*/
+  border-left: solid 5px #e3bf00;/*左線（実線 太さ 色）*/
 }
+
 
 body {
 color: #333a56;/*文章の文字*/
