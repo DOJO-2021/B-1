@@ -76,9 +76,16 @@ insert into bbs values('dojo@seplus2021.onmicrosoft.com',null,'テスト5',
 
 
 
-
-
-
+insert into m_user values('dojo2@seplus2021.onmicrosoft.com','テスト2','dojo2021','テスト2',
+'sepuls',0,'東京都','ピアノ','Java','1998-01-01','よろしくお願いします。','0','null');
+insert into m_user values('dojo3@seplus2021.onmicrosoft.com','テスト3','dojo2021','テスト3',
+'sepuls',0,'東京都','ゲーム','Java','1998-01-01','よろしくお願いします。','0','null');
+insert into m_user values('dojo4@seplus2021.onmicrosoft.com','テスト4','dojo2021','テスト4',
+'sepuls',0,'神奈川県','サッカー','CSS','1998-01-01','よろしくお願いします。','0','null');
+insert into m_user values('dojo5@seplus2021.onmicrosoft.com','テスト5','dojo2021','テスト5',
+'sepuls',0,'大阪府','ショッピング','なし','1998-01-01','よろしくお願いします。','0','null');
+insert into m_user values('dojo6@seplus2021.onmicrosoft.com','テスト6','dojo2021','テスト6',
+'sepuls',0,'神奈川県','水泳','なし','1998-01-01','よろしくお願いします。','0','null');
 
 
 
