@@ -84,6 +84,8 @@
 						パスワード<br> <input type="text" name="bbs_pw"
 							value="${draftList.get(0).draft_pw}">
 					</div><br>
+					<p>下書き読み込みは一番古いものから読み込まれます。</p>
+					<p>一度読み込まれたものは自動で削除</p>
 					<div>
 						<input id="save" type="submit" name="submit" value="下書き保存"
 							class="button"> <input type="submit" name="submit"

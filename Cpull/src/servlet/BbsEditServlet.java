@@ -35,34 +35,30 @@ public class BbsEditServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String user_id_id = request.getParameter("user_id");
 //		System.out.println(bbs_id);
-		System.out.println(user_id_id);
+		System.out.println("user_id_id"+user_id_id);
+		System.out.println("user.getId"+user.getId());
 
 
-		if (user.getId() == null) {
-			response.sendRedirect("/Cpull/LoginServlet");
-			return;
-		}
-
-		//リクエストスコープ
-//		String bbs_id_string = request.getParameter("bbs_id");
-//		int bbs_id = Integer.parseInt(bbs_id_string);
-//		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-//		String user_id = user_id_id.getId();
-
-		//詳細データを抽出（掲示板idをキーに）
-//		BbsDAO bDao = new BbsDAO();
-//		List<BBS> bbsList = bDao.detailselect(new BBS("", bbs_id, "", "", "", 0, 0));
-//		request.setAttribute("bbsList", bbsList);
-//		BBS b = (BBS) request.getAttribute("user_id");
-
-//		if (session.getAttribute("id") == null) {
-//			response.sendRedirect("/B-1/LoginServlet");
+//		if (user.getId() == null) {
+//			response.sendRedirect("/Cpull/LoginServlet");
 //			return;
-		else if (user.getId() != request.getParameter("user_id")) {
-			response.sendRedirect("/WEB-INF/jsp/bbs_list.jsp");
-//			request.getRequestDispatcher("/WEB-INF/jsp/bbs_list.jsp");
+//		}
+//		else
+			if (!(user.getId().equals(user_id_id)) ) {
+//			response.sendRedirect("/WEB-INF/jsp/bbs_top.jsp");
+			//スレッドtopページにフォワードする
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_top.jsp");
+			dispatcher.forward(request, response);
+			System.out.println("not eqaual");
 			return;
 		}
+//		else if (user.getId() == request.getParameter("user_id")) {
+//			//スレッドtopページにフォワードする
+//			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
+//			dispatcher.forward(request, response);
+//			return;
+//		}
+
 //		else if  (session.getAttribute("user_id") == (BBS)request.getAttribute("user_id")) {
 //			request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
 //			return;
@@ -107,6 +103,7 @@ public class BbsEditServlet extends HttpServlet {
 		//	request.setAttribute("bbs_id", new Reply(bbs_id));
 
 		//スレッド編集ページにフォワードする
+		System.out.println("eqaual");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/bbs_edit.jsp");
 		dispatcher.forward(request, response);
 	}

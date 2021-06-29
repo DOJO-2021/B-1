@@ -57,8 +57,10 @@ public class InquiryServlet extends HttpServlet {
 
 				// リクエストパラメータを取得する
 				request.setCharacterEncoding("UTF-8");
-				LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-				String user_id = user_id_id.getId();
+				LoginUser user1 = (LoginUser) session.getAttribute("user");
+				String user_id = user1.getId();
+//				LoginUser user_id_id = (LoginUser) session.getAttribute("id");
+//			String user_id = user_id_id.getId();
 				String subject= request.getParameter("SUBJECT");
 				String message= request.getParameter("MESSAGE");
 				//System.out.println(user_id); //ちゃんと入ってるかコンソールで確認

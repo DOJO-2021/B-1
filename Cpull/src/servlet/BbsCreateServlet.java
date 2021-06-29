@@ -61,8 +61,8 @@ public class BbsCreateServlet extends HttpServlet {
 
 		// リクエストパラメータを取得する
 		request.setCharacterEncoding("UTF-8");
-		LoginUser user_id_id = (LoginUser) session.getAttribute("id");
-		String user_id = user_id_id.getId();
+//		LoginUser user_id_id = (LoginUser) session.getAttribute("user");
+		String user_id = user.getId();
 
 		String bbs_title = request.getParameter("bbs_title");
 		String bbs_details = request.getParameter("bbs_details");
